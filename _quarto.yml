@@ -1,0 +1,97 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+
+
+website:
+  site-url: "https://retaoliveira.pro"
+  page-navigation: false
+
+ # google-analytics: "G-2J79YYG9CZ"
+  page-footer:
+    right: "Este site foi feito com ❤ e [Quarto](https://quarto.org/), por Renata Oliveira, baseado na documentação original do Quarto. License: [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/)."
+    border: false
+
+  twitter-card:
+    creator: "@retaoliveira"
+    card-style: summary_large_image
+    
+  open-graph: true  
+  
+  reader-mode: true
+  
+#  cookie-consent:
+#    style: interstitial
+#    type: express
+#    palette: light
+    
+  google-analytics:
+    tracking-id: "G-XXXXXXX"
+    anonymize-ip: true
+    
+  navbar:
+    search: true
+#    logo: "_site/reta.png"
+    right:
+      - icon: github
+        href: https://github.com/retaoliveira
+      - icon: twitter
+        href: https://twitter.com/retaoliveira
+      - icon: envelope
+        href: mailto:renataoliveira@gmail.com
+#    left:
+#      - text: "Bem vindo ao QUARTO" 
+#     - text: Home
+#       file: index.qmd
+#     - text: "Introdução ao Quarto"
+#       file: intro-quarto.qmd
+
+
+  search: 
+    location: navbar
+    type: overlay
+    copy-button: true
+
+    
+  sidebar:
+    logo: "_site/quarto.png"
+    border: true
+    style: "docked"
+    contents:
+      - index.qmd
+      - section: "Conhecendo o Quarto"
+        contents:
+         - intro-quarto.qmd
+         - documento.qmd
+
+
+      - title: "---"
+
+      - section: "Sites"
+        contents:
+         - index.qmd
+         - intro-quarto.qmd
+
+format:
+  html:
+    code-fold: true
+    code-tools: true
+    code-link: true
+    theme: 
+      light: [mint, styles.scss]
+      dark: [darkly, styles-dark.scss]
+    css: styles.css
+    toc: true
+    #link-external-icon: false
+    #link-external-newwindow: true
+    #link-external-filter: '^(?:http:|https:)\/\/www\.beamilz\.com\/**'
+    citations-hover: true
+    footnotes-hover: true
+    #include-in-header: meta.html
+
+editor: visual
+
+#comments:
+#  giscus:
+#    repo: beatrizmilz/blog-en

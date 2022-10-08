@@ -1,0 +1,43 @@
+---
+title: "Ei penguins, conheçam o Quarto!"
+format: html
+editor: visual
+---
+
+```{r}
+#| label: load-packages
+#| include: false
+
+library(tidyverse)
+library(palmerpenguins)
+```
+
+## Explore o Quarto
+
+O Quarto permite tecer juntos o conteúdo e o código executável em um documento final. Para saber mais sobre o Quarto, veja https://quarto.org.
+
+## Conheça os pingüins 
+
+![](https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/get-started/hello/rstudio/lter_penguins.png){style="float:right;" fig-alt="Illustration of three species of Palmer Archipelago penguins: Chinstrap, Gentoo, and Adelie. Artwork by @allison_horst." width="401"}
+
+Os dados do pacote de pingüins `palmerpenguins` contêm medidas de tamanho de pingüins de três espécies observadas em três ilhas do Arquipélago de Palmer, Antártida.
+
+O gráfico abaixo mostra a relação entre o comprimento da barbatana e o comprimento do bico desses pingüins.
+
+```{r}
+#| label: plot-penguins
+#| warning: false
+#| echo: false
+
+ggplot(penguins, 
+       aes(x = flipper_length_mm, y = bill_length_mm)) +
+  geom_point(aes(color = species, shape = species)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(
+    title = "Flipper and bill length",
+    subtitle = "Dimensions for penguins at Palmer Station LTER",
+    x = "Flipper length (mm)", y = "Bill length (mm)",
+    color = "Penguin species", shape = "Penguin species"
+  ) +
+  theme_minimal()
+```

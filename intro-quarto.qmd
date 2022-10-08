@@ -1,0 +1,111 @@
+---
+title: "Introdução"
+format:
+  html:
+    code-fold: true
+    code-tools: true
+    code-link: true
+---
+
+## Visão geral
+
+Quarto é a próxima geração do RMarkdown do RStudio, e inclui dezenas de novos recursos e capacidades, ao mesmo tempo em que é capaz de renderizar a maioria dos arquivos .Rmd existentes sem modificações.
+
+Você editará o código e o markdown no RStudio da mesma forma que faria com qualquer documento computacional (por exemplo, R Markdown), e visualizará o documento renderizado na aba Viewer enquanto você trabalha.
+
+A extensão dos documentos Quarto é `.qmd` (à esquerda) junto com sua versão renderizada como HTML (à direita). Você também pode optar por renderizá-lo em outros formatos como PDF, MS Word, etc.
+
+![](img/rstudio-hello.png){.column-page-right .border fig-alt="RStudio with a Quarto document entitulado \"Penguins, meet Quarto!\" open on the left side and the rendered version of the document on the right side" fig-align="center"}
+
+Este é o método básico para a publicação no Quarto - pegar um documento fonte e renderizá-lo em uma variedade de formatos de saída.
+
+Siga os passos descritos abaixo.
+
+1.  Baixe e instale o último lançamento do RStudio (v2022.07):
+
+    ::: {.callout appearance="minimal"}
+    <i class="bi bi-download"></i> [Download RStudio v2022.07](https://rstudio.com/products/rstudio/download/)
+    :::
+
+2.  Certifique-se de que você instalou os pacotes `tidyverse` e `palmerpenguins`:
+
+    ``` r
+    install.packages("tidyverse")
+    install.packages("palmerpenguins")
+    ```
+
+3.  Baixe o documento Quarto (`.qmd`) abaixo, abra-o no RStudio, e clique em <kbd>![](img/rstudio-render-button.png){width="25" height="20"}</kbd> Render.
+
+    ::: {.callout appearance="minimal"}
+    <i class="bi bi-download"></i> [Download hello.qmd](_hello.qmd){download="hello.qmd"}
+    :::
+
+## Renderizando
+
+Use o botão <kbd>![](img/rstudio-render-button.png){width="25" height="20"}</kbd> **Render** no IDE RStudio para renderizar o arquivo e visualizar a saída com um único clique ou atalho de teclado (⇧⌘K).
+
+![](img/rstudio-render.png){.border fig-alt="Top of the text editor in RStudio with the Render button highlighted with a purple box." fig-align="center"}
+
+Se você preferir renderizar automaticamente sempre que salvar, você pode verificar a opção Render em Salvar na barra de ferramentas do editor. A pré-visualização será exibida sempre que você renderizar novamente o documento. A pré-visualização lado a lado funciona tanto para saídas HTML como para PDF.
+
+![](img/rstudio-render-on-save.png){.border fig-alt="Top of the text editor in RStudio with the Render on Save checbox checked and highlighted with a purple box." fig-align="center"}
+
+Observe que os documentos também podem ser resultados a partir do console R utilizando o pacote **quarto***:
+
+``` r
+install.packages("quarto")
+quarto::quarto_render("notebook.Rmd")
+```
+
+Ao renderizar, o Quarto gera um novo arquivo que contém texto, código e resultados selecionados a partir do arquivo .qmd. O novo arquivo pode ser um [HTML](https://quarto.org/docs/output-formats/all-formats.html), [PDF](https://quarto.org/docs/output-formats/pdf-basics.html), [MS Word](https://quarto.org/docs/output-formats/ms-word.html) document, [apresentação](https://quarto.org/docs/presentations/), [website](https://quarto.org/docs/websites/), [livro](https://quarto.org/docs/books/), [documento interativo](https://quarto.org/docs/interactive/), ou [outro formato](https://quarto.org/docs/output-formats/all-formats.html).
+
+## Criando documentos
+
+Na imagem abaixo podemos ver o mesmo documento nos dois modos do editor do RStudio: visual (à esquerda) e fonte (à direita). O [editor visual](/docs/visual-editor/) do RStudio oferece uma experiência de autoria [WYSIWYM](https://en.wikipedia.org/wiki/WYSIWYM) por markdown. Para formatação  você pode utilizar a barra de ferramentas, um atalho de teclado (⌘B), ou a construção de marcação para formato (`** negrito**`). O código fonte em texto puro subjacente ao documento é escrito por você e você pode visualizá-lo/editá-lo em qualquer ponto, mudando para o modo fonte para edição. Você pode alternar entre estes dois modos clicando em **Source*** e **Visual*** na barra de ferramentas do editor (ou usando o atalho de teclado ⌘⇧ F4).
+
+![](img/rstudio-source-visual.png){.column-page-right fig-alt="On the left: Document in the visual editor. On the right: Same document in the source editor. The visual/source editor toggle is highlighted in both documents marking their current state. The document shown is the \"Hello Quarto\" document from a previous image on the page." fig-align="center"}
+
+A seguir, vamos voltar nossa atenção para o conteúdo de nosso documento Quarto. O arquivo contém três tipos de conteúdo: um cabeçalho YAML, pedaços de código e texto em markdown.
+
+### Cabeçalho YAML 
+
+É um cabeçalho (opcional) YAML demarcado por três traços (`---`) em ambas as extremidades.
+
+Quando renderizado, o `título`, `"Olá, Quarto"`, aparecerá no topo do documento  com um tamanho de fonte maior do que o resto do documento. Os outros dois campos YAML denotam que a saída deve estar em formato "html" e o documento deve abrir no "editor" "visual", por padrão.
+
+A sintaxe básica da YAML utiliza pares de valores chave no formato "chave: valor". Outros campos do YAML comumente encontrados em cabeçalhos de documentos incluem metadados como "autor", "subtítulo", "data", assim como opções de personalização como "tema", "cor de botão", "largura de figura", etc. Você pode aprender sobre todos os campos YAML disponíveis para documentos HTML  [aqui](/docs/reference/formats/html.html). Os campos YAML disponíveis variam de acordo com o formato do documento, por exemplo, veja [aqui](/docs/reference/formats/pdf.html) para documentos em PDF e [aqui](/docs/reference/formats/docx.html) para MS Word.
+
+### Chunks de código
+
+Pedaços de código são identificados com `{r}` com opções (opcionais) em estilo YAML, identificados por `#|` no início da linha.
+
+```` markdown
+```{{r}}
+#| label: load-packages
+#| include: false
+
+library(tidyverse)
+library(palmerpenguins)
+```
+````
+
+Neste caso, o "rótulo" do trecho de código é "load-packages" e nós definimos "include" para "false" para indicar que não queremos o trecho em si ou nenhuma de suas saídas nos documentos apresentados.
+
+Além de renderizar o documento completo para visualizar os resultados dos trechos de código, você também pode executar cada trecho de código interativamente no editor do RStudio, clicando no ícone ![](https://d33wubrfki0l68.cloudfront.net/18153fb9953057ee5cff086122bd26f9cee8fe93/3aba9/img/notebook-run-chunk.png) ou atalho de teclado (⇧⌘⏎). O RStudio executa o código e exibe os resultados em linha dentro de seu arquivo ou no Console, dependendo de sua preferência.
+
+![](img/rstudio-inline-output.png){fig-alt="In the background, the code chunk labeled plot-penguins from hello.qmd. The chunk is partially covered by its output, a scatterplot showing the relationship between bill length and flipper length of penguins, colors by species. The button for running the code chunk is highlighted and an arrow extends to the plot, showing that clicking the button results in the plot being generated." fig-align="center"}
+
+#### Texto markdown
+
+Texto markdown possui formatação, incluindo cabeçalhos de seção, hyperlinks, uma imagem embutida e um trecho de código em linha.
+
+![](img/rstudio-text.png){.border fig-alt="Text portion of the of the linked example document titled \"Penguins, meet Quarto!\", with annotation that reads \"Text\"." fig-align="center"}
+
+O Quarto usa a sintaxe markdown para o texto. Se usar o editor visual, você não precisará aprender muita sintaxe de markdown para criar seu documento, pois você pode usar os menus e atalhos para adicionar um cabeçalho, texto em negrito, inserir uma tabela, etc. Se utilizar o editor do código fonte, você poderá formatar o texto com expressões marcadas como `##`, `***negrito**`, etc.
+
+## Como funciona
+
+Quando você apresenta um documento da Quarto, primeiro o [knitr](http://yihui.name/knitr/) executa todos os trechos de código e cria um novo documento markdown (.md) que inclui o código e sua saída. O arquivo de markdown gerado é então processado pelo [pandoc](http://pandoc.org/), que cria o formato final. O botão **Render** encapsula estas ações e as executa na ordem correta para você.
+
+![](img/rstudio-qmd-how-it-works.png){.border fig-alt="Workflow diagram starting with a qmd file, then knitr, then md, then pandoc, then PDF, MS Word, or HTML." fig-align="center"}
+

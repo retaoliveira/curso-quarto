@@ -1,0 +1,380 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Sejam bem vindos ao Quarto!",
+    "section": "",
+    "text": "Este curso foi planejado para aqueles que não têm nenhum ou pouco tempo de experiência com R Markdown e que querem aprender com o Quarto. O Quarto é a próxima geração de RMarkdown para publicação, incluindo dinâmicas e documentos estáticos e suporte de linguagem de programação multilíngüe. Com o Quarto você pode criar documentos, livros, apresentações, blogs ou outros recursos on-line."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Professora na Curso-R.\nDoutoranda em Ciência Ambiental (PROCAM/IEE/USP)\nCo-organizadora da R-Ladies São Paulo 💜\nInstrutora de tidyverse certificada pela RStudio."
+  },
+  {
+    "objectID": "intro-quarto.html",
+    "href": "intro-quarto.html",
+    "title": "Introdução",
+    "section": "",
+    "text": "Quarto é a próxima geração do RMarkdown do RStudio, e inclui dezenas de novos recursos e capacidades, ao mesmo tempo em que é capaz de renderizar a maioria dos arquivos .Rmd existentes sem modificações.\nVocê editará o código e o markdown no RStudio da mesma forma que faria com qualquer documento computacional (por exemplo, R Markdown), e visualizará o documento renderizado na aba Viewer enquanto você trabalha.\nA extensão dos documentos Quarto é .qmd (à esquerda) junto com sua versão renderizada como HTML (à direita). Você também pode optar por renderizá-lo em outros formatos como PDF, MS Word, etc.\n\n\n\n\n\nEste é o método básico para a publicação no Quarto - pegar um documento fonte e renderizá-lo em uma variedade de formatos de saída.\nSiga os passos descritos abaixo.\n\nBaixe e instale o último lançamento do RStudio (v2022.07):\n\n\n\n\n\n\n Download RStudio v2022.07\n\n\n\nCertifique-se de que você instalou os pacotes tidyverse e palmerpenguins:\ninstall.packages(\"tidyverse\")\ninstall.packages(\"palmerpenguins\")\nBaixe o documento Quarto (.qmd) abaixo, abra-o no RStudio, e clique em  Render.\n\n\n\n\n\n\n Download hello.qmd"
+  },
+  {
+    "objectID": "image.html",
+    "href": "image.html",
+    "title": "magick",
+    "section": "",
+    "text": "logo <- image_read('_site/reta.jpg')\nlogo <- image_transparent(logo, 'white')\nimage_write(logo, path = \"_site/reta.png\", format = \"png\")\n\n\n# clean image and write to disk\nclean_img_transparent <- function(img_url, trim = FALSE){\n  \n  # find the name of the img and extract it\n  img_name <- str_replace(img_url, \".*[/]([^.]+)[.].*\", \"\\\\1\")\n  \n  # some images need to be trimmed\n  trim_area <- if(isTRUE(trim)){\n    geometry_area(0, 0, 0, 10)\n  } else {\n    geometry_area(0, 0, 0, 0)\n  }\n  \n  img_url %>% \n    image_read() %>% \n    image_crop(geometry = trim_area) %>% \n    image_fill(\n      color = \"transparent\", \n      refcolor = \"white\", \n      fuzz = 4,\n      point = \"+1+1\" # start at top left 1 pixel in\n      ) \n}\n\n\nclean_img_transparent(\"_site/reta.jpg\")\n\n\n\nimage_write(logo, path = \"_site/reta.png\", format = \"png\")"
+  },
+  {
+    "objectID": "about.html#curso-r",
+    "href": "about.html#curso-r",
+    "title": "About",
+    "section": "Curso-R",
+    "text": "Curso-R"
+  },
+  {
+    "objectID": "about.html#filosofia-de-código-aberto",
+    "href": "about.html#filosofia-de-código-aberto",
+    "title": "About",
+    "section": "Filosofia de código aberto!",
+    "text": "Filosofia de código aberto!\n\n\n\n\nLivros\n\n\n\n\n\n\n\n\n\n\n\n\n\nLives\n\n\n\n\n\n\n\n\nMaterial dos cursos\n\n\n\n\n\n\n\n\nBlog"
+  },
+  {
+    "objectID": "about.html#sobre-essa-apresentação",
+    "href": "about.html#sobre-essa-apresentação",
+    "title": "About",
+    "section": "Sobre essa apresentação",
+    "text": "Sobre essa apresentação\n\n\n\n\n❌ Tutorial sobre o Quarto\n✅ Minha experiência pessoal\n✅ Dicas sobre o que eu aprendi até então"
+  },
+  {
+    "objectID": "about.html#no-começo",
+    "href": "about.html#no-começo",
+    "title": "About",
+    "section": "No começo…",
+    "text": "No começo…\n\nknitr::include_graphics(\"https://i.giphy.com/media/1i4UsfZhrhKkHagP5g/giphy.webp\")"
+  },
+  {
+    "objectID": "about.html#r-markdown",
+    "href": "about.html#r-markdown",
+    "title": "About",
+    "section": "R Markdown",
+    "text": "R Markdown\n\nPacote em R, para criar documentos reprodutíveis.\nMuito usado na comunidade de R.\nCriado e mantido pela RStudio."
+  },
+  {
+    "objectID": "about.html#r-markdown-1",
+    "href": "about.html#r-markdown-1",
+    "title": "About",
+    "section": "R Markdown",
+    "text": "R Markdown\n\nPossui extensões que permitem produzir:\n\nSites\nBlogs\nApresentações\nTextos acadêmicos (artigos científicos, relatórios, teses, etc)\nLivros: Ex: Análises ecológicas no R\n\nEntre outros!"
+  },
+  {
+    "objectID": "about.html#eu-r-markdown",
+    "href": "about.html#eu-r-markdown",
+    "title": "About",
+    "section": "Eu 💜 R Markdown",
+    "text": "Eu 💜 R Markdown\n\nUso desde 2018!\nVárias apresentações sobre R Markdown (especialmente apresentações com xaringan!): https://beatrizmilz.com/talk/\nGosto de acompanhar, testar as novidades e assistir palestras!\nPara saber mais, recomendo essa palestra super recente do Tom Mock: RMarkdown: reproducible reporting"
+  },
+  {
+    "objectID": "about.html#section",
+    "href": "about.html#section",
+    "title": "About",
+    "section": "",
+    "text": "No 3º R Day (setembro/2021), o Yihui Xie (criador do R Markdown) participou e disse:\n\n” The future? We have learned a lot in the last 10 years from those packages in the R Markdown ecosystem. We are lauching a new, exciting and much bigger project. Stay tuned.”\n\nAssista a apresentação no YouTube."
+  },
+  {
+    "objectID": "about.html#stalkeando-acompanhando",
+    "href": "about.html#stalkeando-acompanhando",
+    "title": "About",
+    "section": "\nStalkeando Acompanhando",
+    "text": "Stalkeando Acompanhando\nEncontrei uma nova organização no GitHub: quarto-dev\nAlgumas pessoas da RStudio estavam envolvidas no projeto\nAcompanhei e logo quis testar!"
+  },
+  {
+    "objectID": "about.html#pequeno-parêntese-rstudio",
+    "href": "about.html#pequeno-parêntese-rstudio",
+    "title": "About",
+    "section": "Pequeno parêntese: RStudio",
+    "text": "Pequeno parêntese: RStudio\n\n\nMais conhecida pela IDE RStudio\nÉ uma companhia criada em 2009\nTem uma grande equipe de pessoas que trabalham no desenvolvimento de pacotes em R\nOrganizam a rstudio::conf (em 2020 com mais de 2200 participantes)\nÉ muito próxima da comunidade e uma B Corporation\nÉ a empresa privada mais importante no contexto da linguagem de programação R do mundo (minha opinião)\nSaiba mais neste link!"
+  },
+  {
+    "objectID": "about.html#o-que-é-o-quarto",
+    "href": "about.html#o-que-é-o-quarto",
+    "title": "About",
+    "section": "O que é o Quarto?",
+    "text": "O que é o Quarto?\n\nSegundo a documentação oficial, o Quarto é um sistema de escrita técnica e científica, de código aberto, baseada no Pandoc.\nO Pandoc é um sistema de conversão de documentos em vários formatos, e também é usado no R Markdown."
+  },
+  {
+    "objectID": "about.html#quarto",
+    "href": "about.html#quarto",
+    "title": "About",
+    "section": "Quarto",
+    "text": "Quarto\n\n\n\nknitr::include_graphics(\"https://media.giphy.com/media/j0eRJzyW7XjMpu1Pqd/giphy.gif\")\n\n\n\n\n\n\n\n\n\nComecei a usar o Quarto em outubro de 2021\nEnviei uma sugestão (outubro/2021)\nEnviei uma contribuição (novembro/2021)"
+  },
+  {
+    "objectID": "about.html#porque-o-quarto-existe",
+    "href": "about.html#porque-o-quarto-existe",
+    "title": "About",
+    "section": "Porque o Quarto existe?",
+    "text": "Porque o Quarto existe?\n\nO rmarkdown é um pacote em R. Para usá-lo, é necessário ter o R instalado (mesmo que o seu arquivo não tenha conteúdos em R).\nO R Markdown é uma ferramenta muito boa para escrita técnica e científica reprodutível, possibilitando criar vários tipos de documentos. Porém, o seu uso acaba ficando limitado às pessoas que usam R.\nO Quarto é um software novo, que não depende do R!\n\n\n\nPor exemplo: Você pode usar o VSCode como IDE, escrever um documento com código em Python e gerar o documento final. Tudo isso sem precisar ter o R e/ou RStudio instalados."
+  },
+  {
+    "objectID": "about.html#quais-são-as-similaridades",
+    "href": "about.html#quais-são-as-similaridades",
+    "title": "About",
+    "section": "Quais são as similaridades?",
+    "text": "Quais são as similaridades?\n\nA estrutura do arquivo é muito similar! Para muitos arquivos, há compatibilidade (bastando alterar a extensão de .Rmd para .qmd).\nPodemos adicionar código em R, Python, Julia, etc etc.\n\nPodemos criar diversos tipos de arquivos, como:\n\nPáginas da internet (arquivos .html)\nPDFs\nWords\nApresentações\nDocumentos interativos\nLivros\nE mais está sendo produzido :)"
+  },
+  {
+    "objectID": "about.html#quais-são-as-principais-diferenças",
+    "href": "about.html#quais-são-as-principais-diferenças",
+    "title": "About",
+    "section": "Quais são as (principais) diferenças?",
+    "text": "Quais são as (principais) diferenças?\n\n\nNecessidade do R\nExtensão\nBoostrap\nObservable JS\n\n\n\n\n\nR Markdown\n\n\nÉ um pacote em R.\nPrecisamos ter o R instalado para renderizar o arquivo R Markdown.\n\n\n\n\nQuarto\n\n\nÉ um outro software, precisa ser instalado.\nNão precisamos do R para renderizar o arquivo.\n\n\n\n\n\n\n\n\n\nR Markdown\n\n\n.Rmd\n\n\n\n\nQuarto\n\n\n.qmd\n\n\n\n\n\n\n\n\n\nR Markdown\n\n\nBootstrap: Por padrão, usa o v3.3.5.\nPara usar versões recentes do bootstrap, é necessário usar o pacote bslib #1260\n\n\n\n\nQuarto\n\n\n\nBootstrap v5.\n\n\n\n\n\n\n\n\n\nR Markdown\n\n\nNão tem suporte ao Observable JS.\n\n\n\n\nQuarto\n\n\nTem suporte ao Observable JS.\n\n\n\n\nObservable JS: Usado para criar visualizações de dados interativas."
+  },
+  {
+    "objectID": "about.html#como-começar-a-usar-o-quarto",
+    "href": "about.html#como-começar-a-usar-o-quarto",
+    "title": "About",
+    "section": "Como começar a usar o quarto",
+    "text": "Como começar a usar o quarto\nInstalar o Quarto:"
+  },
+  {
+    "objectID": "about.html#como-começar-a-usar-o-quarto-1",
+    "href": "about.html#como-começar-a-usar-o-quarto-1",
+    "title": "About",
+    "section": "Como começar a usar o quarto",
+    "text": "Como começar a usar o quarto\n\nEscolha uma IDE. Exemplos que experimentei:\n\n\nRStudio - Experimente o Visual Markdown Editor\n\nRStudio Cloud\n\nVisual Studio code - Instale também a extensão do Quarto para VS Code"
+  },
+  {
+    "objectID": "about.html#quarto-no-rstudio",
+    "href": "about.html#quarto-no-rstudio",
+    "title": "About",
+    "section": "Quarto no RStudio",
+    "text": "Quarto no RStudio\n\n\nNew File\nNew Project\nCreate Quarto Project\nProjeto Quarto criado"
+  },
+  {
+    "objectID": "about.html#quarto-no-rstudio-cloud",
+    "href": "about.html#quarto-no-rstudio-cloud",
+    "title": "About",
+    "section": "Quarto no RStudio Cloud",
+    "text": "Quarto no RStudio Cloud\n\n\nDiferenças\nNew file\nRender\n\n\n\n\n\nSimilar ao RStudio: https://rstudio.cloud/\nO quarto já vem instalado!\nNão tem a opção (até agora) de usar o “New project”, apenas o “New file”.\nAtenção aos pacotes que é importante instalar antes:\n\ninstall.packages(\"jsonlite\")\ninstall.packages(\"rmarkdown\")\ninstall.packages(\"htmltools\")"
+  },
+  {
+    "objectID": "about.html#quarto-no-terminal",
+    "href": "about.html#quarto-no-terminal",
+    "title": "About",
+    "section": "Quarto no terminal",
+    "text": "Quarto no terminal\nVocê também pode usar o terminal para utilizar o Quarto.\n\n\nVer comandos disponíveis\nCriar um projeto\nRenderizar\n\n\n\nquarto help\n  Usage:   quarto \n  Version: 0.9.243\n                  \n\n  Description:\n\n    Quarto CLI\n\n  Options:\n\n    -h, --help     - Show this help.                            \n    -V, --version  - Show the version number for this program.  \n\n  Commands:\n\n    render          [input] [args...]  - Render input file(s) to various document types.                                                \n    serve           [input]            - Serve an interactive document.                                                                 \n    create-project  [dir]              - Create a project for rendering multiple documents                                              \n    preview         [file] [args...]   - Render and preview a Quarto document or website project. Automatically reloads the browser when\n    convert         [input]            - Convert documents to alternate representations.                                                \n    capabilities                       - Query for current capabilities (output formats, engines, kernels etc.)                         \n    check           [target]           - Check and verify correct functioning of Quarto installation and computation engines.           \n    inspect         [path]             - Inspect a Quarto project or input path. Inspecting a project returns its config and engines.   \n    tools           [command] [tool]   - Manage the installation, update, and uninstallation of useful tools.                           \n    help            [command]          - Show this help or the help of a sub-command.    \n\n\ncd ~/Desktop\nquarto create-project exemplo-quarto-project\nCreating project at /Users/beatrizmilz/Desktop/exemplo-quarto-project:\n  - Created _quarto.yml\n  - Created exemplo-quarto-project.qmd\n\n\ncd ~/Desktop/exemplo-quarto-project\nquarto render\npandoc \n  to: html\n  output-file: exemplo-quarto-project.html\n  standalone: true\n  section-divs: true\n  html-math-method: mathjax\n  wrap: none\n  default-image-extension: png\n  filters:\n    - crossref\n  \nmetadata\n  document-css: false\n  link-citations: true\n  lang: en\n  title: exemplo-quarto-project"
+  },
+  {
+    "objectID": "about.html#quarto-no-vs-code",
+    "href": "about.html#quarto-no-vs-code",
+    "title": "About",
+    "section": "Quarto no VS Code",
+    "text": "Quarto no VS Code"
+  },
+  {
+    "objectID": "about.html#vamos-experimentar-no-rstudio-cloud",
+    "href": "about.html#vamos-experimentar-no-rstudio-cloud",
+    "title": "About",
+    "section": "Vamos experimentar no RStudio Cloud!",
+    "text": "Vamos experimentar no RStudio Cloud!\n\nhttps://rstudio.cloud/"
+  },
+  {
+    "objectID": "about.html#dicas-para-acompanhar-as-novidades",
+    "href": "about.html#dicas-para-acompanhar-as-novidades",
+    "title": "About",
+    "section": "Dicas para acompanhar as novidades",
+    "text": "Dicas para acompanhar as novidades\n\nAtualize o Quarto com frequência!\nCaso você utilize o RStudio, mantenha-o atualizado também.\nSiga e acompanhe o Twitter: @quarto_pub\nAcompanhe as discussions no GitHub\n\nAcompanhe o evento rstudio::conf 2022\n\nKeynote por Mine Çetinkaya-Rundel & Julia Stewart Lowndes: Publishing and collaboration with Quarto.\nEstarei por lá! Me siga em twitter.com/BeaMilz"
+  },
+  {
+    "objectID": "about.html#futurologia",
+    "href": "about.html#futurologia",
+    "title": "About",
+    "section": "Futurologia",
+    "text": "Futurologia\n\nO plano é lançar o Quarto versão 1.0 na rstudio::conf #463\nEdição colaborativa online? #405\nCom a chegada do Quarto, o R Markdown vai desaparecer? Post em inglês por Yihui Xie"
+  },
+  {
+    "objectID": "about.html#materiais-para-ir-mais-longe",
+    "href": "about.html#materiais-para-ir-mais-longe",
+    "title": "About",
+    "section": "Materiais para ir mais longe",
+    "text": "Materiais para ir mais longe\n\n\n\nDocumentação do Quarto e a Galeria\nNão falamos do Quarto Post em inglês por Alison Hill\nReproducible Authoring with Quarto  Apresentação em inglês por Mine Çetinkaya-Rundel"
+  },
+  {
+    "objectID": "about.html#obrigada",
+    "href": "about.html#obrigada",
+    "title": "About",
+    "section": "Obrigada!",
+    "text": "Obrigada!\n\n\nAgradecimentos:\n\nJulio Trecenti\nSteven Ross\nOrganização do VI SER\nEquipe de desenvolvimento do Quarto e JJ\nMine Çetinkaya-Rundel e Alison Hill\n\n\nContato:\n\n   \n\n\nDúvidas no Fórum discourse da Curso-R"
+  },
+  {
+    "objectID": "index.html#objetivos-de-aprendizagem",
+    "href": "index.html#objetivos-de-aprendizagem",
+    "title": "Sejam bem vindos ao Quarto!",
+    "section": "Objetivos de aprendizagem",
+    "text": "Objetivos de aprendizagem\nEsta disciplina tem por objetivo formar estudantes aptos a:\n\nEntender a diferença entre ‘knitr’, R Markdown, e Quarto\n\nUtilizar RStudio, knitr e Quarto para gerar documentos estáticos, websites/blogs, e apresentações\n\nUtilizar as funções e a parametrização básica para produzir documentos\n\nCriar e editar documentos como apresentações, artigos, blogs e websites"
+  },
+  {
+    "objectID": "documento.html",
+    "href": "documento.html",
+    "title": "Do RMarkdown para o Quarto",
+    "section": "",
+    "text": "Quarto suporta blocos de código executáveis dentro do markdown. Isto permite que você crie documentos e relatórios totalmente reprodutíveis - o código necessário para produzir sua saída faz parte do próprio documento e é automaticamente executado novamente sempre que o documento é renderizado.\nIf you would like to follow along step-by-step in your own environment, download the Quarto document (.qmd) below, open it in RStudio, and click on  Render (or use the keyboard shortcut ⇧⌘K). We recommend also checking the box for Render on Save for a live preview of your changes.\n\n\n\n\n\n\n Download computations.qmd\n\n\n\nNote that you will need to open this document in the latest release of RStudio (v2022.07) which you can download here."
+  },
+  {
+    "objectID": "documento.html#cell-output",
+    "href": "documento.html#cell-output",
+    "title": "Do RMarkdown para o Quarto",
+    "section": "Cell Output",
+    "text": "Cell Output\nBy default, the code and its output are displayed within the rendered document.\n\nHowever, for some documents, you may want to hide all of the code and just show the output. To do so, specify echo: false within the execute option in the YAML.\n---\ntitle: \"Quarto Computations\"\nexecute:\n  echo: false\n---\nIf you checked Render on Save earlier, just save the document after making this change for a live preview. Otherwise render the document to see your updates reflected. The result will look like the following.\n\nYou might want to selectively enable code echo for some cells. To do this add the echo: true cell option. Try this with the chunk labelled scatterplot.\n#| label: scatterplot\n#| echo: true\n\nggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +\n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  theme_minimal()\nSave the document again and note that the code is now included for the scatterplot chunk.\n\nThe echo option can be set to true, false, or fenced. The last one might be of special interest for writing documentation and teaching materials as it allows you to include the fenced code delimiter in your code output to emphasize that executable code requires that delimiter. You can read more about this option in the Fenced Echo documentation.\nThere a large number of other options available for cell output, for example warning for showing/hiding warnings (which can be especially helpful for package loading messages), include as a catch all for preventing any output (code or results) from being included in output, and error to prevent errors in code execution from halting the rendering of the document (and print the error in the rendered document).\nSee the Knitr Cell Options documentation for additional details."
+  },
+  {
+    "objectID": "documento.html#code-folding",
+    "href": "documento.html#code-folding",
+    "title": "Do RMarkdown para o Quarto",
+    "section": "Code Folding",
+    "text": "Code Folding\nRather than hiding code entirely, you might want to fold it and allow readers to view it at their discretion. You can do this via the code-fold option. Remove the echo option we previously added and add the code-fold HTML format option.\n---\ntitle: \"Quarto Computations\"\nformat:\n  html:\n    code-fold: true\n---\nSave the document again and note that new Code widgets are now included for each code chunk.\n\nYou can also provide global control over code folding. Try adding code-tools: true to the HTML format options.\n---\ntitle: \"Quarto Computations\"\nformat:\n  html:\n    code-fold: true\n    code-tools: true\n---\nSave the document and you’ll see that a code menu appears at the top right of the rendered document that provides global control over showing and hiding all code."
+  },
+  {
+    "objectID": "documento.html#code-linking",
+    "href": "documento.html#code-linking",
+    "title": "Do RMarkdown para o Quarto",
+    "section": "Code Linking",
+    "text": "Code Linking\nThe code-link option enables hyper-linking of functions within code blocks to their online documentation. Try adding code-link: true to the HTML format options.\n---\ntitle: \"Quarto Computations\"\nformat:\n  html:\n    code-link: true\n---\nSave the document and observe that the functions are now clickable hyperlinks.\n\nNote that code linking is currently implemented only for the knitr engine via the downlit package."
+  },
+  {
+    "objectID": "documento.html#figures",
+    "href": "documento.html#figures",
+    "title": "Do RMarkdown para o Quarto",
+    "section": "Figures",
+    "text": "Figures\nWe can improve the appearance and accessibility of our plot. We can change its aspect ratio by setting fig-width and fig-height, provide a fig-cap, modify its label for cross referencing, and add alternative text with fig-alt.\nWe’ll add the following chunk options.\n#| label: fig-scatterplot\n#| fig-cap: \"City and highway mileage for 38 popular models of cars.\"\n#| fig-alt: \"Scatterplot of city vs. highway mileage for cars, where points are colored by the number of cylinders. The plot displays a positive, linear, and strong relationship between city and highway mileage, and mileage increases as the number cylinders decreases.\"\n#| fig-width: 6\n#| fig-height: 3.5\nSave the document to see the updated plot. Note that we have also updated the narrative with a cross reference to this figure using the following.\n@fig-scatterplot shows a positive, strong, and linear relationship between the city and highway mileage of these cars."
+  },
+  {
+    "objectID": "documento.html#multiple-figures",
+    "href": "documento.html#multiple-figures",
+    "title": "Do RMarkdown para o Quarto",
+    "section": "Multiple Figures",
+    "text": "Multiple Figures\nLet’s add another plot to our chunk—a scatterplot where the points are colored by engine displacement, using a different color scale. Our goal is to display these plots side-by-side (i.e., in two columns), with a descriptive subcaption for each plot. Since this will produce a wider visualization we’ll also use the column option to lay it out across the entire page rather than being constrained to the body text column.\nThere are quite a few changes to this chunk. To follow along, copy and paste the options outlined below into your Quarto document.\n#| label: fig-mpg\n#| fig-cap: \"City and highway mileage for 38 popular models of cars.\"\n#| fig-subcap:\n#|   - \"Color by number of cylinders\"\n#|   - \"Color by engine displacement, in liters\"\n#| layout-ncol: 2\n#| column: page\n\nggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +\n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  theme_minimal()\n\nggplot(mpg, aes(x = hwy, y = cty, color = displ)) +\n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c(option = \"E\") +\n  theme_minimal()\nAdditionally, replace the existing text that describes the visualization with the following.\nThe plots in @fig-mpg show the relationship between city and highway mileage for 38 popular models of cars.\nIn @fig-mpg-1 the points are colored by the number of cylinders while in @fig-mpg-2 the points are colored by engine displacement.\nThen, save the document and inspect the rendered output, which should look like the following.\n\nLet’s discuss some of the new options used here. You’ve seen fig-cap before but we’ve now added a fig-subcap option.\n#| fig-cap: \"City and highway mileage for 38 popular models of cars.\"\n#| fig-subcap:\n#|   - \"Color by number of cylinders\"\n#|   - \"Color by engine displacement, in liters\"\nFor code cells with multiple outputs adding the fig-subcap option enables us to treat them as subfigures.\nWe also added an option to control how multiple figures are laid out—in this case we specified side-by-side in two columns.\n#| layout-ncol: 2\nIf you have 3, 4, or more figures in a panel there are many options available for customizing their layout. See the article Figure Layout for details.\nFinally, we added an option to control the span of the page that our figures occupy.\n#| column: page\nThis allows our figure display to span out beyond the normal body text column. See the documentation on Article Layout to learn about all of the available layout options."
+  },
+  {
+    "objectID": "documento.html#data-frames",
+    "href": "documento.html#data-frames",
+    "title": "Do RMarkdown para o Quarto",
+    "section": "Data Frames",
+    "text": "Data Frames\n../../computations/_knitr-df-print.md"
+  },
+  {
+    "objectID": "documento.html#inline-code",
+    "href": "documento.html#inline-code",
+    "title": "Do RMarkdown para o Quarto",
+    "section": "Inline Code",
+    "text": "Inline Code\nTo include executable expressions within markdown, enclose the expression in `r `. For example, we can use inline code to state the number of observations in our data. Try adding the following markdown text to your Quarto document.\n\n\nThere are `r nrow(mpg)` observations in our data. \n\n\n\nSave your document and inspect the rendered output. The expression inside the backticks has been executed and the sentence includes the actual number of observations.\n\nThere are 234 observations in our data.\n\nIf the expression you want to inline is more complex, involving many functions or a pipeline, we recommend including it in a code chunk (with echo: false) and assigning the result to an object. Then, you can call that object in your inline code.\nFor example, say you want to state the average city and highway mileage in your data. First, compute these values in a code chunk.\n#| echo: false\n\nmean_cty <- round(mean(mpg$cty), 2)\nmean_hwy <- round(mean(mpg$hwy), 2)\nThen, add the following markdown text to your Quarto document.\n\n\nThe average city mileage of the cars in our data is `r mean_cty` and the average highway mileage is `r mean_hwy`. \n\n\n\nSave your document and inspect the rendered output.\n\nThe average city mileage of the cars in our data is 16.86 and the average highway mileage is 23.44."
+  },
+  {
+    "objectID": "documento.html#caching",
+    "href": "documento.html#caching",
+    "title": "Do RMarkdown para o Quarto",
+    "section": "Caching",
+    "text": "Caching\nIf your document includes code chunks that take too long to compute, you might want to cache the results of those chunks. You can use the cache option either at the document level using the YAML execute option.\nexecute:\n  cache: true\nHowever caching all code chunks in a document may not be preferable. You can also indicate which chunks should be cached directly with using a chunk option.\n#| cache: true\nTry adding this chunk option to one of the code chunks in your document that produces a plot and save. When the document is rendered, you’ll see that a new folder has been created in your working directory with the same name as your document and the suffix _cache. This folder contains the cached results. You can find out more about caching in Quarto documents in the Cache documentation.\nIf you followed along step-by-step with this tutorial, you should now have a Quarto document that implements everything we covered. Otherwise, you can download a completed version of computations.qmd below.\n\n\n\n\n\n\n Download computations-complete.qmd\n\n\n\n_footer.md"
+  },
+  {
+    "objectID": "intro-quarto.html#rendering",
+    "href": "intro-quarto.html#rendering",
+    "title": "Introdução",
+    "section": "Rendering",
+    "text": "Rendering\nUse the  Render button in the RStudio IDE to render the file and preview the output with a single click or keyboard shortcut (⇧⌘K).\n\n\n\n\n\nIf you prefer to automatically render whenever you save, you can check the Render on Save option on the editor toolbar. The preview will update whenever you re-render the document. Side-by-side preview works for both HTML and PDF outputs.\n\n\n\n\n\nNote that documents can also be rendered from the R console via the quarto package:\ninstall.packages(\"quarto\")\nquarto::quarto_render(\"notebook.Rmd\")\nWhen rendering, Quarto generates a new file that contains selected text, code, and results from the .qmd file. The new file can be an HTML, PDF, MS Word document, presentation, website, book, interactive document, or other format."
+  },
+  {
+    "objectID": "intro-quarto.html#authoring",
+    "href": "intro-quarto.html#authoring",
+    "title": "Introdução",
+    "section": "Authoring",
+    "text": "Authoring\nIn the image below we can see the same document in the two modes of the RStudio editor: visual (on the left) and source (on the right). RStudio’s visual editor offers an WYSIWYM authoring experience for markdown. For formatting (e.g. bolding text) you can use the toolbar, a keyboard shortcut (⌘B), or the markdown construct (**bold**). The plain text source code underlying the document is written for you and you can view/edit it at any point by switching to source mode for editing. You can toggle back and forth these two modes by clicking on Source and Visual in the editor toolbar (or using the keyboard shortcut ⌘⇧ F4).\n\n\n\n\n\nNext, let’s turn our attention to the contents of our Quarto document. The file contains three types of content: a YAML header, code chunks, and markdown text.\n\nYAML header\nAn (optional) YAML header demarcated by three dashes (---) on either end.\nWhen rendered, the title, \"Hello, Quarto\", will appear at the top of the rendered document with a larger font size than the rest of the document. The other two YAML fields in denote that the output should be in html format and the document should open in the visual editor, by default.\nThe basic syntax of YAML uses key-value pairs in the format key: value. Other YAML fields commonly found in headers of documents include metadata like author, subtitle, date as well as customization options like theme, fontcolor, fig-width, etc. You can find out about all available YAML fields for HTML documents here. The available YAML fields vary based on document format, e.g. see here for YAML fields for PDF documents and here for MS Word.\n\n\nCode chunks\nR code chunks identified with {r} with (optional) chunk options, in YAML style, identified by #| at the beginning of the line.\n```{r}\n#| label: load-packages\n#| include: false\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n```\nIn this case the label of the code chunk is load-packages and we set include to false to indicate that we don’t want the chunk itself or any of its outputs in the rendered documents.\nIn addition to rendering the complete document to view the results of code chunks you can also run each code chunk interactively in the RStudio editor by clicking the  icon or keyboard shortcut (⇧⌘⏎). RStudio executes the code and displays the results either inline within your file or in the Console, depending on your preference.\n\n\n\n\n\n\n\nMarkdown text\nText with formatting, including section headers, hyperlinks, an embedded image, and an inline code chunk.\n\n\n\n\n\nQuarto uses markdown syntax for text. If using the visual editor, you won’t need to learn much markdown syntax for authoring your document as you can use the menus and shortcuts to add a header, bold text, insert a table, etc. If using the source editor, you can achieve these with markdown expressions like ##, **bold**, etc."
+  },
+  {
+    "objectID": "intro-quarto.html#how-it-works",
+    "href": "intro-quarto.html#how-it-works",
+    "title": "Introdução",
+    "section": "How it works",
+    "text": "How it works\nWhen you render a Quarto document, first knitr executes all of the code chunks and creates a new markdown (.md) document which includes the code and its output. The markdown file generated is then processed by pandoc, which creates the finished format. The Render button encapsulates these actions and executes them in the right order for you.\n\n\n\n\n\n_footer.md"
+  },
+  {
+    "objectID": "intro-quarto.html#renderizando",
+    "href": "intro-quarto.html#renderizando",
+    "title": "Introdução",
+    "section": "Renderizando",
+    "text": "Renderizando\nUse o botão  Render no IDE RStudio para renderizar o arquivo e visualizar a saída com um único clique ou atalho de teclado (⇧⌘K).\n\n\n\n\n\nSe você preferir renderizar automaticamente sempre que salvar, você pode verificar a opção Render em Salvar na barra de ferramentas do editor. A pré-visualização será exibida sempre que você renderizar novamente o documento. A pré-visualização lado a lado funciona tanto para saídas HTML como para PDF.\n\n\n\n\n\nObserve que os documentos também podem ser resultados a partir do console R utilizando o pacote quarto*:\ninstall.packages(\"quarto\")\nquarto::quarto_render(\"notebook.Rmd\")\nAo renderizar, o Quarto gera um novo arquivo que contém texto, código e resultados selecionados a partir do arquivo .qmd. O novo arquivo pode ser um HTML, PDF, MS Word document, apresentação, website, livro, documento interativo, ou outro formato."
+  },
+  {
+    "objectID": "intro-quarto.html#criando-documentos",
+    "href": "intro-quarto.html#criando-documentos",
+    "title": "Introdução",
+    "section": "Criando documentos",
+    "text": "Criando documentos\nNa imagem abaixo podemos ver o mesmo documento nos dois modos do editor do RStudio: visual (à esquerda) e fonte (à direita). O editor visual do RStudio oferece uma experiência de autoria WYSIWYM por markdown. Para formatação você pode utilizar a barra de ferramentas, um atalho de teclado (⌘B), ou a construção de marcação para formato (** negrito**). O código fonte em texto puro subjacente ao documento é escrito por você e você pode visualizá-lo/editá-lo em qualquer ponto, mudando para o modo fonte para edição. Você pode alternar entre estes dois modos clicando em Source* e Visual* na barra de ferramentas do editor (ou usando o atalho de teclado ⌘⇧ F4).\n\n\n\n\n\nA seguir, vamos voltar nossa atenção para o conteúdo de nosso documento Quarto. O arquivo contém três tipos de conteúdo: um cabeçalho YAML, pedaços de código e texto em markdown.\n\nCabeçalho YAML\nÉ um cabeçalho (opcional) YAML demarcado por três traços (---) em ambas as extremidades.\nQuando renderizado, o título, \"Olá, Quarto\", aparecerá no topo do documento com um tamanho de fonte maior do que o resto do documento. Os outros dois campos YAML denotam que a saída deve estar em formato “html” e o documento deve abrir no “editor” “visual”, por padrão.\nA sintaxe básica da YAML utiliza pares de valores chave no formato “chave: valor”. Outros campos do YAML comumente encontrados em cabeçalhos de documentos incluem metadados como “autor”, “subtítulo”, “data”, assim como opções de personalização como “tema”, “cor de botão”, “largura de figura”, etc. Você pode aprender sobre todos os campos YAML disponíveis para documentos HTML aqui. Os campos YAML disponíveis variam de acordo com o formato do documento, por exemplo, veja aqui para documentos em PDF e aqui para MS Word.\n\n\nChunks de código\nPedaços de código são identificados com {r} com opções (opcionais) em estilo YAML, identificados por #| no início da linha.\n```{r}\n#| label: load-packages\n#| include: false\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n```\nNeste caso, o “rótulo” do trecho de código é “load-packages” e nós definimos “include” para “false” para indicar que não queremos o trecho em si ou nenhuma de suas saídas nos documentos apresentados.\nAlém de renderizar o documento completo para visualizar os resultados dos trechos de código, você também pode executar cada trecho de código interativamente no editor do RStudio, clicando no ícone  ou atalho de teclado (⇧⌘⏎). O RStudio executa o código e exibe os resultados em linha dentro de seu arquivo ou no Console, dependendo de sua preferência.\n\n\n\n\n\n\nTexto markdown\nTexto markdown possui formatação, incluindo cabeçalhos de seção, hyperlinks, uma imagem embutida e um trecho de código em linha.\n\n\n\n\n\nO Quarto usa a sintaxe markdown para o texto. Se usar o editor visual, você não precisará aprender muita sintaxe de markdown para criar seu documento, pois você pode usar os menus e atalhos para adicionar um cabeçalho, texto em negrito, inserir uma tabela, etc. Se utilizar o editor do código fonte, você poderá formatar o texto com expressões marcadas como ##, ***negrito**, etc."
+  },
+  {
+    "objectID": "intro-quarto.html#como-funciona",
+    "href": "intro-quarto.html#como-funciona",
+    "title": "Introdução",
+    "section": "Como funciona",
+    "text": "Como funciona\nQuando você apresenta um documento da Quarto, primeiro o knitr executa todos os trechos de código e cria um novo documento markdown (.md) que inclui o código e sua saída. O arquivo de markdown gerado é então processado pelo pandoc, que cria o formato final. O botão Render encapsula estas ações e as executa na ordem correta para você."
+  },
+  {
+    "objectID": "index.html#proposta-pedagógica",
+    "href": "index.html#proposta-pedagógica",
+    "title": "Sejam bem vindos ao Quarto!",
+    "section": "Proposta pedagógica",
+    "text": "Proposta pedagógica\nA intenção desta disciplina é fazer com que o aprendizado seja mais dinâmico e ocorra de forma simultânea, fazendo com que o aluno tenha as bases teóricas e teste-as ao mesmo tempo.\nA proposta pedagógica para desenvolvimento deste curso fundamenta-se no conceito de Aprendizagem Baseada em Projetos e em Problemas. É proposto um projeto integrador para apreensão do conhecimento."
+  },
+  {
+    "objectID": "index.html#ementa-da-disciplina",
+    "href": "index.html#ementa-da-disciplina",
+    "title": "Sejam bem vindos ao Quarto!",
+    "section": "Ementa da disciplina",
+    "text": "Ementa da disciplina\n\nOlá Quarto!\n\nEstrutura e tipos de documentos.\n\nRenderização e autoria.\n\nCabeçalho YAML.\n\nCódigo.\n\nLinks, figuras, tabelas de dados e formatação.\n\nZotero e referências.\n\nPublicação de relatórios e documentos técnicos e científicos para colaboração."
+  },
+  {
+    "objectID": "index.html#planejamento-de-encontros",
+    "href": "index.html#planejamento-de-encontros",
+    "title": "Sejam bem vindos ao Quarto!",
+    "section": "Planejamento de encontros",
+    "text": "Planejamento de encontros\nOs encontros acontecerão nas terças-feiras, de 08:30 às 11:15h. Serão realizados na Sala A do PPGA.\n\n\n\n\n\n\n\nData\nDescrição da Atividade\n\n\n\n\n11/10\nInstalação do Quarto CLI em diferentes sistemas operacionais. Olá Quarto – apresentação geral de funcionalidades e tipos de documentos.\n\n\n18/10\nAutoria de documentos, YAML e formatos.\n\n\n25/10\nCode chunks, Markdown, renderização.\n\n\n01/11\nLinks, figuras, layout, tabelas, notas em destaque e referência cruzada.\n\n\n08/11\nZotero, citações e lista de referências. Publicação de documentos.\n\n\nTotal de Horas\n15 horas"
+  },
+  {
+    "objectID": "index.html#proposta-de-avaliação-da-aprendizagem",
+    "href": "index.html#proposta-de-avaliação-da-aprendizagem",
+    "title": "Sejam bem vindos ao Quarto!",
+    "section": "Proposta de avaliação da aprendizagem",
+    "text": "Proposta de avaliação da aprendizagem\nA aprendizagem na disciplina será avaliada por meio da consolidação de atividades alinhadas com os objetivos de aprendizagem (projetos incrementais) e por meio da elaboração de um projeto transversal aos objetivos (projeto integrador).\n\n\n\n\n\n\n\n\nPontos\nEntrega\nAtividade\n\n\n\n\n15\nLab 1 – Introdução ao Quarto - primeiros passos\n\n\n\n15\nLab 2 – Autoria de documentos, YAML e formatos - explorando diferentes possibilidades\n\n\n\n15\nLab 3 – Code chunks, Markdown, renderização. Links, figuras, layout, tabelas, notas em destaque e referência cruzada - incluindo conteúdos diversos\n\n\n\n15\nLab 4 – Zotero, citações e lista de referências. Publicação de documentos - documentos acadêmicos e técnicos e publicação de documentos.\n\n\n\n40\nProjeto Integrador\n\n\n\nTOTAL:\n100 pontos"
+  },
+  {
+    "objectID": "index.html#recursos-necessários",
+    "href": "index.html#recursos-necessários",
+    "title": "Sejam bem vindos ao Quarto!",
+    "section": "Recursos necessários",
+    "text": "Recursos necessários\nComputador com Sistema Operacional à escolha do estudante para desenvolver as atividades. Os softwares a serem instalados são:\n\nR (Windows) - https://cran.r-project.org/bin/windows/base/\nRStudio (Windows) - https://rstudio.com/products/rstudio/download/\nQuarto CLI (Windows) - https://quarto.org/docs/get-started/\nGit - https://git-scm.com/downloads\n\nOs alunos deverão ter uma conta gratuita na plataforma github.com. Recomendamos também que se cadastrem no Quarto Pub\nA turma virtual do SIGAA será utilizada para postagens de conteúdos e outras comunicações."
+  },
+  {
+    "objectID": "index.html#bibliografia-recomendada-sobre-quarto",
+    "href": "index.html#bibliografia-recomendada-sobre-quarto",
+    "title": "Sejam bem vindos ao Quarto!",
+    "section": "Bibliografia recomendada sobre Quarto",
+    "text": "Bibliografia recomendada sobre Quarto\n\nALLAIRE, J., TEAGUE, C., SCHEIDEGGER, C., XIE, Y., & DERVIEUX, C. Quarto (Version 0.3) [Computer software]. Disponível em https://doi.org/10.5281/zenodo.5960048 (www.quarto.org). Acesso em 10 ago. 2022.\n\nHORTON, Nicholas J.; KLEINMAN, Ken. Using R and RStudio for data management, statistical analysis, and graphics. Second edition. Boca Raton: CRC Press, Taylor & Francis Group, 2015.\n\nPARADIS, Emanuel. R for Beginners. Disponível em: https://www.nceas.ucsb.edu/files/ scicomp/ Dloads/RProgramming/BestFirstRTutorial.pdf . Acesso em: 12/11/2019.\n\nTEETOR, Paul. R cookbook: Proven recipes for data analysis, statistics, and graphics. Sebastopol: O’Reilly Media, Inc., 2011.\n\nQuarto\nrstudio::conf 2022 Workshop - Getting started with Quarto e Github"
+  },
+  {
+    "objectID": "index.html#comunicação",
+    "href": "index.html#comunicação",
+    "title": "Sejam bem vindos ao Quarto!",
+    "section": "Comunicação",
+    "text": "Comunicação\nToda comunicação individual com a docente deverá acontecer por meio do email institucional do docente, deve conter no campo “assunto” o texto <quarto-PPGA> e deve ser assinada com seu nome completo. Por favor, utilize o email institucional para comunicação com o docente: renataoliveira@cefetmg.br"
+  },
+  {
+    "objectID": "index.html#políticas-institucionais-e-da-disciplina",
+    "href": "index.html#políticas-institucionais-e-da-disciplina",
+    "title": "Sejam bem vindos ao Quarto!",
+    "section": "Políticas institucionais e da disciplina",
+    "text": "Políticas institucionais e da disciplina\nOs estudantes e professores têm a responsabilidade de manter um ambiente de aprendizagem adequado e motivante. Aqueles que não aderirem a tais padrões de comportamento podem estar sujeitos ao regime disciplinar da instituição. A cortesia profissional e a sensibilidade são especialmente importantes no que diz respeito a indivíduos e discussões que lidam com diferenças de raça, cor, cultura, religião, credo, política, status de veterano, orientação sexual, gênero, identidade e expressão de gênero, idade, deficiência e nacionalidades. As listas de classes são fornecidas ao instrutor com o nome legal do aluno. Terei prazer em honrar seu pedido de dirigir-se a você por um nome alternativo ou pronome de gênero. Por favor, me informe essa preferência no início do semestre para que eu possa fazer as mudanças apropriadas em seus registros.\nNão serão tolerados atos de discriminação ou assédio contra ou por qualquer funcionário ou estudante.\nHonestidade acadêmica é um princípio fundamental desta disciplina. Desonestidade acadêmica configura-se por: cópias literais de textos ou ideias sem citação de fonte, fabricações e falsificações de qualquer natureza, plágio, mentira, suborno, comportamento ameaçador ou cumplicidade com desonestidade acadêmica em qualquer nível. Os estudantes que forem considerados em violação da política de integridade acadêmica estarão sujeitos tanto a sanções acadêmicas do membro docente quanto a sanções não acadêmicas. Se você tiver alguma dúvida sobre citações adequadas, configuração de plágio, etc., por favor, não hesite em perguntar!"
+  }
+]
