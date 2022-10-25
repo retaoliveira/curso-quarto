@@ -90,7 +90,6 @@ link(
 :::
 :::
 
-
 ## Sobre essa apresentação {.center}
 
 <center>![](https://quarto.org/quarto.png){height="100"}</center>

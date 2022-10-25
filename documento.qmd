@@ -1,29 +1,30 @@
 ---
 title: "Do RMarkdown para o Quarto"
-format:  html
+format:
+  html:
+    code-fold: true
+    code-tools: true
 ---
 
 ## Do RMarkdown para o Quarto
 
 Quarto suporta blocos de código executáveis dentro do markdown. Isto permite que você crie documentos e relatórios totalmente reprodutíveis - o código necessário para produzir sua saída faz parte do próprio documento e é automaticamente executado novamente sempre que o documento é renderizado.
 
-If you would like to follow along step-by-step in your own environment, download the Quarto document (`.qmd`) below, open it in RStudio, and click on <kbd>![](images/rstudio-render-button.png){width="25" height="20"}</kbd> **Render** (or use the keyboard shortcut ⇧⌘K).
-We recommend also checking the box for **Render on Save** for a live preview of your changes.
+Se você quiser acompanhar o passo-a-passo em seu próprio ambiente, faça o download do documento Quarto (.qmd) abaixo, abra-o no RStudio, e clique em ou e o atalho de teclado ⇧⌘K). Recomendamos também marcar a caixa para *Render* em Save para uma visualização ao vivo de suas alterações.
 
 ::: {.callout-note appearance="minimal"}
 <i class="bi bi-download"></i> [Download computations.qmd](_computations.qmd){download="computations.qmd"}
 :::
 
-Note that you will need to open this document in the [latest release](https://rstudio.com/products/rstudio/download/) of RStudio (v2022.07) which you can download [here](https://rstudio.com/products/rstudio/download/).
+Note que você precisará abrir este documento no último lançamento do RStudio (v2022.07).
 
-## Cell Output
+## Output do chunk de código
 
-By default, the code and its output are displayed within the rendered document.
+Por padrão, o código e sua saída são exibidos dentro do documento apresentado.
 
-![](images/rstudio-computations-preview.png){.border .column-page-right fig-alt="RStudio window with computations.qmd open in the visual editor (on the right) and the rendered document (on the left). The document is titled Quarto Computations and contains some text and code. The rendered version also shows a visualization."}
+![](img/rstudio-computations-preview.png){.border .column-page-right fig-alt="RStudio window with computations.qmd open in the visual editor (on the right) and the rendered document (on the left). The document is titled Quarto Computations and contains some text and code. The rendered version also shows a visualization."}
 
-However, for some documents, you may want to hide all of the code and just show the output.
-To do so, specify `echo: false` within the `execute` option in the YAML.
+Entretanto, para alguns documentos, você pode querer esconder todo o código e apenas mostrar a saída. Para isso, especifique echo:false.
 
 ``` yaml
 ---
@@ -33,15 +34,11 @@ execute:
 ---
 ```
 
-If you checked **Render on Save** earlier, just save the document after making this change for a live preview.
-Otherwise render the document to see your updates reflected.
-The result will look like the following.
+Se você clicou **Render no Save** antes, basta salvar o documento após fazer esta mudança para uma visualização ao vivo. Caso contrário, faça com que o documento seja renderizado pra ver suas atualizações. O resultado será parecido com o seguinte.
 
-![](images/rstudio-exec-echo-false.png){.border fig-alt="Rendered computations.qmd document with title Quarto Computations, some descriptive text, and a plot. Code is not shown."}
+![](img/rstudio-exec-echo-false.png){.border fig-alt="Rendered computations.qmd document with title Quarto Computations, some descriptive text, and a plot. Code is not shown."}
 
-You might want to selectively enable code `echo` for some cells.
-To do this add the `echo: true` cell option.
-Try this with the chunk labelled `scatterplot`.
+Você pode querer ativar seletivamente o código `echo` para algumas células. Para fazer isso, adicione a opção `echo: true`. Tente isto com o pedaço rotulado "scatterplot".
 
 ``` r
 #| label: scatterplot
@@ -53,23 +50,19 @@ ggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +
   theme_minimal()
 ```
 
-Save the document again and note that the code is now included for the `scatterplot` chunk.
+Salve o documento novamente e note que o código agora está incluído para a parte do "scatterplot".
 
-![](images/rstudio-exec-echo-true-preview.png){.border fig-alt="Rendered computations.qmd document with title Quarto Computations, some descriptive text, and a plot. Code is shown for the plot, but not for package loading."}
+![](img/rstudio-exec-echo-true-preview.png){.border fig-alt="Rendered computations.qmd document with title Quarto Computations, some descriptive text, and a plot. Code is shown for the plot, but not for package loading."}
 
-The `echo` option can be set to `true`, `false`, or `fenced`.
-The last one might be of special interest for writing documentation and teaching materials as it allows you to include the fenced code delimiter in your code output to emphasize that executable code requires that delimiter.
-You can read more about this option in the [Fenced Echo](https://quarto.org/docs/computations/execution-options.html#fenced-echo) documentation.
+A opção `echo` pode ser definida como `true`, `false`, ou `fenced`. A última pode ser de especial interesse para escrever documentação e materiais didáticos, pois permite incluir o delimitador de código cercado em sua saída de código para enfatizar que o código executável requer esse delimitador. Você pode ler mais sobre esta opção na documentação [Fenced Echo](https://quarto.org/docs/computations/execution-options.html#fenced-echo).
 
-There a large number of other options available for cell output, for example `warning` for showing/hiding warnings (which can be especially helpful for package loading messages), `include` as a catch all for preventing any output (code or results) from being included in output, and `error` to prevent errors in code execution from halting the rendering of the document (and print the error in the rendered document).
+Há um grande número de outras opções disponíveis para a saída de células, por exemplo, "warning" para mostrar/ocultar avisos (que podem ser especialmente úteis para mensagens de carregamento de pacotes), dentre outras.
 
-See the [Knitr Cell Options](https://quarto.org/docs/reference/cells/cells-knitr.html) documentation for additional details.
+Veja [Knitr Cell Options](https://quarto.org/docs/reference/cells/cells-knitr.html) para informações adicionais.
 
-## Code Folding
+## Escondendo o código
 
-Rather than hiding code entirely, you might want to fold it and allow readers to view it at their discretion.
-You can do this via the `code-fold` option.
-Remove the `echo` option we previously added and add the `code-fold` HTML format option.
+Ao invés de esconder inteiramente o código, talvez seja melhor dobrá-lo e permitir que os leitores o vejam a seu critério. Você pode fazer isso através da opção "code-fold". Remova a opção `echo` que adicionamos anteriormente e adicione a opção `code-fold` em formato HTML.
 
 ``` yaml
 ---
@@ -80,12 +73,11 @@ format:
 ---
 ```
 
-Save the document again and note that new Code widgets are now included for each code chunk.
+Salve o documento novamente e observe que novos widgets de código estão agora incluídos para cada pedaço de código.
 
-![](images/rstudio-code-fold-preview.png){.border .column-page-right fig-alt="RStudio with computations.qmd open. On the right is the visual editor. The YAML has title and format defined. Title is Quarto Computations. Format is html, and code-fold option is set to true. On the right is the rendered version of the document. The title is followed by some text, which is followed by a Code widget that would expand if clicked on, which is followed by some more text, another code widget, and finally the plot. The Code widgets are folded, so the code is not visible in the rendered document."}
+![](img/rstudio-code-fold-preview.png){.border .column-page-right fig-alt="RStudio with computations.qmd open. On the right is the visual editor. The YAML has title and format defined. Title is Quarto Computations. Format is html, and code-fold option is set to true. On the right is the rendered version of the document. The title is followed by some text, which is followed by a Code widget that would expand if clicked on, which is followed by some more text, another code widget, and finally the plot. The Code widgets are folded, so the code is not visible in the rendered document."}
 
-You can also provide global control over code folding.
-Try adding `code-tools: true` to the HTML format options.
+Você também pode fornecer controle global sobre esconder o código. Tente adicionar "cold-tools: true" às opções de formato HTML.
 
 ``` yaml
 ---
@@ -97,14 +89,13 @@ format:
 ---
 ```
 
-Save the document and you'll see that a code menu appears at the top right of the rendered document that provides global control over showing and hiding all code.
+Salve o documento e você verá que um menu de códigos aparece na parte superior direita do documento apresentado, o que proporciona controle global sobre a exibição e ocultação de todos os códigos.
 
-![](images/rstudio-code-tools-preview.png){.border fig-alt="Rendered version of the computations.qmd document. A new code widget appears on top right of the document. The screenshot shows that the widget is clicked on, which reveals a drop down menu with three choices: Show All Code, Hide All Code, and View Source. In the background is the rendered document. The title is followed by some text, which is followed by a Code widget that would expand if clicked on, which is followed by some more text, another code widget, and finally the plot. The Code widgets are folded, so the code is not visible in the rendered document."}
+![](img/rstudio-code-tools-preview.png){.border fig-alt="Rendered version of the computations.qmd document. A new code widget appears on top right of the document. The screenshot shows that the widget is clicked on, which reveals a drop down menu with three choices: Show All Code, Hide All Code, and View Source. In the background is the rendered document. The title is followed by some text, which is followed by a Code widget that would expand if clicked on, which is followed by some more text, another code widget, and finally the plot. The Code widgets are folded, so the code is not visible in the rendered document."}
 
 ## Code Linking
 
-The `code-link` option enables hyper-linking of functions within code blocks to their online documentation.
-Try adding `code-link: true` to the HTML format options.
+A opção `code-link` permite hiperligação de funções dentro de blocos de código para sua documentação on-line. Tente adicionar `code-link: true` às opções de formato HTML.
 
 ``` yaml
 ---
@@ -115,18 +106,15 @@ format:
 ---
 ```
 
-Save the document and observe that the functions are now clickable hyperlinks.
+Salve o documento e observe que as funções agora são hiperlinks clicáveis.
 
-![](images/rstudio-code-link-preview.png){.column-page-right fig-alt="Rendered version of the computations.qmd document. The document contains a title (Quarto Computations), text, code chunks, and a plot. The screenshot shows that function names in code chunks are clickable, and clicking on one brings you to documentation on the package website (which is shown on the foreground of the image). The function shown is theme_minimal() from ggplot2."}
+![](img/rstudio-code-link-preview.png){.column-page-right fig-alt="Rendered version of the computations.qmd document. The document contains a title (Quarto Computations), text, code chunks, and a plot. The screenshot shows that function names in code chunks are clickable, and clicking on one brings you to documentation on the package website (which is shown on the foreground of the image). The function shown is theme_minimal() from ggplot2."} Note que a ligação de códigos está atualmente implementada apenas para o motor de malha através do pacote [downlit](https://downlit.r-lib.org/).
 
-Note that code linking is currently implemented only for the knitr engine via the [downlit](https://downlit.r-lib.org/) package.
+# Figuras
 
-## Figures
+Podemos melhorar a aparência e a acessibilidade da nossa figura. Podemos mudar sua relação de aspecto definindo `fig-width` e `fig-height`, fornecer um `fig-cap`, modificar seu `label` para referência cruzada, e adicionar [texto alternativo](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81) com `fig-alt`.
 
-We can improve the appearance and accessibility of our plot.
-We can change its aspect ratio by setting `fig-width` and `fig-height`, provide a `fig-cap`, modify its `label` for cross referencing, and add [alternative text](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81) with `fig-alt`.
-
-We'll add the following chunk options.
+Vamos adicionar as seguintes opções.
 
 ``` r
 #| label: fig-scatterplot
@@ -136,23 +124,19 @@ We'll add the following chunk options.
 #| fig-height: 3.5
 ```
 
-Save the document to see the updated plot.
-Note that we have also updated the narrative with a [cross reference](https://quarto.org/docs/authoring/cross-references.html#computations) to this figure using the following.
+Salve o documento. Note que também atualizamos a chamada com uma \[referência cruzada\] (https://quarto.org/docs/authoring/cross-references.html#computations) para esta figura usando o seguinte.
 
 ``` markdown
 @fig-scatterplot shows a positive, strong, and linear relationship between the city and highway mileage of these cars.
 ```
 
-![](images/rstudio-figure-options.png){.border .column-page-right fig-alt="RStudio with computations.qmd open. On the right is the visual editor. The YAML has title and format defined. Title is Quarto Computations. Format is html, and code-fold option is set to true. Compared to earlier images on the page, the code chunk shows the new chunk options added to the code chunk. On the right is the rendered version of the document. The title is followed by some text, which is followed by a Code widget that would expand if clicked on, which is followed by some more text, another code widget, and finally the plot. The Code widgets are folded, so the code is not visible in the rendered document."}
+![](img/rstudio-figure-options.png){.border .column-page-right fig-alt="RStudio with computations.qmd open. On the right is the visual editor. The YAML has title and format defined. Title is Quarto Computations. Format is html, and code-fold option is set to true. Compared to earlier images on the page, the code chunk shows the new chunk options added to the code chunk. On the right is the rendered version of the document. The title is followed by some text, which is followed by a Code widget that would expand if clicked on, which is followed by some more text, another code widget, and finally the plot. The Code widgets are folded, so the code is not visible in the rendered document."}
 
-## Multiple Figures
+## Múltiplas Figuras
 
-Let's add another plot to our chunk---a scatterplot where the points are colored by engine displacement, using a different color scale.
-Our goal is to display these plots side-by-side (i.e., in two columns), with a descriptive subcaption for each plot.
-Since this will produce a wider visualization we'll also use the `column` option to lay it out across the entire page rather than being constrained to the body text column.
+Acrescentemos outro elemento - um gráfico de dispersão onde os pontos são coloridos pelo deslocamento do motor, usando uma escala de cor diferente. Nosso objetivo é exibir estes gráficos lado a lado (ou seja, em duas colunas), com uma sublegenda descritiva para cada gráfico. Como isto produzirá uma visualização mais ampla, utilizaremos também a opção `column` para dispor em toda a página, em vez de ficarmos restritos à coluna de texto do corpo.
 
-There are quite a few changes to this chunk.
-To follow along, copy and paste the options outlined below into your Quarto document.
+Há algumas mudanças neste trecho. Para acompanhar, copie e cole as opções descritas abaixo em seu documento Quarto.
 
 ``` r
 #| label: fig-mpg
@@ -174,19 +158,18 @@ ggplot(mpg, aes(x = hwy, y = cty, color = displ)) +
   theme_minimal()
 ```
 
-Additionally, replace the existing text that describes the visualization with the following.
+Além disso, substitua o texto existente que descreve a visualização pelo seguinte.
 
 ``` markdown
 The plots in @fig-mpg show the relationship between city and highway mileage for 38 popular models of cars.
 In @fig-mpg-1 the points are colored by the number of cylinders while in @fig-mpg-2 the points are colored by engine displacement.
 ```
 
-Then, save the document and inspect the rendered output, which should look like the following.
+Em seguida, salve o documento e inspecione a saída renderizada, que deve se parecer com o seguinte.
 
-![](images/rstudio-multi-figure-preview.png){.border fig-alt="Rendered version of the computations.qmd document with a new plot. The document contains a title (Quarto Computations), text, code chunks, and figure include two side-by-side subfigures, each scatterplots. The text shows clickable cross reference links to Figure 1, Figure 1a, and Figure 1b."}
+![](img/rstudio-multi-figure-preview.png){.border fig-alt="Rendered version of the computations.qmd document with a new plot. The document contains a title (Quarto Computations), text, code chunks, and figure include two side-by-side subfigures, each scatterplots. The text shows clickable cross reference links to Figure 1, Figure 1a, and Figure 1b."}
 
-Let's discuss some of the new options used here.
-You've seen `fig-cap` before but we've now added a `fig-subcap` option.
+Vamos discutir algumas das novas opções utilizadas aqui. Você já viu `fig-cap` antes, mas agora adicionamos um `fig-subcap`.
 
 ``` r
 #| fig-cap: "City and highway mileage for 38 popular models of cars."
@@ -195,37 +178,33 @@ You've seen `fig-cap` before but we've now added a `fig-subcap` option.
 #|   - "Color by engine displacement, in liters"
 ```
 
-For code cells with multiple outputs adding the `fig-subcap` option enables us to treat them as subfigures.
+Para células de código com múltiplas saídas, adicionar a opção 'fig-subcap' nos permite tratá-las como subfiguras.
 
-We also added an option to control how multiple figures are laid out---in this case we specified side-by-side in two columns.
+Também adicionamos uma opção para controlar como múltiplas figuras são dispostas - neste caso, especificamos lado a lado em duas colunas.
 
 ``` r
 #| layout-ncol: 2
 ```
 
-If you have 3, 4, or more figures in a panel there are many options available for customizing their layout.
-See the article [Figure Layout](../../authoring/figures.qmd#figure-panels) for details.
+Se você tiver 3, 4 ou mais figuras em um painel, há muitas opções disponíveis para personalizar seu layout. Veja o artigo [Figure Layout](authoring/figures.qmd#figure-panels) para detalhes.
 
-Finally, we added an option to control the span of the page that our figures occupy.
+Finalmente, adicionamos uma opção para controlar a extensão da página que nossas figuras ocupam.
 
 ``` r
 #| column: page
 ```
 
-This allows our figure display to span out beyond the normal body text column.
-See the documentation on [Article Layout](../../authoring/article-layout.qmd) to learn about all of the available layout options.
+Isto permite que nossa exibição de figuras se estenda além da coluna de texto normal do corpo. Consulte a documentação sobre [Layout do Artigo](authoring/article-layout.qmd) para saber mais sobre todas as opções de layout disponíveis.
 
 ## Data Frames
 
 ``` include
-../../computations/_knitr-df-print.md
+/computations/_knitr-df-print.md
 ```
 
 ## Inline Code
 
-To include executable expressions within markdown, enclose the expression in `` `r ` ``.
-For example, we can use inline code to state the number of observations in our data.
-Try adding the following markdown text to your Quarto document.
+Para incluir expressões executáveis dentro do markdown, incluir a expressão em `r`. Por exemplo, podemos utilizar código em linha para declarar o número de observações em nossos dados. Tente adicionar o seguinte texto de html ao seu documento Quarto.
 
 ```{=html}
 <div class="sourceCode">
@@ -236,18 +215,15 @@ There are &#96;r nrow(mpg)&#96; observations in our data.
 </pre>
 </div>
 ```
-Save your document and inspect the rendered output.
-The expression inside the backticks has been executed and the sentence includes the actual number of observations.
+Salve seu documento e inspecione a saída entregue. A expressão dentro dos backticks foi executada e a sentença inclui o número real de observações.
 
 ::: border
 There are 234 observations in our data.
 :::
 
-If the expression you want to inline is more complex, involving many functions or a pipeline, we recommend including it in a code chunk (with `echo: false`) and assigning the result to an object.
-Then, you can call that object in your inline code.
+Se a expressão que você deseja inline for mais complexa, envolvendo muitas funções ou um pipeline, recomendamos incluí-la em um pedaço de código (com `echo: falso`) e atribuir o resultado a um objeto. Então, você pode chamar esse objeto em seu código em linha.
 
-For example, say you want to state the average city and highway mileage in your data.
-First, compute these values in a code chunk.
+Por exemplo, digamos que você queira declarar a quilometragem média da cidade e da rodovia em seus dados. Primeiro, calcule estes valores em um pedaço de código.
 
 ``` r
 #| echo: false
@@ -256,7 +232,7 @@ mean_cty <- round(mean(mpg$cty), 2)
 mean_hwy <- round(mean(mpg$hwy), 2)
 ```
 
-Then, add the following markdown text to your Quarto document.
+Em seguida, adicione o seguinte texto de marcação para baixo ao seu documento Quarto.
 
 ```{=html}
 <div class="sourceCode">
@@ -267,7 +243,7 @@ The average city mileage of the cars in our data is &#96;r mean_cty&#96 and the 
 </pre>
 </div>
 ```
-Save your document and inspect the rendered output.
+Salve seu documento e inspecione a saída entregue.
 
 ::: border
 The average city mileage of the cars in our data is 16.86 and the average highway mileage is 23.44.
@@ -275,34 +251,24 @@ The average city mileage of the cars in our data is 16.86 and the average highwa
 
 ## Caching
 
-If your document includes code chunks that take too long to compute, you might want to cache the results of those chunks.
-You can use the `cache` option either at the document level using the YAML execute option.
+Se seu documento inclui pedaços de código que levam muito tempo para serem computados, você pode querer armazenar em cache os resultados desses pedaços. Você pode utilizar a opção `cache` tanto no nível do documento utilizando a opção executar YAML.
 
 ``` yaml
 execute:
   cache: true
 ```
 
-However caching all code chunks in a document may not be preferable.
-You can also indicate which chunks should be cached directly with using a chunk option.
+Entretanto, o cache de todos os pedaços de código em um documento pode não ser preferível. Você também pode indicar quais blocos devem ser armazenados em cache diretamente com o uso de uma opção de bloco.
 
 ``` r
 #| cache: true
 ```
 
-Try adding this chunk option to one of the code chunks in your document that produces a plot and save.
-When the document is rendered, you'll see that a new folder has been created in your working directory with the same name as your document and the suffix `_cache`.
-This folder contains the cached results.
-You can find out more about caching in Quarto documents in the [Cache](https://quarto.org/docs/projects/code-execution.html#cache) documentation.
+Try adding this chunk option to one of the code chunks in your document that produces a plot and save. When the document is rendered, you'll see that a new folder has been created in your working directory with the same name as your document and the suffix `_cache`. This folder contains the cached results. You can find out more about caching in Quarto documents in the [Cache](https://quarto.org/docs/projects/code-execution.html#cache) documentation.
 
-If you followed along step-by-step with this tutorial, you should now have a Quarto document that implements everything we covered.
-Otherwise, you can download a completed version of `computations.qmd` below.
+If you followed along step-by-step with this tutorial, you should now have a Quarto document that implements everything we covered. Otherwise, you can download a completed version of `computations.qmd` below.
 
 ::: {.callout-note appearance="minimal"}
 <i class="bi bi-download"></i> [Download computations-complete.qmd](_computations-complete.qmd){download="computations-complete.qmd"}
 :::
-
-``` include
-_footer.md
-```
 

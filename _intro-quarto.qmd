@@ -16,7 +16,7 @@ library(palmerpenguins)
 
 O Quarto permite tecer juntos o conteúdo e o código executável em um documento final. Para saber mais sobre o Quarto, veja https://quarto.org.
 
-## Conheça os pingüins 
+## Conheça os pingüins
 
 ![](https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/get-started/hello/rstudio/lter_penguins.png){style="float:right;" fig-alt="Illustration of three species of Palmer Archipelago penguins: Chinstrap, Gentoo, and Adelie. Artwork by @allison_horst." width="401"}
 

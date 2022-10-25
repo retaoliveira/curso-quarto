@@ -50,7 +50,7 @@ Se você preferir renderizar automaticamente sempre que salvar, você pode verif
 
 ![](img/rstudio-render-on-save.png){.border fig-alt="Top of the text editor in RStudio with the Render on Save checbox checked and highlighted with a purple box." fig-align="center"}
 
-Observe que os documentos também podem ser resultados a partir do console R utilizando o pacote **quarto***:
+Observe que os documentos também podem ser resultados a partir do console R utilizando o pacote **quarto**\*:
 
 ``` r
 install.packages("quarto")
@@ -61,19 +61,19 @@ Ao renderizar, o Quarto gera um novo arquivo que contém texto, código e result
 
 ## Criando documentos
 
-Na imagem abaixo podemos ver o mesmo documento nos dois modos do editor do RStudio: visual (à esquerda) e fonte (à direita). O [editor visual](/docs/visual-editor/) do RStudio oferece uma experiência de autoria [WYSIWYM](https://en.wikipedia.org/wiki/WYSIWYM) por markdown. Para formatação  você pode utilizar a barra de ferramentas, um atalho de teclado (⌘B), ou a construção de marcação para formato (`** negrito**`). O código fonte em texto puro subjacente ao documento é escrito por você e você pode visualizá-lo/editá-lo em qualquer ponto, mudando para o modo fonte para edição. Você pode alternar entre estes dois modos clicando em **Source*** e **Visual*** na barra de ferramentas do editor (ou usando o atalho de teclado ⌘⇧ F4).
+Na imagem abaixo podemos ver o mesmo documento nos dois modos do editor do RStudio: visual (à esquerda) e fonte (à direita). O [editor visual](/docs/visual-editor/) do RStudio oferece uma experiência de autoria [WYSIWYM](https://en.wikipedia.org/wiki/WYSIWYM) por markdown. Para formatação você pode utilizar a barra de ferramentas, um atalho de teclado (⌘B), ou a construção de marcação para formato (`** negrito**`). O código fonte em texto puro subjacente ao documento é escrito por você e você pode visualizá-lo/editá-lo em qualquer ponto, mudando para o modo fonte para edição. Você pode alternar entre estes dois modos clicando em **Source**\* e **Visual**\* na barra de ferramentas do editor (ou usando o atalho de teclado ⌘⇧ F4).
 
 ![](img/rstudio-source-visual.png){.column-page-right fig-alt="On the left: Document in the visual editor. On the right: Same document in the source editor. The visual/source editor toggle is highlighted in both documents marking their current state. The document shown is the \"Hello Quarto\" document from a previous image on the page." fig-align="center"}
 
 A seguir, vamos voltar nossa atenção para o conteúdo de nosso documento Quarto. O arquivo contém três tipos de conteúdo: um cabeçalho YAML, pedaços de código e texto em markdown.
 
-### Cabeçalho YAML 
+### Cabeçalho YAML
 
 É um cabeçalho (opcional) YAML demarcado por três traços (`---`) em ambas as extremidades.
 
-Quando renderizado, o `título`, `"Olá, Quarto"`, aparecerá no topo do documento  com um tamanho de fonte maior do que o resto do documento. Os outros dois campos YAML denotam que a saída deve estar em formato "html" e o documento deve abrir no "editor" "visual", por padrão.
+Quando renderizado, o `título`, `"Olá, Quarto"`, aparecerá no topo do documento com um tamanho de fonte maior do que o resto do documento. Os outros dois campos YAML denotam que a saída deve estar em formato "html" e o documento deve abrir no "editor" "visual", por padrão.
 
-A sintaxe básica da YAML utiliza pares de valores chave no formato "chave: valor". Outros campos do YAML comumente encontrados em cabeçalhos de documentos incluem metadados como "autor", "subtítulo", "data", assim como opções de personalização como "tema", "cor de botão", "largura de figura", etc. Você pode aprender sobre todos os campos YAML disponíveis para documentos HTML  [aqui](/docs/reference/formats/html.html). Os campos YAML disponíveis variam de acordo com o formato do documento, por exemplo, veja [aqui](/docs/reference/formats/pdf.html) para documentos em PDF e [aqui](/docs/reference/formats/docx.html) para MS Word.
+A sintaxe básica da YAML utiliza pares de valores chave no formato "chave: valor". Outros campos do YAML comumente encontrados em cabeçalhos de documentos incluem metadados como "autor", "subtítulo", "data", assim como opções de personalização como "tema", "cor de botão", "largura de figura", etc. Você pode aprender sobre todos os campos YAML disponíveis para documentos HTML [aqui](/docs/reference/formats/html.html). Os campos YAML disponíveis variam de acordo com o formato do documento, por exemplo, veja [aqui](/docs/reference/formats/pdf.html) para documentos em PDF e [aqui](/docs/reference/formats/docx.html) para MS Word.
 
 ### Chunks de código
 
@@ -108,4 +108,3 @@ O Quarto usa a sintaxe markdown para o texto. Se usar o editor visual, você nã
 Quando você apresenta um documento da Quarto, primeiro o [knitr](http://yihui.name/knitr/) executa todos os trechos de código e cria um novo documento markdown (.md) que inclui o código e sua saída. O arquivo de markdown gerado é então processado pelo [pandoc](http://pandoc.org/), que cria o formato final. O botão **Render** encapsula estas ações e as executa na ordem correta para você.
 
 ![](img/rstudio-qmd-how-it-works.png){.border fig-alt="Workflow diagram starting with a qmd file, then knitr, then md, then pandoc, then PDF, MS Word, or HTML." fig-align="center"}
-

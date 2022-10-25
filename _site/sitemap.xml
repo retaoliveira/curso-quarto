@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://retaoliveira.pro/index.html</loc>
-    <lastmod>2022-10-08T03:02:15.284Z</lastmod>
+    <lastmod>2022-10-25T03:39:12.796Z</lastmod>
   </url>
   <url>
     <loc>https://retaoliveira.pro/intro-quarto.html</loc>
-    <lastmod>2022-10-08T02:58:08.137Z</lastmod>
+    <lastmod>2022-10-25T03:39:13.615Z</lastmod>
   </url>
   <url>
     <loc>https://retaoliveira.pro/image.html</loc>
@@ -14,10 +14,78 @@
   </url>
   <url>
     <loc>https://retaoliveira.pro/about.html</loc>
-    <lastmod>2022-10-08T02:01:10.730Z</lastmod>
+    <lastmod>2022-10-25T03:39:11.768Z</lastmod>
   </url>
   <url>
     <loc>https://retaoliveira.pro/documento.html</loc>
-    <lastmod>2022-10-08T02:44:33.898Z</lastmod>
+    <lastmod>2022-10-25T04:27:47.377Z</lastmod>
+  </url>
+  <url>
+    <loc>https://retaoliveira.pro/authoring/article-layout.html</loc>
+    <lastmod>2022-10-25T04:26:14.265Z</lastmod>
+  </url>
+  <url>
+    <loc>https://retaoliveira.pro/authoring/figures.html</loc>
+    <lastmod>2022-10-25T04:26:06.074Z</lastmod>
+  </url>
+  <url>
+    <loc>https://retaoliveira.pro/authoring/index.html</loc>
+    <lastmod>2022-10-25T04:24:20.509Z</lastmod>
+  </url>
+  <url>
+    <loc>https://retaoliveira.pro/authoring/jupyter.html</loc>
+    <lastmod>2022-10-25T04:24:22.096Z</lastmod>
+  </url>
+  <url>
+    <loc>https://retaoliveira.pro/authoring/rstudio.html</loc>
+    <lastmod>2022-10-25T04:24:23.928Z</lastmod>
+  </url>
+  <url>
+    <loc>https://retaoliveira.pro/authoring/text-editor.html</loc>
+    <lastmod>2022-10-25T04:24:24.780Z</lastmod>
+  </url>
+  <url>
+    <loc>https://retaoliveira.pro/authoring/vscode.html</loc>
+    <lastmod>2022-10-25T04:24:25.484Z</lastmod>
+  </url>
+  <url>
+    <loc>https://retaoliveira.pro/computations/index.html</loc>
+    <lastmod>2022-10-25T04:24:25.953Z</lastmod>
+  </url>
+  <url>
+    <loc>https://retaoliveira.pro/computations/jupyter.html</loc>
+    <lastmod>2022-10-25T04:24:27.369Z</lastmod>
+  </url>
+  <url>
+    <loc>https://retaoliveira.pro/computations/rstudio.html</loc>
+    <lastmod>2022-10-25T04:24:28.842Z</lastmod>
+  </url>
+  <url>
+    <loc>https://retaoliveira.pro/computations/text-editor.html</loc>
+    <lastmod>2022-10-25T04:24:30.397Z</lastmod>
+  </url>
+  <url>
+    <loc>https://retaoliveira.pro/computations/vscode.html</loc>
+    <lastmod>2022-10-25T04:24:31.681Z</lastmod>
+  </url>
+  <url>
+    <loc>https://retaoliveira.pro/hello/index.html</loc>
+    <lastmod>2022-10-25T04:24:32.152Z</lastmod>
+  </url>
+  <url>
+    <loc>https://retaoliveira.pro/hello/jupyter.html</loc>
+    <lastmod>2022-10-25T04:24:33.279Z</lastmod>
+  </url>
+  <url>
+    <loc>https://retaoliveira.pro/hello/rstudio.html</loc>
+    <lastmod>2022-10-25T04:24:34.188Z</lastmod>
+  </url>
+  <url>
+    <loc>https://retaoliveira.pro/hello/text-editor.html</loc>
+    <lastmod>2022-10-25T04:24:35.326Z</lastmod>
+  </url>
+  <url>
+    <loc>https://retaoliveira.pro/hello/vscode.html</loc>
+    <lastmod>2022-10-25T04:24:36.499Z</lastmod>
   </url>
 </urlset>

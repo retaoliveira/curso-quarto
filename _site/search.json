@@ -53,7 +53,7 @@
     "href": "about.html#no-começo",
     "title": "About",
     "section": "No começo…",
-    "text": "No começo…\n\nknitr::include_graphics(\"https://i.giphy.com/media/1i4UsfZhrhKkHagP5g/giphy.webp\")"
+    "text": "No começo…\n\nCodeknitr::include_graphics(\"https://i.giphy.com/media/1i4UsfZhrhKkHagP5g/giphy.webp\")"
   },
   {
     "objectID": "about.html#r-markdown",
@@ -109,7 +109,7 @@
     "href": "about.html#quarto",
     "title": "About",
     "section": "Quarto",
-    "text": "Quarto\n\n\n\nknitr::include_graphics(\"https://media.giphy.com/media/j0eRJzyW7XjMpu1Pqd/giphy.gif\")\n\n\n\n\n\n\n\n\n\nComecei a usar o Quarto em outubro de 2021\nEnviei uma sugestão (outubro/2021)\nEnviei uma contribuição (novembro/2021)"
+    "text": "Quarto\n\n\n\nCodeknitr::include_graphics(\"https://media.giphy.com/media/j0eRJzyW7XjMpu1Pqd/giphy.gif\")\n\n\n\n\n\n\n\n\n\nComecei a usar o Quarto em outubro de 2021\nEnviei uma sugestão (outubro/2021)\nEnviei uma contribuição (novembro/2021)"
   },
   {
     "objectID": "about.html#porque-o-quarto-existe",
@@ -221,7 +221,7 @@
     "href": "documento.html",
     "title": "Do RMarkdown para o Quarto",
     "section": "",
-    "text": "Quarto suporta blocos de código executáveis dentro do markdown. Isto permite que você crie documentos e relatórios totalmente reprodutíveis - o código necessário para produzir sua saída faz parte do próprio documento e é automaticamente executado novamente sempre que o documento é renderizado.\nIf you would like to follow along step-by-step in your own environment, download the Quarto document (.qmd) below, open it in RStudio, and click on  Render (or use the keyboard shortcut ⇧⌘K). We recommend also checking the box for Render on Save for a live preview of your changes.\n\n\n\n\n\n\n Download computations.qmd\n\n\n\nNote that you will need to open this document in the latest release of RStudio (v2022.07) which you can download here."
+    "text": "Quarto suporta blocos de código executáveis dentro do markdown. Isto permite que você crie documentos e relatórios totalmente reprodutíveis - o código necessário para produzir sua saída faz parte do próprio documento e é automaticamente executado novamente sempre que o documento é renderizado.\nSe você quiser acompanhar o passo-a-passo em seu próprio ambiente, faça o download do documento Quarto (.qmd) abaixo, abra-o no RStudio, e clique em ou e o atalho de teclado ⇧⌘K). Recomendamos também marcar a caixa para Render em Save para uma visualização ao vivo de suas alterações.\n\n\n\n\n\n\n Download computations.qmd\n\n\n\nNote que você precisará abrir este documento no último lançamento do RStudio (v2022.07)."
   },
   {
     "objectID": "documento.html#cell-output",
@@ -242,7 +242,7 @@
     "href": "documento.html#code-linking",
     "title": "Do RMarkdown para o Quarto",
     "section": "Code Linking",
-    "text": "Code Linking\nThe code-link option enables hyper-linking of functions within code blocks to their online documentation. Try adding code-link: true to the HTML format options.\n---\ntitle: \"Quarto Computations\"\nformat:\n  html:\n    code-link: true\n---\nSave the document and observe that the functions are now clickable hyperlinks.\n\nNote that code linking is currently implemented only for the knitr engine via the downlit package."
+    "text": "Code Linking\nA opção code-link permite hiperligação de funções dentro de blocos de código para sua documentação on-line. Tente adicionar code-link: true às opções de formato HTML.\n---\ntitle: \"Quarto Computations\"\nformat:\n  html:\n    code-link: true\n---\nSalve o documento e observe que as funções agora são hiperlinks clicáveis.\n Note que a ligação de códigos está atualmente implementada apenas para o motor de malha através do pacote downlit."
   },
   {
     "objectID": "documento.html#figures",
@@ -263,21 +263,21 @@
     "href": "documento.html#data-frames",
     "title": "Do RMarkdown para o Quarto",
     "section": "Data Frames",
-    "text": "Data Frames\n../../computations/_knitr-df-print.md"
+    "text": "Data Frames\n/computations/_knitr-df-print.md"
   },
   {
     "objectID": "documento.html#inline-code",
     "href": "documento.html#inline-code",
     "title": "Do RMarkdown para o Quarto",
     "section": "Inline Code",
-    "text": "Inline Code\nTo include executable expressions within markdown, enclose the expression in `r `. For example, we can use inline code to state the number of observations in our data. Try adding the following markdown text to your Quarto document.\n\n\nThere are `r nrow(mpg)` observations in our data. \n\n\n\nSave your document and inspect the rendered output. The expression inside the backticks has been executed and the sentence includes the actual number of observations.\n\nThere are 234 observations in our data.\n\nIf the expression you want to inline is more complex, involving many functions or a pipeline, we recommend including it in a code chunk (with echo: false) and assigning the result to an object. Then, you can call that object in your inline code.\nFor example, say you want to state the average city and highway mileage in your data. First, compute these values in a code chunk.\n#| echo: false\n\nmean_cty <- round(mean(mpg$cty), 2)\nmean_hwy <- round(mean(mpg$hwy), 2)\nThen, add the following markdown text to your Quarto document.\n\n\nThe average city mileage of the cars in our data is `r mean_cty` and the average highway mileage is `r mean_hwy`. \n\n\n\nSave your document and inspect the rendered output.\n\nThe average city mileage of the cars in our data is 16.86 and the average highway mileage is 23.44."
+    "text": "Inline Code\nPara incluir expressões executáveis dentro do markdown, incluir a expressão em r. Por exemplo, podemos utilizar código em linha para declarar o número de observações em nossos dados. Tente adicionar o seguinte texto de html ao seu documento Quarto.\n\n\nThere are `r nrow(mpg)` observations in our data. \n\n\n\nSalve seu documento e inspecione a saída entregue. A expressão dentro dos backticks foi executada e a sentença inclui o número real de observações.\n\nThere are 234 observations in our data.\n\nSe a expressão que você deseja inline for mais complexa, envolvendo muitas funções ou um pipeline, recomendamos incluí-la em um pedaço de código (com echo: falso) e atribuir o resultado a um objeto. Então, você pode chamar esse objeto em seu código em linha.\nPor exemplo, digamos que você queira declarar a quilometragem média da cidade e da rodovia em seus dados. Primeiro, calcule estes valores em um pedaço de código.\n#| echo: false\n\nmean_cty <- round(mean(mpg$cty), 2)\nmean_hwy <- round(mean(mpg$hwy), 2)\nEm seguida, adicione o seguinte texto de marcação para baixo ao seu documento Quarto.\n\n\nThe average city mileage of the cars in our data is `r mean_cty` and the average highway mileage is `r mean_hwy`. \n\n\n\nSalve seu documento e inspecione a saída entregue.\n\nThe average city mileage of the cars in our data is 16.86 and the average highway mileage is 23.44."
   },
   {
     "objectID": "documento.html#caching",
     "href": "documento.html#caching",
     "title": "Do RMarkdown para o Quarto",
     "section": "Caching",
-    "text": "Caching\nIf your document includes code chunks that take too long to compute, you might want to cache the results of those chunks. You can use the cache option either at the document level using the YAML execute option.\nexecute:\n  cache: true\nHowever caching all code chunks in a document may not be preferable. You can also indicate which chunks should be cached directly with using a chunk option.\n#| cache: true\nTry adding this chunk option to one of the code chunks in your document that produces a plot and save. When the document is rendered, you’ll see that a new folder has been created in your working directory with the same name as your document and the suffix _cache. This folder contains the cached results. You can find out more about caching in Quarto documents in the Cache documentation.\nIf you followed along step-by-step with this tutorial, you should now have a Quarto document that implements everything we covered. Otherwise, you can download a completed version of computations.qmd below.\n\n\n\n\n\n\n Download computations-complete.qmd\n\n\n\n_footer.md"
+    "text": "Caching\nSe seu documento inclui pedaços de código que levam muito tempo para serem computados, você pode querer armazenar em cache os resultados desses pedaços. Você pode utilizar a opção cache tanto no nível do documento utilizando a opção executar YAML.\nexecute:\n  cache: true\nEntretanto, o cache de todos os pedaços de código em um documento pode não ser preferível. Você também pode indicar quais blocos devem ser armazenados em cache diretamente com o uso de uma opção de bloco.\n#| cache: true\nTry adding this chunk option to one of the code chunks in your document that produces a plot and save. When the document is rendered, you’ll see that a new folder has been created in your working directory with the same name as your document and the suffix _cache. This folder contains the cached results. You can find out more about caching in Quarto documents in the Cache documentation.\nIf you followed along step-by-step with this tutorial, you should now have a Quarto document that implements everything we covered. Otherwise, you can download a completed version of computations.qmd below.\n\n\n\n\n\n\n Download computations-complete.qmd"
   },
   {
     "objectID": "intro-quarto.html#rendering",
@@ -376,5 +376,719 @@
     "title": "Sejam bem vindos ao Quarto!",
     "section": "Políticas institucionais e da disciplina",
     "text": "Políticas institucionais e da disciplina\nOs estudantes e professores têm a responsabilidade de manter um ambiente de aprendizagem adequado e motivante. Aqueles que não aderirem a tais padrões de comportamento podem estar sujeitos ao regime disciplinar da instituição. A cortesia profissional e a sensibilidade são especialmente importantes no que diz respeito a indivíduos e discussões que lidam com diferenças de raça, cor, cultura, religião, credo, política, status de veterano, orientação sexual, gênero, identidade e expressão de gênero, idade, deficiência e nacionalidades. As listas de classes são fornecidas ao instrutor com o nome legal do aluno. Terei prazer em honrar seu pedido de dirigir-se a você por um nome alternativo ou pronome de gênero. Por favor, me informe essa preferência no início do semestre para que eu possa fazer as mudanças apropriadas em seus registros.\nNão serão tolerados atos de discriminação ou assédio contra ou por qualquer funcionário ou estudante.\nHonestidade acadêmica é um princípio fundamental desta disciplina. Desonestidade acadêmica configura-se por: cópias literais de textos ou ideias sem citação de fonte, fabricações e falsificações de qualquer natureza, plágio, mentira, suborno, comportamento ameaçador ou cumplicidade com desonestidade acadêmica em qualquer nível. Os estudantes que forem considerados em violação da política de integridade acadêmica estarão sujeitos tanto a sanções acadêmicas do membro docente quanto a sanções não acadêmicas. Se você tiver alguma dúvida sobre citações adequadas, configuração de plágio, etc., por favor, não hesite em perguntar!"
+  },
+  {
+    "objectID": "documento.html#output-do-chunk-de-código",
+    "href": "documento.html#output-do-chunk-de-código",
+    "title": "Do RMarkdown para o Quarto",
+    "section": "Output do chunk de código",
+    "text": "Output do chunk de código\nPor padrão, o código e sua saída são exibidos dentro do documento apresentado.\n\nEntretanto, para alguns documentos, você pode querer esconder todo o código e apenas mostrar a saída. Para isso, especifique echo:false.\n---\ntitle: \"Quarto Computations\"\nexecute:\n  echo: false\n---\nSe você clicou Render no Save antes, basta salvar o documento após fazer esta mudança para uma visualização ao vivo. Caso contrário, faça com que o documento seja renderizado pra ver suas atualizações. O resultado será parecido com o seguinte.\n\nVocê pode querer ativar seletivamente o código echo para algumas células. Para fazer isso, adicione a opção echo: true. Tente isto com o pedaço rotulado “scatterplot”.\n#| label: scatterplot\n#| echo: true\n\nggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +\n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  theme_minimal()\nSalve o documento novamente e note que o código agora está incluído para a parte do “scatterplot”.\n\nA opção echo pode ser definida como true, false, ou fenced. A última pode ser de especial interesse para escrever documentação e materiais didáticos, pois permite incluir o delimitador de código cercado em sua saída de código para enfatizar que o código executável requer esse delimitador. Você pode ler mais sobre esta opção na documentação Fenced Echo.\nHá um grande número de outras opções disponíveis para a saída de células, por exemplo, “warning” para mostrar/ocultar avisos (que podem ser especialmente úteis para mensagens de carregamento de pacotes), dentre outras.\nVeja Knitr Cell Options para informações adicionais."
+  },
+  {
+    "objectID": "documento.html#escondendo-o-código",
+    "href": "documento.html#escondendo-o-código",
+    "title": "Do RMarkdown para o Quarto",
+    "section": "Escondendo o código",
+    "text": "Escondendo o código\nAo invés de esconder inteiramente o código, talvez seja melhor dobrá-lo e permitir que os leitores o vejam a seu critério. Você pode fazer isso através da opção “code-fold”. Remova a opção echo que adicionamos anteriormente e adicione a opção code-fold em formato HTML.\n---\ntitle: \"Quarto Computations\"\nformat:\n  html:\n    code-fold: true\n---\nSalve o documento novamente e observe que novos widgets de código estão agora incluídos para cada pedaço de código.\n\nVocê também pode fornecer controle global sobre esconder o código. Tente adicionar “cold-tools: true” às opções de formato HTML.\n---\ntitle: \"Quarto Computations\"\nformat:\n  html:\n    code-fold: true\n    code-tools: true\n---\nSalve o documento e você verá que um menu de códigos aparece na parte superior direita do documento apresentado, o que proporciona controle global sobre a exibição e ocultação de todos os códigos."
+  },
+  {
+    "objectID": "documento.html#múltiplas-figuras",
+    "href": "documento.html#múltiplas-figuras",
+    "title": "Do RMarkdown para o Quarto",
+    "section": "Múltiplas Figuras",
+    "text": "Múltiplas Figuras\nAcrescentemos outro elemento - um gráfico de dispersão onde os pontos são coloridos pelo deslocamento do motor, usando uma escala de cor diferente. Nosso objetivo é exibir estes gráficos lado a lado (ou seja, em duas colunas), com uma sublegenda descritiva para cada gráfico. Como isto produzirá uma visualização mais ampla, utilizaremos também a opção column para dispor em toda a página, em vez de ficarmos restritos à coluna de texto do corpo.\nHá algumas mudanças neste trecho. Para acompanhar, copie e cole as opções descritas abaixo em seu documento Quarto.\n#| label: fig-mpg\n#| fig-cap: \"City and highway mileage for 38 popular models of cars.\"\n#| fig-subcap:\n#|   - \"Color by number of cylinders\"\n#|   - \"Color by engine displacement, in liters\"\n#| layout-ncol: 2\n#| column: page\n\nggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +\n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  theme_minimal()\n\nggplot(mpg, aes(x = hwy, y = cty, color = displ)) +\n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c(option = \"E\") +\n  theme_minimal()\nAlém disso, substitua o texto existente que descreve a visualização pelo seguinte.\nThe plots in @fig-mpg show the relationship between city and highway mileage for 38 popular models of cars.\nIn @fig-mpg-1 the points are colored by the number of cylinders while in @fig-mpg-2 the points are colored by engine displacement.\nEm seguida, salve o documento e inspecione a saída renderizada, que deve se parecer com o seguinte.\n\nVamos discutir algumas das novas opções utilizadas aqui. Você já viu fig-cap antes, mas agora adicionamos um fig-subcap.\n#| fig-cap: \"City and highway mileage for 38 popular models of cars.\"\n#| fig-subcap:\n#|   - \"Color by number of cylinders\"\n#|   - \"Color by engine displacement, in liters\"\nPara células de código com múltiplas saídas, adicionar a opção ‘fig-subcap’ nos permite tratá-las como subfiguras.\nTambém adicionamos uma opção para controlar como múltiplas figuras são dispostas - neste caso, especificamos lado a lado em duas colunas.\n#| layout-ncol: 2\nSe você tiver 3, 4 ou mais figuras em um painel, há muitas opções disponíveis para personalizar seu layout. Veja o artigo Figure Layout para detalhes.\nFinalmente, adicionamos uma opção para controlar a extensão da página que nossas figuras ocupam.\n#| column: page\nIsto permite que nossa exibição de figuras se estenda além da coluna de texto normal do corpo. Consulte a documentação sobre Layout do Artigo para saber mais sobre todas as opções de layout disponíveis."
+  },
+  {
+    "objectID": "authoring/article-layout.html",
+    "href": "authoring/article-layout.html",
+    "title": "Article Layout",
+    "section": "",
+    "text": "Quarto supports a variety of page layout options that enable you to author content that:\n\nFills the main content region\nOverflows the content region\nSpans the entire page\nOccupies the document margin\n\nQuarto uses the concept of columns to describe page layout (e.g. the “body” column, the “margin” column, etc.). Below we’ll describe how to arrange content into these columns.\nAll of the layout capabilities described in this document work for HTML output and many work for PDF and LaTeX output. For details about the PDF / LaTeX output, see PDF/LaTeX Layout."
+  },
+  {
+    "objectID": "authoring/article-layout.html#body-column",
+    "href": "authoring/article-layout.html#body-column",
+    "title": "Article Layout",
+    "section": "Body Column",
+    "text": "Body Column\nBy default, elements are position in the body of the document and are allowed to span the content of the document, like the below.\n\n.column-body\n\nBut if you’d like, you can extend content slightly outside the bounds of the body by creating a div with the .column-body-outset class. For example:\n:::{.column-body-outset}\nOutset content...\n:::\n\n.column-body-outset"
+  },
+  {
+    "objectID": "authoring/article-layout.html#page-column",
+    "href": "authoring/article-layout.html#page-column",
+    "title": "Article Layout",
+    "section": "Page Column",
+    "text": "Page Column\nIf you need even more space for your content, you can use the .column-page class to make the content much wider, though stopping short of extending across the whole document.\n\n.column-page\n\nFor example, to create a wider image, you could use:\n:::{.column-page}\n![](images/elephant.jpg)\n:::\n\n\n\nFor computational output, you can specify the page column in your code cell options. For example:\n\nCode```{r}\n#| column: page\n\nknitr::kable(\n  mtcars[1:6, 1:10]\n)\n```\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\nqsec\nvs\nam\ngear\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n16.46\n0\n1\n4\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n17.02\n0\n1\n4\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n18.61\n1\n1\n4\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n19.44\n1\n0\n3\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n17.02\n0\n0\n3\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460\n20.22\n1\n0\n3\n\n\n\n\n\nIn addition, you can use .column-page-inset to inset the element from the page slightly, like so:\n\n.column-page-inset"
+  },
+  {
+    "objectID": "authoring/article-layout.html#screen-column",
+    "href": "authoring/article-layout.html#screen-column",
+    "title": "Article Layout",
+    "section": "Screen Column",
+    "text": "Screen Column\nYou can have content span the full width of the page with no margin (full bleed). For this, use the .column-screen class or specify column: screen on a code cell. For example:\n::: {.column-screen}\n![A full screen image](/image.png)\n:::\n\n.column-screen\n\nThe following code displays a Leaflet map across the whole page.\n\nCode```{r}\n#| column: screen\n\nlibrary(leaflet)\nleaflet() %>%\n  addTiles() %>%  # Add default OpenStreetMap map tiles\n  addMarkers(lng=174.768, lat=-36.852, popup=\"The birthplace of R\")\n```\n\n\n\n\n\nScreen Inset\nIf you’d like a full width appearance, but would like to retain a margin, you can use inset or inset-shaded modifiers on the column. For example:\n::: {.column-screen-inset}\n![A full screen image](/image.png)\n:::\n\n.column-screen-inset\n\nThe inset-shaded modifier results in a block spanning the full width but wrapped with a lightly shaded background. For example:\n\nCode```{r}\n#| column: screen-inset-shaded\n\nlibrary(leaflet)\nleaflet() %>%\n  addTiles() %>%  # Add default OpenStreetMap map tiles\n  addMarkers(lng=174.768, lat=-36.852, popup=\"The birthplace of R\")\n```\n\n\n\n\n\nColumn layouts like screen-inset-shaded will work with advanced figure layout. For example, it is straightforward to create a multi column presentation of figures that spans the document:\n\nCode```{r}\n#| column: screen-inset-shaded\n#| layout-nrow: 1\n\nplot(cars)\nplot(iris)\nplot(pressure)\n```"
+  },
+  {
+    "objectID": "authoring/article-layout.html#margin-content",
+    "href": "authoring/article-layout.html#margin-content",
+    "title": "Article Layout",
+    "section": "Margin Content",
+    "text": "Margin Content\nYou can place content within the right margin of Quarto document. For example, here we use the .column-margin class to place an image in the margin:\n::: {.column-margin}\n![A margin image](image.png)\n:::\n\n\n.column-margin\nThis also works for text content:\n::: {.column-margin}\nWe know from *the first fundamental theorem of calculus* that for $x$ in $[a, b]$:\n\n$$\\frac{d}{dx}\\left( \\int_{a}^{x} f(u)\\,du\\right)=f(x).$$\n:::\n\n\nWe know from the first fundamental theorem of calculus that for \\(x\\) in \\([a, b]\\):\n\\[\\frac{d}{dx}\\left( \\int_{a}^{x} f(u)\\,du\\right)=f(x).\\]\nMargin Figures\nFigures that you create using code cells can be placed in the margin by using the column: margin code cell option. If the code produces more than one figure, each of the figures will be placed in the margin.\n\nCode```{r}\n#| label: fig-mtcars\n#| fig-cap: \"MPG vs horsepower, colored by transmission.\"\n#| column: margin\n\nlibrary(ggplot2)\nmtcars2 <- mtcars\nmtcars2$am <- factor(\n  mtcars$am, labels = c('automatic', 'manual')\n)\nggplot(mtcars2, aes(hp, mpg, color = am)) +\n  geom_point() +\n  geom_smooth(formula = y ~ x, method = \"loess\") +\n  theme(legend.position = 'bottom')\n```\n\n\n\n\nFigure 1: MPG vs horsepower, colored by transmission.\n\n\n\nMargin Tables\nYou an also place tables in the margin of your document by specifying column: margin.\n\nCode```{r}\n#| column: margin\n\nknitr::kable(\n  mtcars[1:6, 1:3]\n)\n```\n\n\n\n\n\nmpg\ncyl\ndisp\n\n\n\nMazda RX4\n21.0\n6\n160\n\n\nMazda RX4 Wag\n21.0\n6\n160\n\n\nDatsun 710\n22.8\n4\n108\n\n\nHornet 4 Drive\n21.4\n6\n258\n\n\nHornet Sportabout\n18.7\n8\n360\n\n\nValiant\n18.1\n6\n225\n\n\n\n\nMultiple Outputs\nYou can also target specific output types (for example, figures) to be placed in the margin. For example, the following code will render a table summarizing the mtcars dataset and render a lot of the data in the margin next to the table.\n\nCode```{r}\n#| fig-column: margin\n\nmtcars2 <- mtcars\nmtcars2$am <- factor(\n  mtcars$am, labels = c('automatic', 'manual')\n)\n\nknitr::kable(\n  mtcars[1:6, 1:6]\n)\n\nlibrary(ggplot2)\nggplot(mtcars2, aes(hp, mpg, color = am)) +\n  geom_point() +\n  geom_smooth(formula = y ~ x, method = \"loess\") +\n  theme(legend.position = 'bottom')\n```\n\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\nwt\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n2.620\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n2.875\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n2.320\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n3.215\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15\n3.440\n\n\nValiant\n18.1\n6\n225\n105\n2.76\n3.460"
+  },
+  {
+    "objectID": "authoring/article-layout.html#page-breaks",
+    "href": "authoring/article-layout.html#page-breaks",
+    "title": "Article Layout",
+    "section": "Page Breaks",
+    "text": "Page Breaks\nThe pagebreak shortcode enables you to insert a native pagebreak into a document (.e.g in LaTeX this would be a \\newpage, in MS Word a docx-native pagebreak, in HTML a page-break-after: always CSS directive, etc.):\npage 1\n\n{{< pagebreak >}}\n\npage 2\nNative pagebreaks are supported for HTML, LaTeX, Context, MS Word, Open Document, and ePub (for other formats a form-feed character \\f is inserted)."
+  },
+  {
+    "objectID": "authoring/article-layout.html#margin-references",
+    "href": "authoring/article-layout.html#margin-references",
+    "title": "Article Layout",
+    "section": "Margin References",
+    "text": "Margin References\nFootnotes and the bibliography typically appear at the end of the document, but you can choose to have them placed in the margin by setting the following option1 in the document front matter:1 You can also position references in other location (such as the bottom of the block, section, or document).\n---\nreference-location: margin\ncitation-location: margin\n---\nWith these options set, footnotes and citations will (respectively) be automatically be placed in the margin of the document rather than the bottom of the page. As an example, when I cite @xie2018, the citation bibliography entry itself will now appear in the margin.\nAsides\nAsides allow you to place content aside from the content it is placed in. Asides look like footnotes, but do not include the footnote mark (the superscript number). This is a span that has the class aside which places it in the margin without a footnote number.\n[This is a span that has the class aside which places it in the margin without a footnote number.]{.aside}"
+  },
+  {
+    "objectID": "authoring/article-layout.html#margin-captions",
+    "href": "authoring/article-layout.html#margin-captions",
+    "title": "Article Layout",
+    "section": "Margin Captions",
+    "text": "Margin Captions\nFor figures and tables, you may leave the content in the body of the document while placing the caption in the margin of the document. Using cap-location: margin in a code cell or document front matter to control this. For example:\n\nCode```{r}\n#| label: fig-cap-margin\n#| fig-cap: \"MPG vs horsepower, colored by transmission.\"\n#| cap-location: margin\n\nlibrary(ggplot2)\nmtcars2 <- mtcars\nmtcars2$am <- factor(\n  mtcars$am, labels = c('automatic', 'manual')\n)\nggplot(mtcars2, aes(hp, mpg, color = am)) +\n  geom_point() +\n  geom_smooth(formula = y ~ x, method = \"loess\") +\n  theme(legend.position = 'bottom')\n```\n\n\n\nFigure 2: MPG vs horsepower, colored by transmission."
+  },
+  {
+    "objectID": "authoring/article-layout.html#overflowing-content",
+    "href": "authoring/article-layout.html#overflowing-content",
+    "title": "Article Layout",
+    "section": "Overflowing Content",
+    "text": "Overflowing Content\nYou can also extend content outside the body region on only the left or right side of the document by using the right and left versions of the body, page, and screen columns to layout your content. The left or right version of these columns are as follows:\n\n.column-body-outset-right\n\n\n.column-page-inset-right\n\n\n.column-page-right\n\n\n.column-screen-inset-right\n\n\n.column-screen-right\n\n\n.column-body-outset-left\n\n\n.column-page-inset-left\n\n\n.column-page-left\n\n\n.column-screen-inset-left\n\n\n.column-screen-left\n\nUse a div with one of the above classes to align content into one of the overflow regions. This also works using the column option of executable code cells:\n\nCode```{r}\n#| column: screen-inset-right\n\nlibrary(leaflet)\nleaflet() %>%\n  addTiles() %>%  # Add default OpenStreetMap map tiles\n  addMarkers(lng=174.768, lat=-36.852, popup=\"The birthplace of R\")\n```"
+  },
+  {
+    "objectID": "authoring/article-layout.html#options-reference",
+    "href": "authoring/article-layout.html#options-reference",
+    "title": "Article Layout",
+    "section": "Options Reference",
+    "text": "Options Reference\nGlobal Options\nSome layout options can be specified globally in document yaml. For example:\n---\nfig-cap-location: margin\nreference-location: margin\n---\nAll of the below options currently only support setting a value of margin which tells Quarto to place the corresponding element in the margin.\n\n\n\n\n\n\nOption\nDescription\n\n\n\nreference-location\nWhere to place footnotes. Defaults to document.\n[document | section | block | margin ]\n\n\ncitation-location\nWhere to place citations. Defaults to document.\n[document | margin ]\n\n\ncap-location\nWhere to place figure and table captions. Defaults to `bottom` for figures and top for tables.\n[top | bottom | margin]\n\n\nfig-cap-location\nWhere to place figure captions. Defaults to bottom.\n[top | bottom | margin]\n\n\ntbl-cap-location\nWhere to place table captions. Defaults to top.\n[top | bottom | margin]\n\n\nCode Cell Options\nYou can also set layout column on specific code cells. This controls the layout of content that is produced by the code cell.\n```{r}\n#| column: page\n\nplot(cars)\n```\n\n\n\n\n\n\n\nOption\nDescription\n\n\n\ncolumn\nLayout column to use for code cell outputs. See column options below.\n\n\nfig-column\nLayout column to use for code cell figure outputs. See column options below.\n\n\ntbl-column\nLayout column to use for code cell table outputs. See column options below.\n\n\ncap-location\nWhere to place figure and table captions produced by this code cell. Defaults to bottom for figures and top for tables.\n[top | bottom | margin]\n\n\nfig-cap-location\nWhere to place captions for figures produced by this code cell. Defaults to inline.\n[inline | margin]\n\n\ntbl-cap-location\nWhere to place captions for tables produced by this code cell. Defaults to inline.\n[inline | margin]\n\n\n\n\nUsing Classes\nIn addition to global and code cell specific options, you may use divs with layout classes (prefixed with .column-) to arrange content into columns:\n::: {.column-margin}\nThis content will appear in the margin!\n:::\nAvailable Columns\nHere are all of the available column specifiers:\n\n\n\n\n\n\n\n\nColumn\nCode Cell column\n\nClass Name\n\n\n\nBody\ncolumn: body\ncolumn: body-outset\ncolumn: body-outset-left\ncolumn: body-outset-right\n.column-body\n.column-body-outset\n.column-body-outset-left\n.column-body-outset-right\n\n\nPage\ncolumn: page\ncolumn: page-left\ncolumn: page-right\n.column-page\n.column-page-left\n.column-page-right\n\n\nScreen Inset\ncolumn: screen-inset\ncolumn: screen-inset-shaded\ncolumn: screen-inset-left\ncolumn: screen-inset-right\n.column-screen-inset\n.column-screen-inset-shaded\n.column-screen-inset-left\n.column-screen-inset-right\n\n\nScreen\ncolumn: screen\ncolumn: screen-left\ncolumn: screen-right\n.column-screen\n.column-screen-left\n.column-screen-right\n\n\nMargin\ncolumn: margin\n.column-margin"
+  },
+  {
+    "objectID": "authoring/article-layout.html#pdflatex-layout",
+    "href": "authoring/article-layout.html#pdflatex-layout",
+    "title": "Article Layout",
+    "section": "PDF/LaTeX Layout",
+    "text": "PDF/LaTeX Layout\nWhile most of the layout capabilities described are supported for both HTML and PDF output, some are available only for HTML output. You can use the full set of columns for HTML. Then, when you render PDF or LaTeX output, content will automatically be placed in the most appropriate related column (typically this will mean using the main column and right margin). Here is how columns are mapped:\n\nAny column that uses the right margin (e.g. page, screen, screen-right, etc. will be rendered as page-right in LaTeX.\nAny column that uses the left margin will be rendered as normal body content.\n\nPage Geometry\nWhen you render a PDF using content in the margin or content that spans the page, Quarto automatically will adjust the page geometry for the default Quarto LaTeX document classes (KOMA scrartcl, scrreport, or scrbook) to create a slightly narrower body content region and a slightly wider margin region. This adjustment will incorporate known paper sizes to create a reasonable page geometry for most content.\nYou can control the page geometry directly yourself by setting geometry options in your document’s front matter. For example:\n---\ngeometry:\n  - left=.75in\n  - textwidth=4.5in\n  - marginparsep=.25in\n  - marginparwidth=2.25in\n---\nYou can use these options to control the page geometry for the built in document classes or to customize the geometry of other document classes that you may be using.\n\n\n\n\n\n\nIf you’d like to view the page geometry in your rendered PDF, you can pass showframe to the geometry option as in the below example.\n---\ngeometry:\n  - showframe\n---\n\n\n\nCode Blocks\nWhen rendering a PDF that uses the margins for content, Quarto automatically adjusts the appearance of code blocks. Rather than having a solid background color, a left border treatment is used.\nThis enables non-breaking code to overflow into the margin without cosmetic issues created by the code block background (which does not overflow into the margin region).\nYou can disable this treatment by setting the following code-block-border-left: false in your document front matter."
+  },
+  {
+    "objectID": "authoring/figures.html",
+    "href": "authoring/figures.html",
+    "title": "Figures",
+    "section": "",
+    "text": "Quarto includes a number of features aimed at making it easier to work with figures and subfigures, as well as for laying out panels that contain multiple figures, tables, or other content."
+  },
+  {
+    "objectID": "authoring/figures.html#figure-basics",
+    "href": "authoring/figures.html#figure-basics",
+    "title": "Figures",
+    "section": "Figure Basics",
+    "text": "Figure Basics\nIn Pandoc markdown, a figure is created whenever a captioned image appears by-itself in a paragraph. For example:\n![Elephant](elephant.png)\nThis results in the following treatment for various output types:\n\n\n\n\n\n\n\n\nHTML\nPDF\nWord\n\n\n\n\n\n\n\n\n\n\nNote that for LaTeX / PDF output figures are automatically numbered (you can arrange for figures to be numbered in other formats using Cross References).\n\nLinked Figures\nWhen rendering with Quarto, you can enclose a figure within a link and it will still be treated within output as a captioned figure. For example:\n[![Elephant](elephant.png)](https://en.wikipedia.org/wiki/Elephant)\n\n\nFigure Alignment\nFigures are center aligned by default. Add the fig-align attribute to the image to use a different alignment. For example:\n![Elephant](elephant.png){fig-align=\"left\"}\nNote that figure captions are left aligned to accommodate longer caption text (which looks odd when center aligned).\n\n\nAlt Text\nYou can add alternative text to a figure by adding the fig-alt attribute to the image. For example, the following Markdown…\n![](elephant.png){fig-alt=\"A drawing of an elephant.\"}\n… will create the following HTML with the corresponding alt tag:\n<img src=\"elephant.png\" alt=\"A drawing of an elephant.\">\nNote that the figure caption, title, and alt text can all be different. For example, the following code…\n![Elephant](elephant.png \"Title: An elephant\"){fig-alt=\"A drawing of an elephant.\"}\n…produces this HTML:\n<img src=\"elephant.png\" title=\"Title: An elephant\" alt=\"A drawing of an elephant.\">\n\n\nMultiformat Figures\nYou can write markdown that provides a distinct image file format depending on the target output format. To do this simply leave-off the extension, for example:\n![](elephant)\nBy default this will look for elephant.png, however if you are rendering to PDF it will look for elephant.pdf. You can customize this behavior using the default-image-extension option. For example:\nformat:\n  html:\n    default-image-extension: svg\n  pdf:\n    default-image-extension: tex"
+  },
+  {
+    "objectID": "authoring/figures.html#subfigures",
+    "href": "authoring/figures.html#subfigures",
+    "title": "Figures",
+    "section": "Subfigures",
+    "text": "Subfigures\nIf you have several figures that appear as a group, you can create a figure div to enclose them. For example:\n::: {#fig-elephants layout-ncol=2}\n\n![Surus](surus.png){#fig-surus}\n\n![Hanno](hanno.png){#fig-hanno}\n\nFamous Elephants\n:::\nAgain, the last paragraph provides the main caption, and the individual figures carry the sub-captions. Here is what this looks like when rendered as HTML:\n\nNote that the empty lines between the figures (and between the last figure and the caption) are required (it’s what indicates that these images belong to their own paragraphs rather than being multiple images within the same paragraph).\nNote also that we also used a layout-ncol attribute to specify a two-column layout. The next section delves more into customizing figure layouts."
+  },
+  {
+    "objectID": "authoring/figures.html#figure-panels",
+    "href": "authoring/figures.html#figure-panels",
+    "title": "Figures",
+    "section": "Figure Panels",
+    "text": "Figure Panels\nAbove we demonstrate laying out two side-by-side figures with subcaptions and a main caption. You may or may not want the caption / sub-caption treatment, and you might also want to use multiple rows of figures. All of these variations are possible.\nTo layout two figures with their own standalone captions (and no main caption), just eliminate the #fig identifiers and main caption at the bottom:\n::: {layout-ncol=2}\n![Surus](surus.png)\n\n![Hanno](hanno.png)\n:::\n\nYou can also eliminate the captions entirely:\n::: {layout-ncol=2}\n![](surus.png)\n\n![](hanno.png)\n:::\n\nMultiple Rows\nIf you have more than 2 images, you might want to lay them out across multiple rows. You can do this using the layout-nrow attribute. For example:\n::: {layout-nrow=2}\n![Surus](surus.png)\n\n![Hanno](hanno.png)\n\n![Abdul Abbas](abdul-abbas.png)\n\n![Lin Wang](lin-wang.png)\n:::\n\nMore complex figure arrangements (e.g. rows with varying column layouts) are possible. See the Custom Layouts section below for more details."
+  },
+  {
+    "objectID": "authoring/figures.html#figure-divs",
+    "href": "authoring/figures.html#figure-divs",
+    "title": "Figures",
+    "section": "Figure Divs",
+    "text": "Figure Divs\nYou can treat any markdown content you want as a figure by enclosing it in Pandoc div block with an identifier prefaced with #fig-. For example, here we create a figure that includes an embedded iframe:\n::: {#fig-elephant}\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/SNggmeilXDQ\"></iframe>\n\nElephant\n:::\nNote that the last paragraph in the div block is used as the figure caption."
+  },
+  {
+    "objectID": "authoring/figures.html#latex-figures",
+    "href": "authoring/figures.html#latex-figures",
+    "title": "Figures",
+    "section": "LaTeX Figures",
+    "text": "LaTeX Figures\nThis section describes some figure handling options that are specific to LaTeX output.\nOne very important thing to note is that using the fig-env and fig-pos options described below will trigger the creation of a LaTeX floating environment (most often \\begin{figure}). Depending upon where this LaTeX is generated it (e.g. is it within another \\begin{figure}) this could generate invalid LaTeX. To be on the safe side these attributes should typically only be used for images at the very top level of your document.\n\nEnvironments\nThere are a number of LaTeX packages that provide custom figure environments. For example, the mdframed package includes an mdframed environment used to enclose figures in a special border style. By default, Quarto uses the standard figure environment, but you can use the fig-env attribute to specify a custom one. For example:\n---\ntitle: \"Sidenotes\"\nformat:\n  pdf:\n    include-in-header: \n      text: |\n        \\usepackage{mdframed}\n---\n\n![Elephant](elephant.png){fig-env=\"mdframed\"}\n\n\nFigure Position\nThe default LaTeX figure is a floating environment, so the specific location it appears in your document will depend on its size and the nature of the other content around it. You can exercise some control over this behavior using the fig-pos option. The fig-pos option provides a placement specifier for the figure environment. For example, the ht in this LaTeX snippet is the fig-pos:\n\\begin{figure}[ht]\n\n\\end{figure}\nYou can specify fig-pos either at the document level, as a executable code block option, or within markdown. Here we do all three:\n---\ntitle: \"My Document\"\nformat:\n  pdf:\n    fig-pos: 'h'\n---\n\n```{python}\n#| fig-pos: 't'\n\n```\n\n![](figure.png){fig.pos='b'}\nSee this article for additional details on LaTeX figure positioning.\n\n\n\n\n\n\nFigures and Code Blocks\n\n\n\nIf your figure was generated by an executable code block and the code was included in the output (echo: true), then fig-pos will be set to H by default (to try to keep it alongside the code that generated it). In all other cases, default LaTeX handing of figure position is used unless you specify an explicit fig-pos.\n\n\n\n\nPGF/TikZ Graphics\nIf you are creating LaTeX output, Quarto will automatically emit the correct LaTeX for markdown images that reference .tex files containg PGF/TikZ vector graphics. For example, the following markdown images:\n![](image1.tex)\n\n![](image2.tex){width=80%}\nWill be written to LaTeX as:\n\\input{image1.tex}\n\n\\resizebox{0.8\\linewidth}{!}{\\input{image2.tex}}\nAs shown above, width and height percentages are automatically converted to \\linewidth scaled. Alternatively you can specify custom LaTeX for the width and height arguments of \\resizebox."
+  },
+  {
+    "objectID": "authoring/figures.html#caption-locations",
+    "href": "authoring/figures.html#caption-locations",
+    "title": "Figures",
+    "section": "Caption Locations",
+    "text": "Caption Locations\nBy default, figure captions are positioned below figures. You can modify this behavior using the fig-cap-location option. For example:\n---\nfig-cap-location: top\n---\nNote that this option is specified at the top level so that it can be shared by both PDF and HTML formats. If you are only targeting a single format you can place it alongside other format specific options.\nValid values for the caption location include:\n\n\n\nValue\nDescription\n\n\n\n\ntop\nPosition the caption above the figure.\n\n\nbottom\nPosition the caption below the figure.\n\n\nmargin\nPosition the caption in the margin.\n\n\n\nSee the article on Article Layout for additional details on placing captions in the margin."
+  },
+  {
+    "objectID": "authoring/figures.html#complex-layouts",
+    "href": "authoring/figures.html#complex-layouts",
+    "title": "Figures",
+    "section": "Custom Layouts",
+    "text": "Custom Layouts\nThe examples above used the layout-ncol or layout-nrow attributes to create straightforward layouts where all columns are of equal sizes. The layout attribute enables the creation of much more complex layouts.\nFor example, this defines a layout with two equally sized figures in the first row, then another image that spans the entire second row:\n::: {layout=\"[[1,1], [1]]\"}\n![Surus](surus.png)\n\n![Hanno](hanno.png)\n\n![Lin Wang](lin-wang.png)\n:::\n\nThe layout attribute is a 2-dimensional array where the first dimension defines rows and the second columns. In this case \"layout=\"[[1,1], [1]]\" translates to: create two rows, the first of which has two columns of equal size and the second of which has a single column.\nNote that the numbers in a row are arbitrary and don’t need to add up to a particular total. You can therefore use whatever scheme is most natural. For example, here we define columns that occupy varying percentage widths of the row:\n::: {layout=\"[[70,30], [100]]\"}\n![Surus](surus.png)\n\n![Hanno](hanno.png)\n\n![Lin Wang](lin-wang.png)\n:::\nYou can also use negative values to create space between elements. For example:\n::: {layout=\"[[40,-20,40], [100]]\"}\n![Surus](surus.png)\n\n![Hanno](hanno.png)\n\n![Lin Wang](lin-wang.png)\n:::\n\n\nVertical Alignment\nIf you have a layout with a row of images of differing heights, you can control their vertical alignment using the layout-valign attribute. A simple example:\n::: {layout=\"[25,-2,10]\" layout-valign=\"bottom\"}\n![Surus](surus.png)\n\n![Lin Wang](lin-wang.png)\n:::\n\nNote that vertical alignment isn’t limited to images, you can also vertically align any other elements that are included in a panel."
+  },
+  {
+    "objectID": "authoring/figures.html#computations",
+    "href": "authoring/figures.html#computations",
+    "title": "Figures",
+    "section": "Computations",
+    "text": "Computations\n\nFigures\nNote that figure layout attributes also work for figures produced by executable code blocks. Here are examples for both Jupyter and Knitr:\n\nJupyterKnitr\n\n\n```{python}\n#| layout-ncol: 2\n#| fig-cap: \n#|   - \"Line Plot 1\"\n#|   - \"Line Plot 2\"\n\nimport matplotlib.pyplot as plt\nplt.plot([1,23,2,4])\nplt.show()\n\nplt.plot([8,65,23,90])\nplt.show()\n```\n\n\n\n```{r}\n#| layout-ncol: 2\n#| fig-cap: \n#|   - \"Speed and Stopping Distances of Cars\"\n#|   - \"Vapor Pressure of Mercury as a Function of Temperature\"\n\nplot(cars)\nplot(pressure)\n```\n\n\n\n\nNote that in these examples we also use the fig-cap option to apply a caption to each of the generated figures.\n\n\nSubcaptions\nYou can create subcaptions for computational output by combining the the fig-cap and fig-subcap options. When applying captions to computational output you can optionally include a label with a fig- prefix—if you do this then the figure will be numbered and cross-referenceable.\n\nJupyterKnitr\n\n\n```{python}\n#| label: fig-charts\n#| fig-cap: Charts\n#| fig-subcap: \n#|   - \"First\"\n#|   - \"Second\"\n#| layout-ncol: 2\n\nimport matplotlib.pyplot as plt\nplt.plot([1,23,2,4])\nplt.show()\n\nplt.plot([8,65,23,90])\nplt.show()\n```\n\n\n\n```{r}\n#| label: fig-charts\n#| fig-cap: Charts\n#| fig-subcap: \n#|   - \"Cars\"\n#|   - \"Pressure\"\n#| layout-ncol: 2\n\nplot(cars)\nplot(pressure)\n```\n\n\n\n\n\n\nCustom Layout\nThe layout works the same way for figures produced by Knitr or Jupyter. For example, here’s an Rmd code chunk that produces 3 plots and defines a custom layout for them:\n```{r}\n#| layout: [[45,-10, 45], [100]]\n\nplot(cars)\nplot(pressure)\nplot(mtcars)\n```"
+  },
+  {
+    "objectID": "authoring/figures.html#block-layout",
+    "href": "authoring/figures.html#block-layout",
+    "title": "Figures",
+    "section": "Block Layout",
+    "text": "Block Layout\nWhile the examples above illustrate laying out figures, it’s important to note that layout attributes can be used to layout any sort of block content. For example, here we layout 2 lists side-by-side:\n::: {layout-ncol=2}\n### List One\n\n- Item A\n- Item B\n- Item C\n\n### List Two\n\n- Item X\n- Item Y\n- Item Z\n:::\nNote that headings are automatically combined with the block that follows them, so this markdown has a total of 2 columns to lay out. Here’s an example of a paragraph next to a bullet list (without headings):\n::: {layout-ncol=2}\n- Item X\n- Item Y\n- Item Z\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur gravida eu erat et fring. Morbi congue augue vel eros ullamcorper, eget convallis tortor sagittis. Fusce sodales viverra mauris a fringilla. Donec feugiat, justo eu blandit placerat, enim dui volutpat turpis, eu dictum lectus urna eu urna. Mauris sed massa ornare, interdum ipsum a, semper massa. \n:::"
+  },
+  {
+    "objectID": "authoring/jupyter.html",
+    "href": "authoring/jupyter.html",
+    "title": "Tutorial: Authoring",
+    "section": "",
+    "text": "../_tool-chooser.md"
+  },
+  {
+    "objectID": "authoring/jupyter.html#overview",
+    "href": "authoring/jupyter.html#overview",
+    "title": "Tutorial: Authoring",
+    "section": "Overview",
+    "text": "Overview\nIn this tutorial we’ll show you how to author Quarto documents in Jupyter Lab. In particular, we’ll discuss the various document formats you can produce and show you how to add components like table of contents, equations, citations, cross-references, and more."
+  },
+  {
+    "objectID": "authoring/jupyter.html#output-formats",
+    "href": "authoring/jupyter.html#output-formats",
+    "title": "Tutorial: Authoring",
+    "section": "Output Formats",
+    "text": "Output Formats\nQuarto supports rendering notebooks to dozens of different output formats. By default, the html format is used, but you can specify an alternate format (or formats) within document options.\n\nFormat Options\nLet’s create a notebook and define various formats for it to be rendered to and add some options to each of the formats. As a reminder, document options are specified in YAML within a “Raw” cell at the beginning of the notebook. To create a Raw cell, add a cell at the top of the notebook and set its type to Raw using the notebook toolbar:\n\nNow, let’s add some basic document metadata and a default output format.\n---\ntitle: \"Quarto Document\"\nauthor: \"Norah Jones\"\nformat: pdf\njupyter: python3\n---\n\nWe specified pdf as the default output format (if we exclude the format option then it will default to html).\nLet’s add some options to control our PDF output.\n---\ntitle: \"Quarto Document\"\nauthor: \"Norah Jones\"\nformat: \n  pdf: \n    toc: true\n    number-sections: true\njupyter: python3\n---\n\n\n\nMultiple Formats\nSome documents you create will have only a single output format, however in many cases it will be desirable to support multiple formats. Let’s add the html and docx formats to our document.\n---\ntitle: \"Quarto Document\"\nauthor: \"Norah Jones\"\ntoc: true\nnumber-sections: true\nhighlight-style: pygments\nformat: \n  html: \n    code-fold: true\n    html-math-method: katex\n  pdf: \n    geometry: \n      - top=30mm\n      - left=20mm\n  docx: default\njupyter: python3\n---\n\nThere’s a lot to take in here! Let’s break it down a bit. The first two lines are generic document metadata that aren’t related to output formats at all.\ntitle: \"Quarto Document\"\nauthor: \"Norah Jones\"\nThe next three lines are document format options that apply to all formats. which is why they are specified at the root level.\ntoc: true\nnumber-sections: true\nhighlight-style: pygments\nNext, we have the format option, where we provide format-specific options.\nformat:\n  html: \n    code-fold: true\n    html-math-method: katex\n  pdf:\n    geometry: \n      - top=30mm\n      - left=30mm\n  docx: default\nThe html and pdf formats each provide an option or two. For example, for the HTML output we want the user to have control over whether to show or hide the code (code-fold: true) and use katex for math text. For PDF we define some margins. The docx format is a bit different—it specifies docx: default. This means just use all of the default options for the format."
+  },
+  {
+    "objectID": "authoring/jupyter.html#rendering",
+    "href": "authoring/jupyter.html#rendering",
+    "title": "Tutorial: Authoring",
+    "section": "Rendering",
+    "text": "Rendering\nThe formats specified within document options define what is rendered by default. If we render the notebook with all the options given above using the following.\n\n\nTerminal\n\nquarto render notebook.ipynb\n\nThen, the following files would be created.\n\nnotebook.html\nnotebook.pdf\nnotebook.docx\n\nWe can select one or more formats using the --to option.\n\n\nTerminal\n\nquarto render notebook.ipynb --to docx\nquarto render notebook.ipynb --to docx,pdf\n\nNote that the target file (in this case notebook.ipynb) should always be the very first command line argument.\nIf needed we can also render formats that aren’t specified within document options.\n\n\nTerminal\n\nquarto render notebook.ipynb --to odt\n\nSince the odt format isn’t included within document options, the default options for the format will be used.\n\n\n\n\n\n\nNote that when rendering an .ipynb Quarto will not execute the cells within the notebook by default (the presumption being that you already executed them while editing the notebook). If you want to execute the cells you can pass the --execute flag to render.\n\n\nTerminal\n\nquarto render notebook.ipynb --execute"
+  },
+  {
+    "objectID": "authoring/jupyter.html#sections",
+    "href": "authoring/jupyter.html#sections",
+    "title": "Tutorial: Authoring",
+    "section": "Sections",
+    "text": "Sections\nYou can use a table of contents and/or section numbering to make it easier for readers to navigate your document. Do this by adding the toc and/or number-sections options to document options. Note that these options are typically specified at the root level because they are shared across all formats.\n---\ntitle: Quarto Basics\nauthor: Norah Jones\ndate: 'May 22, 2021'\ntoc: true\nnumber-sections: true\njupyter: python3\n---\n\n## Colors\n\n- Red\n- Green \n- Blue\n\n## Shapes\n\n- Square\n- Circle\n- Triangle\n\n## Textures\n\n- Smooth\n- Bumpy\n- Fuzzy\n\nHere’s what this document looks like when rendered to HTML.\n\nThere are lots of options available for controlling how the table of contents and section numbering behave. See the output format documentation (e.g. HTML, PDF, MS Word) for additional details."
+  },
+  {
+    "objectID": "authoring/jupyter.html#equations",
+    "href": "authoring/jupyter.html#equations",
+    "title": "Tutorial: Authoring",
+    "section": "Equations",
+    "text": "Equations\nYou can add LaTeX equations to markdown cells within Jupyter Lab.\nEinstein's theory of special relatively that expresses the equivalence of mass and energy:\n\n$E = mc^{2}$\n\\(E = mc^{2}\\)\n\nEquations are rendered when you run the cell.\n\nInline equations are delimited with $…$. To create equations in a new line (display equation) use $$…$$. See the documentation on markdown equations for additional details."
+  },
+  {
+    "objectID": "authoring/jupyter.html#citations",
+    "href": "authoring/jupyter.html#citations",
+    "title": "Tutorial: Authoring",
+    "section": "Citations",
+    "text": "Citations\nTo cite other works within a Quarto document. First create a bibliography file in a supported format (BibTeX or CSL). Then, link the bibliography to your document using the bibliography YAML metadata option.\nHere’s a notebook that includes a bibliography and single citation. Note that markdown cells are un-executed so you can see all of the syntax.\n---\ntitle: Quarto Basics\nformat: html\nbibliography: references.bib\njupyter: python3\n---\n\n## Overview\n\nKnuth says always be literate [@knuth1984].\n\n```{python}\n1 + 1\n```\n\n## References\n\nNote that items within the bibliography are cited using the @citeid syntax.\n Knuth says always be literate [@knuth1984].\nReferences will be included at the end of the document, so we include a ## References heading at the bottom of the notebook.\nHere is what this document looks like when rendered.\n\n\nThe @ citation syntax is very flexible and includes support for prefixes, suffixes, locators, and in-text citations. See the documentation on Citations and Footnotes to learn more."
+  },
+  {
+    "objectID": "authoring/jupyter.html#cross-references",
+    "href": "authoring/jupyter.html#cross-references",
+    "title": "Tutorial: Authoring",
+    "section": "Cross References",
+    "text": "Cross References\nCross-references make it easier for readers to navigate your document by providing numbered references and hyperlinks to figures, tables, equations, and sections. Cross-reference-able entities generally require a label (unique identifier) and a caption.\nThe notebook below illustrates cross-referencing various types of entities. Once again, the markdown cells are again un-executed so that the syntax is visible.\n---\ntitle: Quarto Crossrefs\nformat: html\njupyter: python3\n---\n\n## Overview\n\nSee @fig-simple in @sec-plot for a demonstration of a simple plot. \n\nSee @eq-stddev to better understand standard deviation.\n\n## Plot {#sec-plot}\n\n```{python}\n#| label: fig-simple\n#| fig-cap: Simple Plot\nimport matplotlib.pyplot as plt\nplt.plot([1,23,2,4])\nplt.show()\n```\n\n## Equation {#sec-equation}\n\n$$\ns = \\sqrt{\\frac{1}{N-1} \\sum_{i=1}^N (x_i - \\overline{x})^2}\n$$ {#eq-stddev}\n\\[\nx + 1\n\\]\n\nThis example includes cross-referenced sections, figures, and equations. The table below shows how we expressed each of these.\n\n\n\n\n\n\n\n\nEntity\nReference\nLabel / Caption\n\n\n\n\nSection\n@sec-plot\nID added to heading:\n# Plot {#sec-plot}\n\n\nFigure\n@fig-simple\nYAML options in code cell:\n#| label: fig-simple\n#| fig-cap: Simple Plot\n\n\nEquation\n@eq-stddev\nAt end of display equation:\n$$ {#eq-stddev}\n\n\n\nAnd finally, here is what this notebook looks like when rendered.\n\nSee the article on Cross References to learn more, including how to customize caption and reference text (e.g. use “Fig.” rather than “Figure”)."
+  },
+  {
+    "objectID": "authoring/jupyter.html#callouts",
+    "href": "authoring/jupyter.html#callouts",
+    "title": "Tutorial: Authoring",
+    "section": "Callouts",
+    "text": "Callouts\nCallouts are an excellent way to draw extra attention to certain concepts, or to more clearly indicate that certain content is supplemental or applicable to only some scenarios.\nCallouts are markdown divs that have special callout attributes. Here’s an example of creating a callout within a markdown cell.\n::: {.callout-note}\nNote that there are five types of callouts, including:\n`note`, `tip`, `warning`, `caution`, and `important`.\n:::\n\nNote that if we run this cell you’ll see that the output looks nothing like a callout! This is because callouts aren’t supported natively by the markdown renderer built in to Jupyter Lab.\n\nHowever, when we ultimately render the document with Quarto the callout appears as intended.\n\n\n\n\n\n\nNote\n\n\n\nNote that there are five types of callouts, including note, tip, warning, caution, and important.\n\n\nYou can learn more about the different types of callouts and options for their appearance in the Callouts documentation."
+  },
+  {
+    "objectID": "authoring/jupyter.html#article-layout",
+    "href": "authoring/jupyter.html#article-layout",
+    "title": "Tutorial: Authoring",
+    "section": "Article Layout",
+    "text": "Article Layout\nThe body of Quarto articles have a default width of approximately 700 pixels. This width is chosen to optimize readability. This normally leaves some available space in the document margins and there are a few ways you can take advantage of this space.\nIn this notebook, we use the reference-location option to indicate that we would like footnotes to be placed in the right margin.\nWe also use the column: screen-inset cell option to indicate we would like our figure to occupy the full width of the screen, with a small inset.\n---\ntitle: Quarto Layout\nformat: html\nreference-location: margin\njupyter: python3\n---\n\n## Placing Colorbars\n\nColorbars indicate the quantitative extent of image data.\nPlacing in a figure is non-trivial because room needs to\nbe made for them. The simplest case is just attaching a \ncolorbar to each axes:^[See the [Matplotlib Gallery](https://matplotlib.org/stable/gallery/subplots_axes_and_figures/colorbar_placement.html) to explore colorbars further].\n\n```{python}\n#| code-fold: true\n#| column: screen-inset\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nfig, axs = plt.subplots(2, 2)\nfig.set_size_inches(20, 8)\ncmaps = ['RdBu_r', 'viridis']\nfor col in range(2):\n    for row in range(2):\n        ax = axs[row, col]\n        pcm = ax.pcolormesh(\n          np.random.random((20, 20)) * (col + 1),\n          cmap=cmaps[col]\n        )\n        fig.colorbar(pcm, ax=ax)\nplt.show()\n```\n\nHere is what this document looks like when rendered.\n\nYou can locate citations, footnotes, and asides in the margin. You can also define custom column spans for figures, tables, or other content. See the documentation on Article Layout for additional details.\n_footer.md"
+  },
+  {
+    "objectID": "authoring/rstudio.html",
+    "href": "authoring/rstudio.html",
+    "title": "Tutorial: Authoring",
+    "section": "",
+    "text": "../_tool-chooser.md"
+  },
+  {
+    "objectID": "authoring/rstudio.html#overview",
+    "href": "authoring/rstudio.html#overview",
+    "title": "Tutorial: Authoring",
+    "section": "Overview",
+    "text": "Overview\nIn this tutorial we’ll show you how to author Quarto documents in RStudio. In particular, we’ll discuss the various document formats you can produce with the same source code and show you how to add components like table of contents, equations, citations, etc. The visual markdown editor in RStudio makes many of these tasks easier so we’ll highlight its use in this tutorial, but note that it’s possible to accomplish these tasks in the source editor as well.\nIf you would like to follow along step-by-step in your own environment, make sure that you have the latest release of RStudio (v2022.07), which you can download here, installed."
+  },
+  {
+    "objectID": "authoring/rstudio.html#output-formats",
+    "href": "authoring/rstudio.html#output-formats",
+    "title": "Tutorial: Authoring",
+    "section": "Output Formats",
+    "text": "Output Formats\nQuarto supports rendering notebooks to dozens of different output formats. By default, the html format is used, but you can specify an alternate format (or formats) within document options.\n\nFormat Options\nYou can choose the format you want to render your Quarto document to at the time of creating your new document. To create a new document, go to File > New File > Quarto Document… Alternatively, use the command palette (accessible via Ctrl+Shift+P), search for Create a new Quarto document and hit return.\nIn the Title field, give a title for your document (e.g. the screenshot below suggests “Housing Prices”) and add your name to the Author field. Next, you will select the output format for your document. By default, RStudio suggests using HTML as the output, let’s leave that default for now.\n\n\n\n\n\nA new document will be created with the following YAML.\n---\ntitle: \"Housing Prices\"\nauthor: \"Mine Çetinkaya-Rundel\"\n---\nNote that our format choice (HTML) is not even reflected in the YAML as it is the default output format for Quarto documents. However you can directly edit the YAML to change the output format, e.g. to PDF (pdf) or MS Word (docx). Add format: pdf to your document’s YAML as shown below.\n---\ntitle: \"Housing Prices\"\nauthor: \"Mine Çetinkaya-Rundel\"\nformat: pdf\n---\nUnfortunately, this document has no content, so rendering it would not result in very interesting output. To make it a bit easier to demonstrate all the features we want to highlight in this tutorial, let’s close this empty document and start with one that has a little bit of content in it. If you would like to follow along step-by-step in your own environment, download the Quarto document (.qmd) below and open it in RStudio.\n\n\n\n\n\n\n Download authoring.qmd\n\n\n\nIn order to create PDFs you will need to install a recent distribution of LaTeX. We recommend the use of TinyTeX (which is based on TexLive), which you can install with the following command:\n\n\nTerminal\n\nquarto install tool tinytex\n\nSee the article on PDF Engines for details on using other LaTeX distributions and PDF compilation engines.\nOnce you have LaTeX setup, click on  Render (or use the keyboard shortcut ⇧⌘K). We recommend also checking the box for Render on Save for a live preview of your changes. As shown below, you should see the rendered PDF in the Viewer in RStudio.\n\nNext, let’s add an option to the YAML, e.g. to add line numbers to the code chunks (code-line-numbers: true). Add this option to your document’s YAML as shown below, paying attention to the indentation scheme. Under format: our format choice pdf is indented (with two spaces) and it’s followed by : to indicate that further options for that format will be specified. In the next line, further indented by two spaces, we add code-line-numbers: true.\n---\ntitle: \"Housing Prices\"\nauthor: \"Mine Çetinkaya-Rundel\"\nformat:\n  pdf:\n    code-line-numbers: true\n---\nIf you checked Render on Save earlier, just save the document after making this change for a live preview. Otherwise render the document to see your updates reflected, including a table of contents that looks like the following.\n\n\n\n\n\nAn incredibly exciting format option that we won’t go into too much detail in this tutorial is revealjs. Yes, you can make presentations with Quarto as well! In fact, Quarto supports supports a variety of formats for creating presentations, including revealjs for HTML slides, pptx for PowerPoint, and beamer for LaTeX/PDF. The Presentations article gives a thorough walk through of creating slide decks with Quarto.\n\n\nMultiple Formats\nSome documents you create will have only a single output format, however in many cases it will be desirable to support multiple formats. Let’s add the html and docx formats to our document and modify some options specific to each format.\n---\ntitle: \"Housing Prices\"\nauthor: \"Mine Çetinkaya-Rundel\"\nhighlight-style: pygments\nformat:\n  html: \n    code-fold: true\n    html-math-method: katex\n  pdf:\n    geometry: \n      - top=30mm\n      - left=30mm\n  docx: default\n---\nThere’s a lot to take in here! Let’s break it down a bit. The first two lines are generic document metadata that aren’t related to output formats at all.\n---\ntitle: \"Housing Prices\"\nauthor: \"Mine Çetinkaya-Rundel\"\n---\nThe next line is a document format option that applies to all formats, which is why it is specified at the root level.\n---\nhighlight-style: pygments\n---\nNext, we have the format option, where we provide format-specific options.\n---\nformat:\n  html: \n    code-fold: true\n    html-math-method: katex\n  pdf:\n    geometry: \n      - top=30mm\n      - left=30mm\n  docx: default\n---\nThe html and pdf formats each provide an option or two. For example, for the HTML output we want the user to have control over whether to show or hide the code (code-fold: true) and use katex for math text. For PDF we define some margins. The docx format is a bit different—it specifies docx: default. This indicates that we just want to use all of the default options for the format."
+  },
+  {
+    "objectID": "authoring/rstudio.html#rendering",
+    "href": "authoring/rstudio.html#rendering",
+    "title": "Tutorial: Authoring",
+    "section": "Rendering",
+    "text": "Rendering\nClicking the  Render button (or using the keyboard shortcut ⇧⌘K) in RStudio will render the document to the first format listed in the YAML.\n\nNote that the  Render button also has a drop down menu that enables you to render to any of the formats listed in YAML front matter:\n\nIf you would like to render to all formats, you can do so with the quarto package, which provides an R interface to the Quarto CLI. For example, to render the current document, use quarto::quarto_render(). You can also specify the name of the document you want to render as well as the output format(s).\nquarto::quarto_render(\n  \"authoring.qmd\", \n  output_format = c(\"pdf\", \"html\", \"docx\")\n)\nAs a result, you will see three new files appear in your Files pane:\n\nauthoring.docx\nauthoring.html\nauthoring.pdf"
+  },
+  {
+    "objectID": "authoring/rstudio.html#sections",
+    "href": "authoring/rstudio.html#sections",
+    "title": "Tutorial: Authoring",
+    "section": "Sections",
+    "text": "Sections\nYou can use a table of contents and/or section numbering to make it easier for readers to navigate your document. Do this by adding the toc and/or number-sections options to document options. Note that these options are typically specified at the root level because they are shared across all formats.\n---\ntitle: \"Housing Prices\"\nauthor: \"Mine Çetinkaya-Rundel\"\ntoc: true\nnumber-sections: true\nhighlight-style: pygments\nformat:\n  html: \n    code-fold: true\n    html-math-method: katex\n  pdf:\n    geometry: \n      - top=30mm\n      - left=30mm\n  docx: default\n---\nHere’s what this document looks like when rendered to HTML.\n\nThere are lots of options available for controlling how the table of contents and section numbering behave. See the output format documentation (e.g. HTML, PDF, MS Word) for additional details."
+  },
+  {
+    "objectID": "authoring/rstudio.html#equations",
+    "href": "authoring/rstudio.html#equations",
+    "title": "Tutorial: Authoring",
+    "section": "Equations",
+    "text": "Equations\nIf you are using the visual editor mode, you can add LaTeX equations to Quarto documents in RStudio using the Insert Anything tool. You can access it with / at the beginning of an empty block or Cmd+/ anywhere else.\n\n\n\n\n\nDisplay equations (in a new line) are delimited with $$…$$ while inline equations are delimited with $…$. Add the following as display math in the document.\nprice = \\hat{\\beta}_0 + \\hat{\\beta}_1 \\times area + \\epsilon\nRStudio displays a rendered version of the tutorial as you type it in the editor. See the documentation on markdown equations for additional details."
+  },
+  {
+    "objectID": "authoring/rstudio.html#citations",
+    "href": "authoring/rstudio.html#citations",
+    "title": "Tutorial: Authoring",
+    "section": "Citations",
+    "text": "Citations\nThe Insert Anything tool can also be used to insert citations to your document.\n\nIn the next window you can insert a citation via from a variety of sources including your document bibliography, Zotero personal or group libraries, DOI (Document Object Identifier) references, and searches of Crossref, DataCite, or PubMed. You can find out more about citations with the visual editor here.\nSelect From DOI on the left and copy-and-paste the DOI 10.1093/comjnl/27.2.97 in the search bar and hit Search. Then, select the found reference, and Insert it into your document.\n\nIf this is the first citation you are adding to your document, RStudio will automatically create a bibliography file for you. This file is called references.bib by default and RStudio will also add bibliography: references.bib to your document’s YAML metadata.\nNote that items within the bibliography are cited using the @citeid syntax. Add the following text to your document.\nWe're going to do this analysis using literate programming [@knuth1984].\nReferences will be included at the end of the document, so we include a ## References heading at the bottom of the notebook. You might also add .unnumbered class to this section by clicking on the three dots (…) to edit its attributes.\n\nHere is what this document looks like when rendered (with middle sections removed to highlight the relevant parts.\n\nThe @ citation syntax is very flexible and includes support for prefixes, suffixes, locators, and in-text citations. See the documentation on Citations and Footnotes to learn more."
+  },
+  {
+    "objectID": "authoring/rstudio.html#cross-references",
+    "href": "authoring/rstudio.html#cross-references",
+    "title": "Tutorial: Authoring",
+    "section": "Cross References",
+    "text": "Cross References\nCross-references make it easier for readers to navigate your document by providing numbered references and hyperlinks to figures, tables, equations, and sections. Cross-reference-able entities generally require a label (unique identifier) and a caption.\nFor example, to add a label to the equation inserted earlier, click on the three dots to edit its attributes and use the suggested format (starting with #eq-) to label the equation.\n\nThen, add a cross reference using the Insert Anything tool in the visual editor. You might add a sentence like \"We can fit a simple linear regression model of the form shown in\" to contextualize the cross reference and then add the reference to the end of that sentence.\n\nIn the Insert Cross Reference menu, navigate to the desired cross reference entity on the left, and select the equation labeled earlier.\n\nAlternatively, start typing the label of the equation to be referenced in the visual editor, and the autofill tool will bring up the cross references to choose from.\n\nBelow we illustrate cross-referencing various types of entities using fragments from the document you’ve been working with.\nWe present the results of exploratory data analysis in @sec-eda and the regression model in @sec-model.\n\n\n@fig-scatterplot displays the relationship between these two variables in a scatterplot.\n\n\n@tbl-stats displays basic summary statistics for these two variables.\n\n\nWe can fit a simple linear regression model of the form shown in @eq-slr.\nThis examples include cross-referenced sections, figures, and equations. The table below summarizes how we express each of these.\n\n\n\n\n\n\n\n\nEntity\nReference\nLabel / Caption\n\n\n\n\nSection\n@sec-eda\nID added to heading:\n# Exploratory data analysis {#sec-eda}\n\n\nFigure\n@fig-scatterplot\nYAML options in code cell:\n#| label: fig-scatterplot\n#| fig-cap: \"Scatterplot of price vs. area of houses in Duke Forest\"\n\n\nTable\n@tbl-stats\nYAML options in code cell:\n#| label: tbl-stats\n#| tbl-cap: \"Summary statistics for price and area of houses in Duke Forest\"\n\n\nEquation\n@eq-slr\nAt end of display equation:\n$$ {#eq-slr}\n\n\n\nSee the article on Cross References to learn more, including how to customize caption and reference text (e.g. use “Fig.” rather than “Figure”)."
+  },
+  {
+    "objectID": "authoring/rstudio.html#callouts",
+    "href": "authoring/rstudio.html#callouts",
+    "title": "Tutorial: Authoring",
+    "section": "Callouts",
+    "text": "Callouts\nCallouts are an excellent way to draw extra attention to certain concepts, or to more clearly indicate that certain content is supplemental or applicable to only some scenarios.\nCallouts are markdown divs that have special callout attributes. We can insert a callout using the Insert Anything tool.\n\nIn the subsequent dialogue you can select one of five types of callout (note, tip, important, caution, or warning), customize its appearance (default, simple, or minimal), and decide whether you want to show the icon.\n\n\n\n\n\nThen, try inserting the following text in the callout box.\nThis is a pretty incomplete analysis, but hopefully the document provides a good overview of some of the authoring features of Quarto!\nHere is what a callout looks like in the visual editor.\n\nAnd here is the rendered callout in the output document.\n\nYou can learn more about the different types of callouts and options for their appearance in the Callouts documentation."
+  },
+  {
+    "objectID": "authoring/rstudio.html#article-layout",
+    "href": "authoring/rstudio.html#article-layout",
+    "title": "Tutorial: Authoring",
+    "section": "Article Layout",
+    "text": "Article Layout\nThe body of Quarto articles have a default width of approximately 700 pixels. This width is chosen to optimize readability. This normally leaves some available space in the document margins and there are a few ways you can take advantage of this space.\nWe can use the column: page-right cell option to indicate we would like our figure to occupy the full width of the screen, with some inset. Go ahead and add this chunk option to the chunk labeled fig-histogram.\n#| label: fig-histogram\n#| fig-cap: \"Histograms of individual variables\"\n#| fig-subcap:\n#|   - \"Histogram of `price`s\"\n#|   - \"Histogram of `area`s\" \n#| layout-ncol: 2\n#| column: page-right\nHere is what the relevant section of the document looks like when rendered.\n\nYou can locate citations, footnotes, and asides in the margin. You can also define custom column spans for figures, tables, or other content. See the documentation on Article Layout for additional details."
+  },
+  {
+    "objectID": "authoring/rstudio.html#publishing",
+    "href": "authoring/rstudio.html#publishing",
+    "title": "Tutorial: Authoring",
+    "section": "Publishing",
+    "text": "Publishing\nOnce your document is rendered to HTML, you can publish to RPubs (a free service from RStudio for sharing documents on the web) simply by clicking the  Publish button on the editor toolbar or preview window. Alternatively, you can use the quarto::quarto_publish_doc() function.\nquarto::quarto_publish_doc(\n  \"authoring.qmd\", \n  server = \"rpubs.com\"\n  )\nOther possible publishing options include RStudio Connect and ShinyApps as well as GitHub Pages, Netlify, etc. The Publishing HTML article gives a much more detailed overview of your publishing options.\nIf you followed along step-by-step with this tutorial, you should now have a Quarto document that implements everything we covered. Otherwise, you can download a completed version of computations.qmd below.\n\n\n\n\n\n\n Download authoring-complete.qmd\n\n\n\n_footer.md"
+  },
+  {
+    "objectID": "authoring/text-editor.html",
+    "href": "authoring/text-editor.html",
+    "title": "Tutorial: Authoring",
+    "section": "",
+    "text": "../_tool-chooser.md\n_text-editor.md"
+  },
+  {
+    "objectID": "authoring/vscode.html",
+    "href": "authoring/vscode.html",
+    "title": "Tutorial: Authoring",
+    "section": "",
+    "text": "Additionally, if you are interested in seeing how to use Quarto from within .ipynb notebooks, check out the documentation on using the VS Code Notebook Editor with Quarto."
+  },
+  {
+    "objectID": "computations/jupyter.html",
+    "href": "computations/jupyter.html",
+    "title": "Tutorial: Computations",
+    "section": "",
+    "text": "../_tool-chooser.md"
+  },
+  {
+    "objectID": "computations/jupyter.html#overview",
+    "href": "computations/jupyter.html#overview",
+    "title": "Tutorial: Computations",
+    "section": "Overview",
+    "text": "Overview\nQuarto has a wide variety of options available for controlling how code and computational output appear within rendered documents. In this tutorial we’ll take a simple notebook that has some numeric output and plots, and cover how to apply these options.\nIf you want to follow along step-by-step in your own environment, download the notebook below:\n\n\n\n\n\n\n Download computations.ipynb\n\n\n\nThen, create a new directory to work within and copy the notebook into this directory.\nOnce you’ve done that, switch to this directory in a Terminal, install notebook dependencies (if necessary), and open Jupyter Lab to get started working with the notebook. The commands you can use for installation and opening Jupyter Lab are given in the table below.\n\n\n\n\n\n\n\nPlatform\nCommands\n\n\n\n\nMac/Linux\npython3 -m pip install jupyter matplotlib plotly\npython3 -m jupyter lab computations.ipynb\n\n\nWindows\npy -m pip install jupyter matplotlib plotly\npy -m jupyter lab computations.ipynb\n\n\n\nThe notebook as we start out is shown below. Note that none of the cells are executed yet.\n---\ntitle: Quarto Computations\njupyter: python3\n---\n\n## NumPy\n\n```{python}\nimport numpy as np\na = np.arange(15).reshape(3, 5)\na\n```\n\n## Matplotlib\n\n```{python}\nimport matplotlib.pyplot as plt\n\nfig = plt.figure()\nx = np.arange(10)\ny = 2.5 * np.sin(x / 20 * np.pi)\nyerr = np.linspace(0.05, 0.2, 10)\n\nplt.errorbar(x, y + 3, yerr=yerr, label='both limits (default)')\nplt.errorbar(x, y + 2, yerr=yerr, uplims=True, label='uplims=True')\nplt.errorbar(x, y + 1, yerr=yerr, uplims=True, lolims=True,\n             label='uplims=True, lolims=True')\n\nupperlimits = [True, False] * 5\nlowerlimits = [False, True] * 5\nplt.errorbar(x, y, yerr=yerr, uplims=upperlimits, lolims=lowerlimits,\n             label='subsets of uplims and lolims')\n\nplt.legend(loc='lower right')\nplt.show(fig)\n```\n\n## Plotly\n\n```{python}\nimport plotly.express as px\nimport plotly.io as pio\ngapminder = px.data.gapminder()\ngapminder2007 = gapminder.query(\"year == 2007\")\nfig = px.scatter(gapminder2007, \n                 x=\"gdpPercap\", y=\"lifeExp\", color=\"continent\", \n                 size=\"pop\", size_max=60,\n                 hover_name=\"country\")\nfig.show()\n```\n\nNext, create a new Terminal within Jupyter Lab to use for Quarto commands.\n\nFinally, run quarto preview in the Terminal, and position Jupyter Lab side-by-side with the browser showing the preview.\n\n\nTerminal\n\nquarto preview computations.ipynb\n\n\nGo ahead and run all of the cells and then save the notebook. You’ll see that the preview updates immediately."
+  },
+  {
+    "objectID": "computations/jupyter.html#cell-output",
+    "href": "computations/jupyter.html#cell-output",
+    "title": "Tutorial: Computations",
+    "section": "Cell Output",
+    "text": "Cell Output\nAll of the code in the notebook is displayed within the rendered document. However, for some documents, you may want to hide all of the code and just show the output. Let’s go ahead and specify echo: false within the document execute options to prevent code from being printed.\n---\ntitle: Quarto Computations\nexecute:\n  echo: false\njupyter: python3\n---\n\nSave the notebook after making this change. The preview will update to show the output with no code.\n\nYou might want to selectively enable code echo for some cells. To do this add the echo: true cell option. Try this with the NumPy cell.\n```{python}\n#| echo: true\n\nimport numpy as np\na = np.arange(15).reshape(3, 5)\na\n```\n\nSave the notebook and note that the code is now included for the NumPy cell.\n\nThere a large number of other options available for cell output, for example warning to show/hide warnings (which can be especially helpful for package loading messages), include as a catch all for preventing any output (code or results) from being included in output, and error to prevent errors in code execution from halting the rendering of the document (and print the error in the rendered document).\nSee the Jupyter Cell Options documentation for additional details."
+  },
+  {
+    "objectID": "computations/jupyter.html#code-folding",
+    "href": "computations/jupyter.html#code-folding",
+    "title": "Tutorial: Computations",
+    "section": "Code Folding",
+    "text": "Code Folding\nRather than hiding code entirely, you might want to fold it and allow readers to view it at their discretion. You can do this via the code-fold option. Remove the echo option we previously added and add the code-fold HTML format option.\n---\ntitle: Quarto Computations\nexecute:\n   code-fold: true\njupyter: python3\n---\n\nSave the notebook. Now a “Code” widget is available above the output of each cell.\n\nYou can also provide global control over code folding. Try adding code-tools: true to the HTML format options.\n---\ntitle: Quarto Computations\nexecute:\n   code-fold: true\n   code-tools: true\njupyter: python3\n---\n\nSave the notebook and you’ll see that a code menu appears at the top right of the document that provides global control over showing and hiding code.\n\n```{python}\n#| label: fig-limits\n#| fig-cap: \"Errorbar limit selector\"\n\nimport matplotlib.pyplot as plt\n\nfig = plt.figure()\nfig.set_size_inches(12, 7)\n```\nLet’s improve the appearance of our Matplotlib output. It could certainly stand to be wider, and it would be nice to provide a caption and a label for cross-referencing.\nGo ahead and modify the Matplotlib cell to include label and fig-cap options as well as a call to fig.set_size_inches() to set a larger figure size with a wider aspect ratio.\n```{python}\n#| label: fig-limits\n#| fig-cap: \"Errorbar limit selector\"\n\nimport matplotlib.pyplot as plt\n\nfig = plt.figure()\nfig.set_size_inches(12, 7)\n```\n\nExecute the cell to see the updated plot. Then, save the notebook so that the Quarto preview is updated."
+  },
+  {
+    "objectID": "computations/jupyter.html#multiple-figures",
+    "href": "computations/jupyter.html#multiple-figures",
+    "title": "Tutorial: Computations",
+    "section": "Multiple Figures",
+    "text": "Multiple Figures\nThe Plotly cell visualizes GDP and life expectancy data from a single year (2007). Let’s plot another year next to it for comparison and add a caption and subcaptions. Since this will produce a wider visualization we’ll also use the column option to lay it out across the entire page rather than being constrained to the body text column.\nThere are quite a few changes to this cell. Copy and paste the code below into the notebook if you want to try them locally.\n#| label: fig-gapminder\n#| fig-cap: Life Expectancy and GDP\n#| fig-subcap:\n#|   - \"Gapminder: 1957\"\n#|   - \"Gapminder: 2007\"\n#| layout-ncol: 2\n#| column: page\n\nimport plotly.express as px\nimport plotly.io as pio\ngapminder = px.data.gapminder()\ndef gapminder_plot(year):\n    gapminderYear = gapminder.query(\"year == \" + \n                                    str(year))\n    fig = px.scatter(gapminderYear, \n                     x=\"gdpPercap\", y=\"lifeExp\",\n                     size=\"pop\", size_max=60,\n                     hover_name=\"country\")\n    fig.show()\n    \ngapminder_plot(1957)\ngapminder_plot(2007)\nRun the modified cell then save the notebook. The preview will update as follows:\n\nLet’s discuss some of the new options used here. You’ve seen fig-cap before but we’ve now added a fig-subcap option.\n#| fig-cap: Life Expectancy and GDP \n#| fig-subcap:\n#|   - \"Gapminder: 1957\"\n#|   - \"Gapminder: 2007\"\nFor code cells with multiple outputs adding the fig-subcap option enables us to treat them as subfigures.\nWe also added an option to control how multiple figures are laid out—in this case we specified side-by-side in two columns.\n#| layout-ncol: 2\nIf you have 3, 4, or more figures in a panel there are many options available for customizing their layout. See the article on Figures for details.\nFinally, we added an option to control the span of the page that our figures occupy.\n#| column: page\nThis allows our figure display to span out beyond the normal body text column. See the documentation on Article Layout to learn about all of the available layout options.\n_footer.md"
+  },
+  {
+    "objectID": "computations/rstudio.html",
+    "href": "computations/rstudio.html",
+    "title": "Tutorial: Computations",
+    "section": "",
+    "text": "Quarto supports executable code blocks within markdown. This allows you to create fully reproducible documents and reports—the code required to produce your output is part of the document itself, and is automatically re-run whenever the document is rendered.\nIn this tutorial we’ll show you how to author fully reproducible computational documents with Quarto in RStudio.\nIf you would like to follow along step-by-step in your own environment, download the Quarto document (.qmd) below, open it in RStudio, and click on  Render (or use the keyboard shortcut ⇧⌘K). We recommend also checking the box for Render on Save for a live preview of your changes.\n\n\n\n\n\n\n Download computations.qmd\n\n\n\nNote that you will need to open this document in the latest release of RStudio (v2022.07) which you can download here."
+  },
+  {
+    "objectID": "computations/rstudio.html#cell-output",
+    "href": "computations/rstudio.html#cell-output",
+    "title": "Tutorial: Computations",
+    "section": "Cell Output",
+    "text": "Cell Output\nBy default, the code and its output are displayed within the rendered document.\n\nHowever, for some documents, you may want to hide all of the code and just show the output. To do so, specify echo: false within the execute option in the YAML.\n---\ntitle: \"Quarto Computations\"\nexecute:\n  echo: false\n---\nIf you checked Render on Save earlier, just save the document after making this change for a live preview. Otherwise render the document to see your updates reflected. The result will look like the following.\n\nYou might want to selectively enable code echo for some cells. To do this add the echo: true cell option. Try this with the chunk labelled scatterplot.\n#| label: scatterplot\n#| echo: true\n\nggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +\n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  theme_minimal()\nSave the document again and note that the code is now included for the scatterplot chunk.\n\nThe echo option can be set to true, false, or fenced. The last one might be of special interest for writing documentation and teaching materials as it allows you to include the fenced code delimiter in your code output to emphasize that executable code requires that delimiter. You can read more about this option in the Fenced Echo documentation.\nThere a large number of other options available for cell output, for example warning for showing/hiding warnings (which can be especially helpful for package loading messages), include as a catch all for preventing any output (code or results) from being included in output, and error to prevent errors in code execution from halting the rendering of the document (and print the error in the rendered document).\nSee the Knitr Cell Options documentation for additional details."
+  },
+  {
+    "objectID": "computations/rstudio.html#code-folding",
+    "href": "computations/rstudio.html#code-folding",
+    "title": "Tutorial: Computations",
+    "section": "Code Folding",
+    "text": "Code Folding\nRather than hiding code entirely, you might want to fold it and allow readers to view it at their discretion. You can do this via the code-fold option. Remove the echo option we previously added and add the code-fold HTML format option.\n---\ntitle: \"Quarto Computations\"\nformat:\n  html:\n    code-fold: true\n---\nSave the document again and note that new Code widgets are now included for each code chunk.\n\nYou can also provide global control over code folding. Try adding code-tools: true to the HTML format options.\n---\ntitle: \"Quarto Computations\"\nformat:\n  html:\n    code-fold: true\n    code-tools: true\n---\nSave the document and you’ll see that a code menu appears at the top right of the rendered document that provides global control over showing and hiding all code."
+  },
+  {
+    "objectID": "computations/rstudio.html#code-linking",
+    "href": "computations/rstudio.html#code-linking",
+    "title": "Tutorial: Computations",
+    "section": "Code Linking",
+    "text": "Code Linking\nThe code-link option enables hyper-linking of functions within code blocks to their online documentation. Try adding code-link: true to the HTML format options.\n---\ntitle: \"Quarto Computations\"\nformat:\n  html:\n    code-link: true\n---\nSave the document and observe that the functions are now clickable hyperlinks.\n\nNote that code linking is currently implemented only for the knitr engine via the downlit package."
+  },
+  {
+    "objectID": "computations/rstudio.html#figures",
+    "href": "computations/rstudio.html#figures",
+    "title": "Tutorial: Computations",
+    "section": "Figures",
+    "text": "Figures\nWe can improve the appearance and accessibility of our plot. We can change its aspect ratio by setting fig-width and fig-height, provide a fig-cap, modify its label for cross referencing, and add alternative text with fig-alt.\nWe’ll add the following chunk options.\n#| label: fig-scatterplot\n#| fig-cap: \"City and highway mileage for 38 popular models of cars.\"\n#| fig-alt: \"Scatterplot of city vs. highway mileage for cars, where points are colored by the number of cylinders. The plot displays a positive, linear, and strong relationship between city and highway mileage, and mileage increases as the number cylinders decreases.\"\n#| fig-width: 6\n#| fig-height: 3.5\nSave the document to see the updated plot. Note that we have also updated the narrative with a cross reference to this figure using the following.\n@fig-scatterplot shows a positive, strong, and linear relationship between the city and highway mileage of these cars."
+  },
+  {
+    "objectID": "computations/rstudio.html#multiple-figures",
+    "href": "computations/rstudio.html#multiple-figures",
+    "title": "Tutorial: Computations",
+    "section": "Multiple Figures",
+    "text": "Multiple Figures\nLet’s add another plot to our chunk—a scatterplot where the points are colored by engine displacement, using a different color scale. Our goal is to display these plots side-by-side (i.e., in two columns), with a descriptive subcaption for each plot. Since this will produce a wider visualization we’ll also use the column option to lay it out across the entire page rather than being constrained to the body text column.\nThere are quite a few changes to this chunk. To follow along, copy and paste the options outlined below into your Quarto document.\n#| label: fig-mpg\n#| fig-cap: \"City and highway mileage for 38 popular models of cars.\"\n#| fig-subcap:\n#|   - \"Color by number of cylinders\"\n#|   - \"Color by engine displacement, in liters\"\n#| layout-ncol: 2\n#| column: page\n\nggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +\n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c() +\n  theme_minimal()\n\nggplot(mpg, aes(x = hwy, y = cty, color = displ)) +\n  geom_point(alpha = 0.5, size = 2) +\n  scale_color_viridis_c(option = \"E\") +\n  theme_minimal()\nAdditionally, replace the existing text that describes the visualization with the following.\nThe plots in @fig-mpg show the relationship between city and highway mileage for 38 popular models of cars.\nIn @fig-mpg-1 the points are colored by the number of cylinders while in @fig-mpg-2 the points are colored by engine displacement.\nThen, save the document and inspect the rendered output, which should look like the following.\n\nLet’s discuss some of the new options used here. You’ve seen fig-cap before but we’ve now added a fig-subcap option.\n#| fig-cap: \"City and highway mileage for 38 popular models of cars.\"\n#| fig-subcap:\n#|   - \"Color by number of cylinders\"\n#|   - \"Color by engine displacement, in liters\"\nFor code cells with multiple outputs adding the fig-subcap option enables us to treat them as subfigures.\nWe also added an option to control how multiple figures are laid out—in this case we specified side-by-side in two columns.\n#| layout-ncol: 2\nIf you have 3, 4, or more figures in a panel there are many options available for customizing their layout. See the article Figure Layout for details.\nFinally, we added an option to control the span of the page that our figures occupy.\n#| column: page\nThis allows our figure display to span out beyond the normal body text column. See the documentation on Article Layout to learn about all of the available layout options."
+  },
+  {
+    "objectID": "computations/rstudio.html#data-frames",
+    "href": "computations/rstudio.html#data-frames",
+    "title": "Tutorial: Computations",
+    "section": "Data Frames",
+    "text": "Data Frames\n../../computations/_knitr-df-print.md"
+  },
+  {
+    "objectID": "computations/rstudio.html#inline-code",
+    "href": "computations/rstudio.html#inline-code",
+    "title": "Tutorial: Computations",
+    "section": "Inline Code",
+    "text": "Inline Code\nTo include executable expressions within markdown, enclose the expression in `r `. For example, we can use inline code to state the number of observations in our data. Try adding the following markdown text to your Quarto document.\n\n\nThere are `r nrow(mpg)` observations in our data. \n\n\n\nSave your document and inspect the rendered output. The expression inside the backticks has been executed and the sentence includes the actual number of observations.\n\nThere are 234 observations in our data.\n\nIf the expression you want to inline is more complex, involving many functions or a pipeline, we recommend including it in a code chunk (with echo: false) and assigning the result to an object. Then, you can call that object in your inline code.\nFor example, say you want to state the average city and highway mileage in your data. First, compute these values in a code chunk.\n#| echo: false\n\nmean_cty <- round(mean(mpg$cty), 2)\nmean_hwy <- round(mean(mpg$hwy), 2)\nThen, add the following markdown text to your Quarto document.\n\n\nThe average city mileage of the cars in our data is `r mean_cty` and the average highway mileage is `r mean_hwy`. \n\n\n\nSave your document and inspect the rendered output.\n\nThe average city mileage of the cars in our data is 16.86 and the average highway mileage is 23.44."
+  },
+  {
+    "objectID": "computations/rstudio.html#caching",
+    "href": "computations/rstudio.html#caching",
+    "title": "Tutorial: Computations",
+    "section": "Caching",
+    "text": "Caching\nIf your document includes code chunks that take too long to compute, you might want to cache the results of those chunks. You can use the cache option either at the document level using the YAML execute option.\nexecute:\n  cache: true\nHowever caching all code chunks in a document may not be preferable. You can also indicate which chunks should be cached directly with using a chunk option.\n#| cache: true\nTry adding this chunk option to one of the code chunks in your document that produces a plot and save. When the document is rendered, you’ll see that a new folder has been created in your working directory with the same name as your document and the suffix _cache. This folder contains the cached results. You can find out more about caching in Quarto documents in the Cache documentation.\nIf you followed along step-by-step with this tutorial, you should now have a Quarto document that implements everything we covered. Otherwise, you can download a completed version of computations.qmd below.\n\n\n\n\n\n\n Download computations-complete.qmd\n\n\n\n_footer.md"
+  },
+  {
+    "objectID": "computations/text-editor.html",
+    "href": "computations/text-editor.html",
+    "title": "Tutorial: Computations",
+    "section": "",
+    "text": "../_tool-chooser.md"
+  },
+  {
+    "objectID": "computations/text-editor.html#overview",
+    "href": "computations/text-editor.html#overview",
+    "title": "Tutorial: Computations",
+    "section": "Overview",
+    "text": "Overview\nQuarto has a wide variety of options available for controlling how code and computational output appear within rendered documents. In this tutorial we’ll take a .qmd file that has some numeric output and plots, and cover how to apply these options.\nThis tutorial will make use of the matplotlib and plotly Python packages. The commands you can use to install them are given in the table below.\n\n\n\n\n\n\n\nPlatform\nCommands\n\n\n\n\nMac/Linux\npython3 -m pip install jupyter matplotlib plotly\n\n\nWindows\npy -m pip install jupyter matplotlib plotly\n\n\n\nIf you want to follow along step-by-step in your own environment, create a computations.qmd file and copy the following content into it.\n---\ntitle: Quarto Computations\njupyter: python3\n---\n\n## NumPy\n\n```{python}\nimport numpy as np\na = np.arange(15).reshape(3, 5)\na\n```\n\n## Matplotlib\n\n```{python}\nimport matplotlib.pyplot as plt\n\nfig = plt.figure()\nx = np.arange(10)\ny = 2.5 * np.sin(x / 20 * np.pi)\nyerr = np.linspace(0.05, 0.2, 10)\n\nplt.errorbar(x, y + 3, yerr=yerr, label='both limits (default)')\nplt.errorbar(x, y + 2, yerr=yerr, uplims=True, label='uplims=True')\nplt.errorbar(x, y + 1, yerr=yerr, uplims=True, lolims=True,\n             label='uplims=True, lolims=True')\n\nupperlimits = [True, False] * 5\nlowerlimits = [False, True] * 5\nplt.errorbar(x, y, yerr=yerr, uplims=upperlimits, lolims=lowerlimits,\n             label='subsets of uplims and lolims')\n\nplt.legend(loc='lower right')\nplt.show(fig)\n```\n\n## Plotly\n\n```{python}\nimport plotly.express as px\nimport plotly.io as pio\ngapminder = px.data.gapminder()\ngapminder2007 = gapminder.query(\"year == 2007\")\nfig = px.scatter(gapminder2007, \n                 x=\"gdpPercap\", y=\"lifeExp\", color=\"continent\", \n                 size=\"pop\", size_max=60,\n                 hover_name=\"country\")\nfig.show()\n```\nNow, open a Terminal and run quarto preview, then position your editor side-by-side with the browser showing the preview.\n\n\nTerminal\n\nquarto preview computations.qmd"
+  },
+  {
+    "objectID": "computations/text-editor.html#cell-output",
+    "href": "computations/text-editor.html#cell-output",
+    "title": "Tutorial: Computations",
+    "section": "Cell Output",
+    "text": "Cell Output\nAll of the code in the source file is displayed within the rendered document. However, in some cases, you may want to hide all of the code and just show the output. Let’s go ahead and specify echo: false within the document execute options to prevent code from being printed.\n---\ntitle: Quarto Computations\nexecute:\n  echo: false\njupyter: python3\n---\nSave the file after making this change. The preview will update to show the output with no code.\n\nYou might want to selectively enable code echo for some cells. To do this add the echo: true cell option. Try this with the NumPy cell.\n```{python}\n#| echo: true\n\nimport numpy as np\na = np.arange(15).reshape(3, 5)\na\n```\nSave the file and note that the code is now included for the NumPy cell.\n\nThere a large number of other options available for cell output, for example warning to show/hide warnings (which can be especially helpful for package loading messages), include as a catch all for preventing any output (code or results) from being included in output, and error to prevent errors in code execution from halting the rendering of the document (and print the error in the rendered document).\nSee the Jupyter Cell Options documentation for additional details."
+  },
+  {
+    "objectID": "computations/text-editor.html#code-folding",
+    "href": "computations/text-editor.html#code-folding",
+    "title": "Tutorial: Computations",
+    "section": "Code Folding",
+    "text": "Code Folding\nRather than hiding code entirely, you might want to fold it and allow readers to view it at their discretion. You can do this via the code-fold option. Remove the echo option we previously added and add the code-fold HTML format option.\n---\ntitle: Quarto Computations\nexecute:\n   code-fold: true\njupyter: python3\n---\nSave the file. Now a “Code” widget is available above the output of each cell.\n\nYou can also provide global control over code folding. Try adding code-tools: true to the HTML format options.\n---\ntitle: Quarto Computations\nexecute:\n   code-fold: true\n   code-tools: true\njupyter: python3\n---\nSave the file and you’ll see that a code menu appears at the top right of the document that provides global control over showing and hiding code."
+  },
+  {
+    "objectID": "computations/text-editor.html#figures",
+    "href": "computations/text-editor.html#figures",
+    "title": "Tutorial: Computations",
+    "section": "Figures",
+    "text": "Figures\nLet’s improve the appearance of our Matplotlib output. It could certainly stand to be wider, and it would be nice to provide a caption and a label for cross-referencing.\nGo ahead and modify the Matplotlib cell to include label and fig-cap options as well as a call to fig.set_size_inches() to set a larger figure size with a wider aspect ratio:\n```{python}\n#| label: fig-limits\n#| fig-cap: \"Errorbar limit selector\"\n\nimport matplotlib.pyplot as plt\n\nfig = plt.figure()\nfig.set_size_inches(12, 7)\n```\nSave the file to re-render and see the updated plot:"
+  },
+  {
+    "objectID": "computations/text-editor.html#multiple-figures",
+    "href": "computations/text-editor.html#multiple-figures",
+    "title": "Tutorial: Computations",
+    "section": "Multiple Figures",
+    "text": "Multiple Figures\nThe Plotly cell visualizes GDP and life expectancy data from a single year (2007). Let’s plot another year next to it for comparison and add a caption and subcaptions. Since this will produce a wider visualization we’ll also use the column option to lay it out across the entire page rather than being constrained to the body text column.\nThere are quite a few changes to this cell. Copy and paste this code into computations.qmd if you want to try them locally:\n#| label: fig-gapminder\n#| fig-cap: Life Expectancy and GDP\n#| fig-subcap:\n#|   - \"Gapminder: 1957\"\n#|   - \"Gapminder: 2007\"\n#| layout-ncol: 2\n#| column: page\n\nimport plotly.express as px\nimport plotly.io as pio\ngapminder = px.data.gapminder()\ndef gapminder_plot(year):\n    gapminderYear = gapminder.query(\"year == \" + \n                                    str(year))\n    fig = px.scatter(gapminderYear, \n                     x=\"gdpPercap\", y=\"lifeExp\",\n                     size=\"pop\", size_max=60,\n                     hover_name=\"country\")\n    fig.show()\n    \ngapminder_plot(1957)\ngapminder_plot(2007)\nSave the file, the preview will update as follows:\n\nLet’s discuss some of the new options used here. You’ve seen fig-cap before but we’ve now added a fig-subcap option:\n#| fig-cap: Life Expectancy and GDP \n#| fig-subcap:\n#|   - \"Gapminder: 1957\"\n#|   - \"Gapminder: 2007\"\nFor code cells with multiple outputs adding the fig-subcap option enables us to treat them as subfigures.\nWe also added an option to control how multiple figures are laid out—in this case we specified side-by-side in two columns:\n#| layout-ncol: 2\nIf you have 3, 4, or more figures in a panel there are many options available for customizing their layout. See the article Figures for details.\nFinally, we added an option to control the span of the page that our figures occupy:\n#| column: page\nThis allows our figure display to span out beyond the normal body text column. See the documentation on Article Layout to learn about all of the available layout options.\n_footer.md"
+  },
+  {
+    "objectID": "computations/vscode.html",
+    "href": "computations/vscode.html",
+    "title": "Tutorial: Computations",
+    "section": "",
+    "text": "../_tool-chooser.md"
+  },
+  {
+    "objectID": "computations/vscode.html#overview",
+    "href": "computations/vscode.html#overview",
+    "title": "Tutorial: Computations",
+    "section": "Overview",
+    "text": "Overview\nQuarto has a wide variety of options available for controlling how code and computational output appear within rendered documents. In this tutorial we’ll take a .qmd file that has some numeric output and plots, and cover how to apply these options.\nThis tutorial will make use of the matplotlib and plotly Python packages. The commands you can use to install them are given in the table below.\n\n\n\n\n\n\n\nPlatform\nCommands\n\n\n\n\nMac/Linux\npython3 -m pip install juypyter matplotlib plotly\n\n\nWindows\npy -m pip install jupyter matplotlib plotly\n\n\n\nIf you want to follow along step-by-step in your own environment, create a computations.qmd file and copy the following content into it.\n---\ntitle: Quarto Computations\njupyter: python3\n---\n\n## NumPy\n\n```{python}\nimport numpy as np\na = np.arange(15).reshape(3, 5)\na\n```\n\n## Matplotlib\n\n```{python}\nimport matplotlib.pyplot as plt\n\nfig = plt.figure()\nx = np.arange(10)\ny = 2.5 * np.sin(x / 20 * np.pi)\nyerr = np.linspace(0.05, 0.2, 10)\n\nplt.errorbar(x, y + 3, yerr=yerr, label='both limits (default)')\nplt.errorbar(x, y + 2, yerr=yerr, uplims=True, label='uplims=True')\nplt.errorbar(x, y + 1, yerr=yerr, uplims=True, lolims=True,\n             label='uplims=True, lolims=True')\n\nupperlimits = [True, False] * 5\nlowerlimits = [False, True] * 5\nplt.errorbar(x, y, yerr=yerr, uplims=upperlimits, lolims=lowerlimits,\n             label='subsets of uplims and lolims')\n\nplt.legend(loc='lower right')\nplt.show(fig)\n```\n\n## Plotly\n\n```{python}\nimport plotly.express as px\nimport plotly.io as pio\ngapminder = px.data.gapminder()\ngapminder2007 = gapminder.query(\"year == 2007\")\nfig = px.scatter(gapminder2007, \n                 x=\"gdpPercap\", y=\"lifeExp\", color=\"continent\", \n                 size=\"pop\", size_max=60,\n                 hover_name=\"country\")\nfig.show()\n```\nThen, execute the Quarto: Render command. You can alternatively use the Ctrl+Shift+K keyboard shortcut, or the Render button at the top right of the editor:\n\n\n\n\n\n\n\nNote that on the Mac you should use Cmd rather than Ctrl as the prefix for all Quarto keyboard shortcuts.\n\n\n\nHere is what you should see within VS Code:"
+  },
+  {
+    "objectID": "computations/vscode.html#cell-execution",
+    "href": "computations/vscode.html#cell-execution",
+    "title": "Tutorial: Computations",
+    "section": "Cell Execution",
+    "text": "Cell Execution\nAs you author a document you may want to execute one or more cells without re-rendering the entire document. You can do this using the Run Cell button above the code cell. Click that button to execute the cell (output is shown side by side in the Jupyter interactive console):\n\nThere are a variety of commands and keyboard shortcuts available for executing cells:\n\n\n\nQuarto Command\nKeyboard Shortcut\n\n\n\n\nRun Current Cell\n⇧⌘ Enter\n\n\nRun Selected Line(s)\n⌘ Enter\n\n\nRun Next Cell\n⌥⌘ N\n\n\nRun Previous Cell\n⌥⌘ P\n\n\nRun All Cells\n⌥⌘ R\n\n\nRun Cells Above\n⇧⌥⌘ P\n\n\nRun Cells Below\n⇧⌥⌘ N"
+  },
+  {
+    "objectID": "computations/vscode.html#cell-output",
+    "href": "computations/vscode.html#cell-output",
+    "title": "Tutorial: Computations",
+    "section": "Cell Output",
+    "text": "Cell Output\nAll of the code in the source file is displayed within the rendered document. However, in some cases, you may want to hide all of the code and just show the output. Let’s go ahead and specify echo: false within the document execute options to prevent code from being printed.\n---\ntitle: Quarto Computations\nexecute:\n  echo: false\njupyter: python3\n---\nRe-render the document and the preview will update to show the output with no code (remember that you do not need to save the file before rendering, as this happens automatically when you render).\n\nYou might want to selectively enable code echo for some cells. To do this add the echo: true cell option. Try this with the NumPy cell.\n```{python}\n#| echo: true\n\nimport numpy as np\na = np.arange(15).reshape(3, 5)\na\n```\nRe-render note that the code is now included for the NumPy cell.\n\nThere a large number of other options available for cell output, for example warning to show/hide warnings (which can be especially helpful for package loading messages), include as a catch all for preventing any output (code or results) from being included in output, and error to prevent errors in code execution from halting the rendering of the document (and print the error in the rendered document).\nSee the Jupyter Cell Options documentation for additional details."
+  },
+  {
+    "objectID": "computations/vscode.html#code-folding",
+    "href": "computations/vscode.html#code-folding",
+    "title": "Tutorial: Computations",
+    "section": "Code Folding",
+    "text": "Code Folding\nRather than hiding code entirely, you might want to fold it and allow readers to view it at their discretion. You can do this via the code-fold option. Remove the echo option we previously added and add the code-fold HTML format option.\n---\ntitle: Quarto Computations\nformat:\n  html:\n    code-fold: true\njupyter: python3\n---\nRender the document. Now a “Code” widget is available above the output of each cell.\n\nYou can also provide global control over code folding. Try adding code-tools: true to the HTML format options.\n---\ntitle: Quarto Computations\nformat:\n  html:\n    code-fold: true\n    code-tools: true\njupyter: python3\n---\nRender the document and you’ll see that a code menu appears at the top right of the document that provides global control over showing and hiding code."
+  },
+  {
+    "objectID": "computations/vscode.html#figures",
+    "href": "computations/vscode.html#figures",
+    "title": "Tutorial: Computations",
+    "section": "Figures",
+    "text": "Figures\nLet’s improve the appearance of our Matplotlib output. It could certainly stand to be wider, and it would be nice to provide a caption and a label for cross-referencing.\nGo ahead and modify the Matplotlib cell to include label and fig-cap options as well as a call to fig.set_size_inches() to set a larger figure size with a wider aspect ratio:\n```{python}\n#| label: fig-limits\n#| fig-cap: \"Errorbar limit selector\"\n\nimport matplotlib.pyplot as plt\n\nfig = plt.figure()\nfig.set_size_inches(12, 7)\n```\nAfter re-rendering the document you’ll see the updated plot:"
+  },
+  {
+    "objectID": "computations/vscode.html#multiple-figures",
+    "href": "computations/vscode.html#multiple-figures",
+    "title": "Tutorial: Computations",
+    "section": "Multiple Figures",
+    "text": "Multiple Figures\nThe Plotly cell visualizes GDP and life expectancy data from a single year (2007). Let’s plot another year next to it for comparison and add a caption and subcaptions. Since this will produce a wider visualization we’ll also use the column option to lay it out across the entire page rather than being constrained to the body text column.\nThere are quite a few changes to this cell. Copy and paste this code into computations.qmd if you want to try them locally:\n#| label: fig-gapminder\n#| fig-cap: Life Expectancy and GDP\n#| fig-subcap:\n#|   - \"Gapminder: 1957\"\n#|   - \"Gapminder: 2007\"\n#| layout-ncol: 2\n#| column: page\n\nimport plotly.express as px\nimport plotly.io as pio\ngapminder = px.data.gapminder()\ndef gapminder_plot(year):\n    gapminderYear = gapminder.query(\"year == \" + \n                                    str(year))\n    fig = px.scatter(gapminderYear, \n                     x=\"gdpPercap\", y=\"lifeExp\",\n                     size=\"pop\", size_max=60,\n                     hover_name=\"country\")\n    fig.show()\n    \ngapminder_plot(1957)\ngapminder_plot(2007)\nRender the document and the preview will update as follows:\n\nLet’s discuss some of the new options used here. You’ve seen fig-cap before but we’ve now added a fig-subcap option:\n#| fig-cap: Life Expectancy and GDP \n#| fig-subcap:\n#|   - \"Gapminder: 1957\"\n#|   - \"Gapminder: 2007\"\nFor code cells with multiple outputs adding the fig-subcap option enables us to treat them as subfigures.\nWe also added an option to control how multiple figures are laid out—in this case we specified side-by-side in two columns:\n#| layout-ncol: 2\nIf you have 3, 4, or more figures in a panel there are many options available for customizing their layout. See the article Figures for details.\nFinally, we added an option to control the span of the page that our figures occupy:\n#| column: page\nThis allows our figure display to span out beyond the normal body text column. See the documentation on Article Layout to learn about all of the available layout options.\n_footer.md"
+  },
+  {
+    "objectID": "hello/jupyter.html",
+    "href": "hello/jupyter.html",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "",
+    "text": "../_tool-chooser.md"
+  },
+  {
+    "objectID": "hello/jupyter.html#overview",
+    "href": "hello/jupyter.html#overview",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "Overview",
+    "text": "Overview\nIn this tutorial we’ll show you how to use Jupyter Lab with Quarto. You’ll edit code and markdown in Jupyter Lab, just as you would with any notebook, and preview the rendered document in a web browser as you work.\nBelow is an overview of how this will look.\n\nThe notebook on the left is rendered into the HTML version you see on the right. This is the basic model for Quarto publishing—take a source document (in this case a notebook) and render it to a variety of output formats, including HTML, PDF, MS Word, etc.\n\n\n\n\n\n\nNote\n\n\n\nNote that while this tutorial uses Python, using Julia (via the IJulia kernel) is also well supported. See the article on Using Julia for additional details."
+  },
+  {
+    "objectID": "hello/jupyter.html#rendering",
+    "href": "hello/jupyter.html#rendering",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "Rendering",
+    "text": "Rendering\nWe’ll start out by opening a notebook (hello.ipynb) in Jupyter Lab and rendering it to a couple of formats. If you want to follow along step-by-step in your own environment, download the notebook below.\n\n\n\n\n\n\n Download hello.ipynb\n\n\n\nThen, create a new directory to work within and copy the notebook into this directory.\nOnce you’ve done that, switch to this directory in a Terminal, install notebook dependencies (if necessary), and open Jupyter Lab to get started working with the notebook. The commands you can use for installation and opening Jupyter Lab are given in the table below.\n\n\n\n\n\n\n\nPlatform\nCommands\n\n\n\n\nMac/Linux\npython3 -m pip install jupyter matplotlib plotly\npython3 -m jupyter lab hello.ipynb\n\n\nWindows\npy -m pip install jupyter matplotlib plotly\npy -m jupyter lab hello.ipynb\n\n\n\nHere is our notebook in Jupyter Lab.\n---\ntitle: \"Quarto Basics\"\nformat:\n  html:\n    code-fold: true\njupyter: python3\n---\n\nFor a demonstration of a line plot on a polar axis, see @fig-polar.\n\n```{python}\n#| label: fig-polar\n#| fig-cap: \"A line plot on a polar axis\"\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n\nNext, create a new Terminal within Jupyter Lab to use for Quarto commands.\n\nAnd finally, render the notebook to a couple of formats.\n\n\nTerminal\n\nquarto render hello.ipynb --to html\nquarto render hello.ipynb --to docx\n\nNote that the target file (in this case hello.ipynb) should always be the very first command line argument.\nWhen you render a Jupyter notebook with Quarto, the contents of the notebook (code, markdown, and outputs) are converted to plain markdown and then processed by Pandoc, which creates the finished format."
+  },
+  {
+    "objectID": "hello/jupyter.html#authoring",
+    "href": "hello/jupyter.html#authoring",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "Authoring",
+    "text": "Authoring\nThe quarto render command is used to create the final version of your document for distribution. However, during authoring you’ll use the quarto preview command. Try it now from the Terminal with hello.ipynb.\n\n\nTerminal\n\nquarto preview hello.ipynb\n\nThis will render your document and then display it in a web browser.\n\nYou might want to position Jupyter Lab and the browser preview side-by-side so you can see changes as you work.\n\nTo see live preview in action:\n\nChange the the line of code that defines theta as follows:\ntheta = 4 * np.pi * r\nRe-run the code cell to generate a new version of the plot.\nSave the notebook (the preview will update automatically).\n\nThis is the basic workflow for authoring with Quarto.\nThere are few different types of cells in our notebook, let’s work a bit with each type."
+  },
+  {
+    "objectID": "hello/jupyter.html#yaml-options",
+    "href": "hello/jupyter.html#yaml-options",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "YAML Options",
+    "text": "YAML Options\nYou are likely already familiar with markdown and code cells, but there is a new type of cell (“Raw”) that is used for document-level YAML options.\n---\ntitle: \"Quarto Basics\"\nformat:\n  html:\n    code-fold: true\njupyter: python3\n---\n\nTry changing the code-fold option to false.\nformat: \n  html:\n    code-fold: false\nThen save the notebook. You’ll notice that the code is now shown above the plot, where previously it was hidden with a Code button that could be used to show it."
+  },
+  {
+    "objectID": "hello/jupyter.html#markdown-cells",
+    "href": "hello/jupyter.html#markdown-cells",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "Markdown Cells",
+    "text": "Markdown Cells\nMarkdown cells contain raw markdown that will be passed through to Quarto during rendering. You can use any valid Quarto markdown syntax in these cells. Here we specify a header and a cross-reference to the figure created in the code cell below.\n## Polar Axis\n\nFor a demonstration of a line plot on a polar axis, see @fig-polar.\n\nTry changing the header and saving the notebook—the preview will update with the new header text."
+  },
+  {
+    "objectID": "hello/jupyter.html#code-cells",
+    "href": "hello/jupyter.html#code-cells",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "Code Cells",
+    "text": "Code Cells\nYou are likely already familiar with code cells, like the one shown below.\n```{python}\n#| label: fig-polar\n#| fig-cap: \"A line plot on a polar axis\"\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n\nBut there are some new components at the top of the code cell: label and fig-capoptions. Cell options are written in YAML using a specially prefixed comment (#|).\nIn this example, the cell options are used to make the figure cross-reference-able. Try changing the fig-cap and/or the code, running the cell, and then saving the notebook to see the updated preview.\nThere are a wide variety of cell options that you can apply to tailor your output. We’ll delve into these options in the next tutorial.\n\n\n\n\n\n\nNote\n\n\n\nOne particularly useful cell option for figures is fig-alt, which enables you to add alternative text to images for users with visual impairments. See Amy Cesal’s article on Writing Alt Text for Data Visualization to learn more.\n\n\n_footer.md"
+  },
+  {
+    "objectID": "hello/rstudio.html",
+    "href": "hello/rstudio.html",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "",
+    "text": "../_tool-chooser.md"
+  },
+  {
+    "objectID": "hello/rstudio.html#overview",
+    "href": "hello/rstudio.html#overview",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "Overview",
+    "text": "Overview\nQuarto is a multi-language, next-generation version of R Markdown from RStudio, and includes dozens of new features and capabilities while at the same being able to render most existing Rmd files without modification.\nIn this tutorial we’ll show you how to use RStudio with Quarto. You’ll edit code and markdown in RStudio just as you would with any computational document (e.g. R Markdown), and preview the rendered document in the Viewer tab as you work.\nThe following is a Quarto document with the extension .qmd (on the left) along with its rendered version as HTML (on the right). You could also choose to render it into other formats like PDF, MS Word, etc.\n\n\n\n\n\nThis is the basic model for Quarto publishing—take a source document and render it to a variety of output formats.\nIf you would like to follow along step-by-step in your own environment, follow the steps outlined below.\n\nDownload and install the latest release of RStudio (v2022.07):\n\n\n\n\n\n\n Download RStudio v2022.07\n\n\n\nBe sure that you have installed the tidyverse and palmerpenguins packages:\ninstall.packages(\"tidyverse\")\ninstall.packages(\"palmerpenguins\")\nDownload the Quarto document (.qmd) below, open it in RStudio, and click on  Render.\n\n\n\n\n\n\n Download hello.qmd"
+  },
+  {
+    "objectID": "hello/rstudio.html#rendering",
+    "href": "hello/rstudio.html#rendering",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "Rendering",
+    "text": "Rendering\nUse the  Render button in the RStudio IDE to render the file and preview the output with a single click or keyboard shortcut (⇧⌘K).\n\n\n\n\n\nIf you prefer to automatically render whenever you save, you can check the Render on Save option on the editor toolbar. The preview will update whenever you re-render the document. Side-by-side preview works for both HTML and PDF outputs.\n\n\n\n\n\nNote that documents can also be rendered from the R console via the quarto package:\ninstall.packages(\"quarto\")\nquarto::quarto_render(\"notebook.Rmd\")\nWhen rendering, Quarto generates a new file that contains selected text, code, and results from the .qmd file. The new file can be an HTML, PDF, MS Word document, presentation, website, book, interactive document, or other format."
+  },
+  {
+    "objectID": "hello/rstudio.html#authoring",
+    "href": "hello/rstudio.html#authoring",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "Authoring",
+    "text": "Authoring\nIn the image below we can see the same document in the two modes of the RStudio editor: visual (on the left) and source (on the right). RStudio’s visual editor offers an WYSIWYM authoring experience for markdown. For formatting (e.g. bolding text) you can use the toolbar, a keyboard shortcut (⌘B), or the markdown construct (**bold**). The plain text source code underlying the document is written for you and you can view/edit it at any point by switching to source mode for editing. You can toggle back and forth these two modes by clicking on Source and Visual in the editor toolbar (or using the keyboard shortcut ⌘⇧ F4).\n\n\n\n\n\nNext, let’s turn our attention to the contents of our Quarto document. The file contains three types of content: a YAML header, code chunks, and markdown text.\n\nYAML header\nAn (optional) YAML header demarcated by three dashes (---) on either end.\n---\ntitle: \"Hello, Quarto\"\nformat: html\neditor: visual\n---\nWhen rendered, the title , \"Hello, Quarto\", will appear at the top of the rendered document with a larger font size than the rest of the document. The other two YAML fields in denote that the output should be in html format and the document should open in the visual editor, by default.\nThe basic syntax of YAML uses key-value pairs in the format key: value. Other YAML fields commonly found in headers of documents include metadata like author, subtitle, date as well as customization options like theme, fontcolor, fig-width, etc. You can find out about all available YAML fields for HTML documents here. The available YAML fields vary based on document format, e.g. see here for YAML fields for PDF documents and here for MS Word.\n\n\nCode chunks\nR code chunks identified with {r} with (optional) chunk options, in YAML style, identified by #| at the beginning of the line.\n```{r}\n#| label: load-packages\n#| include: false\n\nlibrary(tidyverse)\nlibrary(palmerpenguins)\n```\nIn this case the label of the code chunk is load-packages and we set include to false to indicate that we don’t want the chunk itself or any of its outputs in the rendered documents.\nIn addition to rendering the complete document to view the results of code chunks you can also run each code chunk interactively in the RStudio editor by clicking the  icon or keyboard shortcut (⇧⌘⏎). RStudio executes the code and displays the results either inline within your file or in the Console, depending on your preference.\n\n\n\n\n\n\n\nMarkdown text\nText with formatting, including section headers, hyperlinks, an embedded image, and an inline code chunk.\n\n\n\n\n\nQuarto uses markdown syntax for text. If using the visual editor, you won’t need to learn much markdown syntax for authoring your document as you can use the menus and shortcuts to add a header, bold text, insert a table, etc. If using the source editor, you can achieve these with markdown expressions like ##, **bold**, etc."
+  },
+  {
+    "objectID": "hello/rstudio.html#how-it-works",
+    "href": "hello/rstudio.html#how-it-works",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "How it works",
+    "text": "How it works\nWhen you render a Quarto document, first knitr executes all of the code chunks and creates a new markdown (.md) document which includes the code and its output. The markdown file generated is then processed by pandoc, which creates the finished format. The Render button encapsulates these actions and executes them in the right order for you.\n\n\n\n\n\n_footer.md"
+  },
+  {
+    "objectID": "hello/text-editor.html",
+    "href": "hello/text-editor.html",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "",
+    "text": "../_tool-chooser.md"
+  },
+  {
+    "objectID": "hello/text-editor.html#overview",
+    "href": "hello/text-editor.html#overview",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "Overview",
+    "text": "Overview\nIn this tutorial we’ll show you how to use your favorite text editor with Quarto. You’ll edit plain text .qmd files and preview the rendered document in a web browser as you work.\nBelow is an overview of how this will look.\n\nThe notebook on the left is rendered into the HTML version you see on the right. This is the basic model for Quarto publishing—take a source document (in this case a notebook) and render it to a variety of output formats, including HTML, PDF, MS Word, etc.\nThe tutorials will make use of the matplotlib and plotly Python packages—the commands you can use to install them are given in the table below.\n\n\n\n\n\n\n\nPlatform\nCommands\n\n\n\n\nMac/Linux\npython3 -m pip install jupyter matplotlib plotly\n\n\nWindows\npy -m pip install jupyter matplotlib plotly\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nNote that while this tutorial uses Python, using Julia (via the IJulia kernel) is also well supported. See the article on Using Julia for additional details."
+  },
+  {
+    "objectID": "hello/text-editor.html#editor-modes",
+    "href": "hello/text-editor.html#editor-modes",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "Editor Modes",
+    "text": "Editor Modes\nIf you are using VS Code, you should install the Quarto Extension for VS Code before proceeding. The extension provides syntax highlighting for markdown and embedded languages, completion for embedded languages (e.g. Python, R, Julia, LaTeX, etc.), commands and key-bindings for running cells and selected line(s), and much more.\nThere are also Quarto syntax highlighting modes available for several other editors:\n\n\n\n\n\n\n\nEditor\nExtension\n\n\n\n\nEmacs\nhttps://github.com/quarto-dev/quarto-emacs\n\n\nVim / Neovim\nhttps://github.com/quarto-dev/quarto-vim\n\n\nSublime Text\nhttps://github.com/quarto-dev/quarto-sublime"
+  },
+  {
+    "objectID": "hello/text-editor.html#rendering",
+    "href": "hello/text-editor.html#rendering",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "Rendering",
+    "text": "Rendering\nWe’ll start out by rendering a simple example (hello.qmd) to a couple of formats. If you want to follow along step-by-step in your own environment, create a new file named hello.qmd and copy the following content into it.\n---\ntitle: \"Quarto Basics\"\nformat:\n  html:\n    code-fold: true\njupyter: python3\n---\n\nFor a demonstration of a line plot on a polar axis, see @fig-polar.\n\n```{python}\n#| label: fig-polar\n#| fig-cap: \"A line plot on a polar axis\"\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\nNext, open a Terminal and switch to the directory containing hello.qmd.\nLet’s start by rendering the document to a couple of formats.\n\n\nTerminal\n\nquarto render hello.qmd --to html\nquarto render hello.qmd --to docx\n\nNote that the target file (in this case hello.qmd) should always be the very first command line argument.\nWhen you render a .qmd file with Quarto, the executable code blocks are processed by Jupyter, and the resulting combination of code, markdown, and output is converted to plain markdown. Then, this markdown is processed by Pandoc, which creates the finished format."
+  },
+  {
+    "objectID": "hello/text-editor.html#authoring",
+    "href": "hello/text-editor.html#authoring",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "Authoring",
+    "text": "Authoring\nThe quarto render command is used to create the final version of your document for distribution. However, during authoring you’ll use the quarto preview command. Try it now from the Terminal with hello.qmd.\n\n\nTerminal\n\nquarto preview hello.qmd\n\nThis will render your document and then display it in a web browser.\n\nYou might want to position your editor and the browser preview side-by-side so you can see changes as you work.\n\nTo see live preview in action:\n\nChange the the line of code that defines theta as follows:\ntheta = 4 * np.pi * r\nSave the file. The document is re-rendered, and the browser preview is updated.\n\nThis is the basic workflow for authoring with Quarto.\nThere are few different types of content in hello.qmd, let’s work a bit with each type."
+  },
+  {
+    "objectID": "hello/text-editor.html#yaml-options",
+    "href": "hello/text-editor.html#yaml-options",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "YAML Options",
+    "text": "YAML Options\nAt the top of the file there is a YAML block with document level options.\n---\ntitle: \"Quarto Basics\"\nformat:\n  html:\n    code-fold: true\njupyter: python3\n---\nTry changing the code-fold option to false:\nformat: \n  html:\n    code-fold: false\nThen save the file. You’ll notice that the code is now shown above the plot, where previously it was hidden with a Code button that could be used to show it."
+  },
+  {
+    "objectID": "hello/text-editor.html#markdown",
+    "href": "hello/text-editor.html#markdown",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "Markdown",
+    "text": "Markdown\nNarrative content is written using markdown. Here we specify a header and a cross-reference to the figure created in the code cell below.\n## Polar Axis\n\nFor a demonstration of a line plot on a polar axis, see @fig-polar.\nTry changing the header and saving the notebook—the preview will update with the new header text."
+  },
+  {
+    "objectID": "hello/text-editor.html#code-cells",
+    "href": "hello/text-editor.html#code-cells",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "Code Cells",
+    "text": "Code Cells\nCode cells contain executable code to be run during render, with the output (and optionally the code) included in the rendered document.\n```{python}\n#| label: fig-polar\n#| fig-cap: \"A line plot on a polar axis\"\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\nYou are likely familiar with the Matplotlib code given here. However, there are some less familiar components at the top of the code cell: label and fig-cap options. Cell options are written in YAML using a specially prefixed comment (#|).\nIn this example, the cell options are used to make the figure cross-reference-able. Try changing the fig-cap and/or the code, running the cell, and then saving the file to see the updated preview.\nThere are a wide variety of cell options that you can apply to tailor your output. We’ll delve into these options in the next tutorial.\n\n\n\n\n\n\nNote\n\n\n\nOne particularly useful cell option for figures is fig-alt, which enables you to add alternative text to images for users with visual impairments. See Amy Cesal’s article on Writing Alt Text for Data Visualization to learn more.\n\n\n_footer.md"
+  },
+  {
+    "objectID": "hello/vscode.html",
+    "href": "hello/vscode.html",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "",
+    "text": "../_tool-chooser.md"
+  },
+  {
+    "objectID": "hello/vscode.html#overview",
+    "href": "hello/vscode.html#overview",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "Overview",
+    "text": "Overview\nIn this tutorial we’ll show you how to use Quarto with VS Code. Before getting started, you should install the Quarto VS Code Extension, which includes many tools that enhance working with Quarto, including:\n\nIntegrated render and preview for Quarto documents.\nSyntax highlighting for markdown and embedded languages\nCompletion and diagnostics for YAML options\nCompletion for embedded languages (e.g. Python, R, Julia, etc.)\nCommands and key-bindings for running cells and selected lines.\n\nYou can install the Quarto extension from within the Extensions tab in VS Code, from the Extension Marketplace, the Open VSX Registry or directly from a VISX extension file.\n\n\n\n\n\n\nNote\n\n\n\nThis tutorial focuses on editing plain text Quarto .qmd files in VS Code. You can alternatively use the VS Code Notebook Editor if you prefer to work with .ipynb files.\nFor the purposes of learning we recommend you follow along with the .qmd examples. At the end of this article there is a link to documentation on using the Notebook Editor with Quarto that will apply what you’ve learned to notebooks.\n\n\n\nBasic Workflow\nQuarto .qmd files contain a combination of markdown and executable code cells. Here’s what it might look like in VS Code to edit and preview a .qmd file:\n\nThe document on the left is rendered into the HTML version you see on the right. This is the basic model for Quarto publishing—take a source document and render it to a variety of output formats, including HTML, PDF, MS Word, etc.\nThe tutorials will make use of the matplotlib and plotly Python packages—the commands you can use to install them are given in the table below.\n\n\n\n\n\n\n\nPlatform\nCommands\n\n\n\n\nMac/Linux\npython3 -m pip install jupyter matplotlib plotly\n\n\nWindows\npy -m pip install jupyter matplotlib plotly\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nNote that while this tutorial uses Python, using Julia (via the IJulia kernel) is also well supported. See the article on Using Julia for additional details."
+  },
+  {
+    "objectID": "hello/vscode.html#render-and-preview",
+    "href": "hello/vscode.html#render-and-preview",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "Render and Preview",
+    "text": "Render and Preview\nWe’ll start out by rendering a simple example (hello.qmd) to a couple of formats. If you want to follow along step-by-step in your own environment, create a new file named hello.qmd and copy the following content into it.\n---\ntitle: \"Quarto Basics\"\nformat:\n  html:\n    code-fold: true\njupyter: python3\n---\n\nFor a demonstration of a line plot on a polar axis, see @fig-polar.\n\n```{python}\n#| label: fig-polar\n#| fig-cap: \"A line plot on a polar axis\"\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\nNote that if you are following along be sure to install the required dependencies if you haven’t already:\n\n\n\n\n\n\n\nPlatform\nCommands\n\n\n\n\nMac/Linux\npython3 -m pip install jupyter matplotlib plotly\n\n\nWindows\npy -m pip install jupyter matplotlib plotly\n\n\n\nTo render and preview, execute the Quarto: Render command. You can alternatively use the Ctrl+Shift+K keyboard shortcut, or the Render button at the top right of the editor:\n\n\n\n\n\n\n\nNote that on the Mac you should use Cmd rather than Ctrl as the prefix for all Quarto keyboard shortcuts.\n\n\n\nAdditionally, there are commands available to render specific formats. Here is a complete list of the supported render commands:\n\nQuarto: Render\nQuarto: Render HTML\nQuarto: Render PDF\nQuarto: Render DOCX\n\nThe Quarto: Render command renders the default format of the currently active document. The other commands render specific formats (regardless of the document’s default format). The Ctrl+Shift+K keyboard shortcut will re-execute the most recently executed render command.\n\nHow it Works\nWhen you render a .qmd file with Quarto, the executable code blocks are processed by Jupyter, and the resulting combination of code, markdown, and output is converted to plain markdown. Then, this markdown is processed by Pandoc, which creates the finished format.\n\n\n\n\n\n\n\nAuthoring\nLet’s try making a small change and then re-rendering:\n\nChange the the line of code that defines theta as follows:\ntheta = 4 * np.pi * r\nRe-render the file (using Quarto: Render or the Ctrl+Shift+K shortcut) The document is rendered, and the browser preview is updated.\n\nThis is the basic workflow for authoring with Quarto.\nYou do not need to save the file before rendering (as this happens automatically when you render). It you prefer, you can configure the Quarto extension to render whenever you save a document. See the documentation on Render on Save for additional details.\n\n\nRunning Cells\nYou don’t need to fully render documents in order to iterate on code cells. You’ll notice that there is a Run Cell button above the code cell. Click that button to execute the cell (output is shown side by side in the Jupyter interactive console):\n\nExecute the current cell with Ctrl+Shift+Enter, the current line(s) with Ctrl+Enter, or previous cells with Ctrl+Alt+P (note that on the Mac you should use Cmd rather than Ctrl as the prefix for all Quarto keyboard shortcuts).\nThere are few different types of content in hello.qmd, let’s work a bit with each type."
+  },
+  {
+    "objectID": "hello/vscode.html#yaml-options",
+    "href": "hello/vscode.html#yaml-options",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "YAML Options",
+    "text": "YAML Options\nAt the top of the file there is a YAML block with document level options.\n---\ntitle: \"Quarto Basics\"\nformat:\n  html:\n    code-fold: true\njupyter: python3\n---\nTry changing the code-fold option to false:\nformat: \n  html:\n    code-fold: false\nThen re-render the document (again, no need to save before rendering). You’ll notice that the code is now shown above the plot, where previously it was hidden with a Code button that could be used to show it."
+  },
+  {
+    "objectID": "hello/vscode.html#markdown",
+    "href": "hello/vscode.html#markdown",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "Markdown",
+    "text": "Markdown\nNarrative content is written using markdown. Here we specify a header and a cross-reference to the figure created in the code cell below.\n## Polar Axis\n\nFor a demonstration of a line plot on a polar axis, see @fig-polar.\nTry changing the header and re-rendering—the preview will update with the new header text."
+  },
+  {
+    "objectID": "hello/vscode.html#code-cells",
+    "href": "hello/vscode.html#code-cells",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "Code Cells",
+    "text": "Code Cells\nCode cells contain executable code to be run during render, with the output (and optionally the code) included in the rendered document.\n```{python}\n#| label: fig-polar\n#| fig-cap: \"A line plot on a polar axis\"\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\nYou are likely familiar with the Matplotlib code given here. However, there are some less familiar components at the top of the code cell: label and fig-cap options. Cell options are written in YAML using a specially prefixed comment (#|).\nIn this example, the cell options are used to make the figure cross-reference-able. Try changing the fig-cap and/or the code then re-rendering to see the updated preview.\nThere are a wide variety of cell options that you can apply to tailor your output. We’ll delve into these options in the next tutorial.\n\n\n\n\n\n\nNote\n\n\n\nOne particularly useful cell option for figures is fig-alt, which enables you to add alternative text to images for users with visual impairments. See Amy Cesal’s article on Writing Alt Text for Data Visualization to learn more."
+  },
+  {
+    "objectID": "hello/vscode.html#external-preview",
+    "href": "hello/vscode.html#external-preview",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "External Preview",
+    "text": "External Preview\nIn this tutorial we’ve demonstrated previewing rendered output in a pane within VS Code. If you prefer to use an external browser for preview (or have no preview triggered at all by rendering) you can use the Preview Type option to specify an alternate behavior:"
+  },
+  {
+    "objectID": "hello/vscode.html#next-up",
+    "href": "hello/vscode.html#next-up",
+    "title": "Tutorial: Hello, Quarto",
+    "section": "Next Up",
+    "text": "Next Up\nYou now know the basics of creating and authoring Quarto documents. The following tutorials explore Quarto in more depth:\n\nTutorial: Computations — Learn how to tailor the behavior and output of executable code blocks.\nTutorial: Authoring — Learn more about output formats and technical writing features like citations, crossrefs, and advanced layout.\n\nAdditionally, if you are interested in seeing how to use Quarto from within .ipynb notebooks, check out the documentation on using the VS Code Notebook Editor with Quarto."
   }
 ]
