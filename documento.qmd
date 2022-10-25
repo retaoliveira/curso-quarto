@@ -271,4 +271,3 @@ If you followed along step-by-step with this tutorial, you should now have a Qua
 ::: {.callout-note appearance="minimal"}
 <i class="bi bi-download"></i> [Download computations-complete.qmd](_computations-complete.qmd){download="computations-complete.qmd"}
 :::
-
