@@ -198,9 +198,8 @@ Isto permite que nossa exibição de figuras se estenda além da coluna de texto
 
 ## Data Frames
 
-``` include
-/computations/_knitr-df-print.md
-```
+{{< include computations/_knitr-df-print.md >}}
+
 
 ## Inline Code
 
@@ -215,6 +214,7 @@ There are &#96;r nrow(mpg)&#96; observations in our data.
 </pre>
 </div>
 ```
+
 Salve seu documento e inspecione a saída entregue. A expressão dentro dos backticks foi executada e a sentença inclui o número real de observações.
 
 ::: border

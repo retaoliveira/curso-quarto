@@ -424,7 +424,40 @@ gtag('config', 'G-XXXXXXX', { 'anonymize_ip': true});
 </section>
 <section id="data-frames" class="level2">
 <h2 class="anchored" data-anchor-id="data-frames">Data Frames</h2>
-<pre class="include"><code>/computations/_knitr-df-print.md</code></pre>
+<p>Você pode controlar como os dataframes são impressos por padrão utilizando a opção de documento <code>df-print</code>. As opções disponíveis incluem:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>default</code></td>
+<td>Use o método S3 padrão para o data frame.</td>
+</tr>
+<tr class="even">
+<td><code>kable</code></td>
+<td>Tabela Markdown usando a função <a href="https://bookdown.org/yihui/rmarkdown-cookbook/kable.html"><code>knitr::kable()</code></a>.</td>
+</tr>
+<tr class="odd">
+<td><code>tibble</code></td>
+<td>Tabela de texto usando o pacote <a href="https://tibble.tidyverse.org/"><code>tibble</code></a>.</td>
+</tr>
+<tr class="even">
+<td><code>paged</code></td>
+<td>Tabela HTML com paginação para linhas e colunas que não são apresentadas (implementado usando <a href="https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html"><code>rmarkdown::paged_table()</code></a>)</td>
+</tr>
+</tbody>
+</table>
+<p>Por exemplo, aqui especificamos que queremos impressão paginada para o dataframe:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Document"</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="at">   </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="at">     </span><span class="fu">df-print</span><span class="kw">:</span><span class="at"> paged</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="inline-code" class="level2">
 <h2 class="anchored" data-anchor-id="inline-code">Inline Code</h2>
@@ -946,23 +979,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb17-198"><a href="#cb17-198" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-199"><a href="#cb17-199" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data Frames</span></span>
 <span id="cb17-200"><a href="#cb17-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-201"><a href="#cb17-201" aria-hidden="true" tabindex="-1"></a><span class="in">``` include</span></span>
-<span id="cb17-202"><a href="#cb17-202" aria-hidden="true" tabindex="-1"></a>/computations/_knitr-df-print.md</span>
-<span id="cb17-203"><a href="#cb17-203" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-204"><a href="#cb17-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-205"><a href="#cb17-205" aria-hidden="true" tabindex="-1"></a><span class="fu">## Inline Code</span></span>
-<span id="cb17-206"><a href="#cb17-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-207"><a href="#cb17-207" aria-hidden="true" tabindex="-1"></a>Para incluir expressões executáveis dentro do markdown, incluir a expressão em <span class="in">`r`</span>. Por exemplo, podemos utilizar código em linha para declarar o número de observações em nossos dados. Tente adicionar o seguinte texto de html ao seu documento Quarto.</span>
-<span id="cb17-208"><a href="#cb17-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-209"><a href="#cb17-209" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
-<span id="cb17-210"><a href="#cb17-210" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;div class="sourceCode"&gt;</span></span>
-<span id="cb17-211"><a href="#cb17-211" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;pre class="sourceCode markdown"&gt;</span></span>
-<span id="cb17-212"><a href="#cb17-212" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;code class="sourceCode markdown"&gt;</span></span>
-<span id="cb17-213"><a href="#cb17-213" aria-hidden="true" tabindex="-1"></a><span class="in">There are &amp;#96;r nrow(mpg)&amp;#96; observations in our data. </span></span>
-<span id="cb17-214"><a href="#cb17-214" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/code&gt;</span></span>
-<span id="cb17-215"><a href="#cb17-215" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/pre&gt;</span></span>
-<span id="cb17-216"><a href="#cb17-216" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/div&gt;</span></span>
-<span id="cb17-217"><a href="#cb17-217" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb17-201"><a href="#cb17-201" aria-hidden="true" tabindex="-1"></a>{{&lt; include computations/_knitr-df-print.md &gt;}}</span>
+<span id="cb17-202"><a href="#cb17-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-203"><a href="#cb17-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-204"><a href="#cb17-204" aria-hidden="true" tabindex="-1"></a><span class="fu">## Inline Code</span></span>
+<span id="cb17-205"><a href="#cb17-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-206"><a href="#cb17-206" aria-hidden="true" tabindex="-1"></a>Para incluir expressões executáveis dentro do markdown, incluir a expressão em <span class="in">`r`</span>. Por exemplo, podemos utilizar código em linha para declarar o número de observações em nossos dados. Tente adicionar o seguinte texto de html ao seu documento Quarto.</span>
+<span id="cb17-207"><a href="#cb17-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-208"><a href="#cb17-208" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
+<span id="cb17-209"><a href="#cb17-209" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;div class="sourceCode"&gt;</span></span>
+<span id="cb17-210"><a href="#cb17-210" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;pre class="sourceCode markdown"&gt;</span></span>
+<span id="cb17-211"><a href="#cb17-211" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;code class="sourceCode markdown"&gt;</span></span>
+<span id="cb17-212"><a href="#cb17-212" aria-hidden="true" tabindex="-1"></a><span class="in">There are &amp;#96;r nrow(mpg)&amp;#96; observations in our data. </span></span>
+<span id="cb17-213"><a href="#cb17-213" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/code&gt;</span></span>
+<span id="cb17-214"><a href="#cb17-214" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/pre&gt;</span></span>
+<span id="cb17-215"><a href="#cb17-215" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/div&gt;</span></span>
+<span id="cb17-216"><a href="#cb17-216" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb17-217"><a href="#cb17-217" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-218"><a href="#cb17-218" aria-hidden="true" tabindex="-1"></a>Salve seu documento e inspecione a saída entregue. A expressão dentro dos backticks foi executada e a sentença inclui o número real de observações.</span>
 <span id="cb17-219"><a href="#cb17-219" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-220"><a href="#cb17-220" aria-hidden="true" tabindex="-1"></a>::: border</span>

@@ -1,18 +1,15 @@
+Você pode controlar como os dataframes são impressos por padrão utilizando a opção de documento `df-print`. As opções disponíveis incluem:
 
+| Option    | Description                                                                                                                                                        |
+|------------|------------------------------------------------------------|
+| `default` | Use o método S3 padrão para o data frame.                                                                                                                      |
+| `kable`   | Tabela Markdown usando a função  [`knitr::kable()`](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html).                                                    |
+| `tibble`  | Tabela de texto usando o pacote [`tibble`](https://tibble.tidyverse.org/).                                                                                      |
+| `paged`   | Tabela HTML com paginação para linhas e colunas que não são apresentadas (implementado usando [`rmarkdown::paged_table()`](https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html)) |
 
-You can control how data frames are printed by default using the `df-print` document option. Available options include:
+Por exemplo, aqui especificamos que queremos impressão paginada para o dataframe:
 
-| Option    | Description                                                                                                                                                       |
-|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `default` | Use the default S3 method for the data frame.                                                                                                                     |
-| `kable`   | Markdown table using the [`knitr::kable()`](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html) function.                                                   |
-| `tibble`  | Plain text table using the [`tibble`](https://tibble.tidyverse.org/) package.                                                                                     |
-| `paged`   | HTML table with paging for row and column overflow (implemented using [`rmarkdown::paged_table()`](https://pkgs.rstudio.com/rmarkdown/reference/paged_table.html))|
-
-
-For example, here we specify that we want `paged` printing for data frames:
-
-```yaml
+``` yaml
 ---
 title: "Document"
 format: 
