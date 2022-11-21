@@ -10,7 +10,7 @@ website:
 
  # google-analytics: "G-2J79YYG9CZ"
   page-footer:
-    right: "Este site foi feito com ❤ e [Quarto](https://quarto.org/), por Renata Oliveira, baseado na documentação original do Quarto. License: [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/)."
+    right: "Este site foi feito com ❤ e [Quarto](https://quarto.org/), por Renata Oliveira, baseado na documentação original do [Quarto](www.quarto.org) <br></br> License: [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/)."
     border: false
 
   twitter-card:
@@ -64,14 +64,10 @@ website:
         contents:
          - intro-quarto.qmd
          - documento.qmd
+         - zotero-quarto.qmd
 
 
-      - title: "---"
 
-      - section: "Sites"
-        contents:
-         - index.qmd
-         - intro-quarto.qmd
 
 format:
   html:

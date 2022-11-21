@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://retaoliveira.pro/index.html</loc>
-    <lastmod>2022-10-25T03:39:12.796Z</lastmod>
+    <lastmod>2022-11-21T20:41:50.487Z</lastmod>
   </url>
   <url>
     <loc>https://retaoliveira.pro/intro-quarto.html</loc>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://retaoliveira.pro/documento.html</loc>
-    <lastmod>2022-10-25T18:08:55.499Z</lastmod>
+    <lastmod>2022-11-21T20:41:49.009Z</lastmod>
   </url>
   <url>
     <loc>https://retaoliveira.pro/authoring/article-layout.html</loc>
@@ -87,5 +87,9 @@
   <url>
     <loc>https://retaoliveira.pro/hello/vscode.html</loc>
     <lastmod>2022-10-25T04:24:36.499Z</lastmod>
+  </url>
+  <url>
+    <loc>https://retaoliveira.pro/zotero-quarto.html</loc>
+    <lastmod>2022-11-21T20:41:56.799Z</lastmod>
   </url>
 </urlset>
