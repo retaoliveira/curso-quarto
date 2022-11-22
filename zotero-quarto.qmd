@@ -4,8 +4,6 @@ format:
   html:
     code-fold: true
     code-tools: true
-  revealjs:
-    chalkboard: true
 bibliography: references.bib
 ---
 

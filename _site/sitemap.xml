@@ -1,95 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://quarto.rocks/about.html</loc>
-    <lastmod>2022-11-22T12:30:11.885Z</lastmod>
-  </url>
-  <url>
-    <loc>https://quarto.rocks/authoring/article-layout.html</loc>
-    <lastmod>2022-11-22T12:30:15.252Z</lastmod>
-  </url>
-  <url>
-    <loc>https://quarto.rocks/authoring/figures.html</loc>
-    <lastmod>2022-11-22T12:30:16.869Z</lastmod>
-  </url>
-  <url>
-    <loc>https://quarto.rocks/authoring/index.html</loc>
-    <lastmod>2022-11-22T12:30:17.270Z</lastmod>
-  </url>
-  <url>
-    <loc>https://quarto.rocks/authoring/jupyter.html</loc>
-    <lastmod>2022-11-22T12:30:18.629Z</lastmod>
-  </url>
-  <url>
-    <loc>https://quarto.rocks/authoring/rstudio.html</loc>
-    <lastmod>2022-11-22T12:30:20.384Z</lastmod>
-  </url>
-  <url>
-    <loc>https://quarto.rocks/authoring/text-editor.html</loc>
-    <lastmod>2022-11-22T12:30:21.056Z</lastmod>
-  </url>
-  <url>
-    <loc>https://quarto.rocks/authoring/vscode.html</loc>
-    <lastmod>2022-11-22T12:30:21.786Z</lastmod>
-  </url>
-  <url>
-    <loc>https://quarto.rocks/computations/index.html</loc>
-    <lastmod>2022-11-22T12:30:22.252Z</lastmod>
-  </url>
-  <url>
-    <loc>https://quarto.rocks/computations/jupyter.html</loc>
-    <lastmod>2022-11-22T12:30:23.603Z</lastmod>
-  </url>
-  <url>
-    <loc>https://quarto.rocks/computations/rstudio.html</loc>
-    <lastmod>2022-11-22T12:30:25.232Z</lastmod>
-  </url>
-  <url>
-    <loc>https://quarto.rocks/computations/text-editor.html</loc>
-    <lastmod>2022-11-22T12:30:26.389Z</lastmod>
-  </url>
-  <url>
-    <loc>https://quarto.rocks/computations/vscode.html</loc>
-    <lastmod>2022-11-22T12:30:27.596Z</lastmod>
-  </url>
-  <url>
-    <loc>https://quarto.rocks/documento.html</loc>
-    <lastmod>2022-11-22T12:30:28.757Z</lastmod>
-  </url>
-  <url>
-    <loc>https://quarto.rocks/hello/index.html</loc>
-    <lastmod>2022-11-22T12:30:29.173Z</lastmod>
-  </url>
-  <url>
-    <loc>https://quarto.rocks/hello/jupyter.html</loc>
-    <lastmod>2022-11-22T12:30:30.119Z</lastmod>
-  </url>
-  <url>
-    <loc>https://quarto.rocks/hello/rstudio.html</loc>
-    <lastmod>2022-11-22T12:30:30.898Z</lastmod>
-  </url>
-  <url>
-    <loc>https://quarto.rocks/hello/text-editor.html</loc>
-    <lastmod>2022-11-22T12:30:31.848Z</lastmod>
-  </url>
-  <url>
-    <loc>https://quarto.rocks/hello/vscode.html</loc>
-    <lastmod>2022-11-22T12:30:32.923Z</lastmod>
+    <loc>https://quarto.rocks/zotero-quarto.html</loc>
+    <lastmod>2022-11-22T12:45:42.879Z</lastmod>
   </url>
   <url>
     <loc>https://quarto.rocks/image.html</loc>
-    <lastmod>2022-11-22T12:30:36.537Z</lastmod>
-  </url>
-  <url>
-    <loc>https://quarto.rocks/index.html</loc>
-    <lastmod>2022-11-22T12:30:37.188Z</lastmod>
+    <lastmod>2022-11-22T12:45:39.530Z</lastmod>
   </url>
   <url>
     <loc>https://quarto.rocks/intro-quarto.html</loc>
-    <lastmod>2022-11-22T12:30:37.922Z</lastmod>
-  </url>
-  <url>
-    <loc>https://quarto.rocks/zotero-quarto.html</loc>
-    <lastmod>2022-11-22T12:32:52.297Z</lastmod>
+    <lastmod>2022-11-22T12:45:40.418Z</lastmod>
   </url>
 </urlset>
