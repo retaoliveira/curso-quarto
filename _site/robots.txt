@@ -1,1 +1,1 @@
-Sitemap: https://retaoliveira.pro/sitemap.xml
+Sitemap: https://quarto.rocks/sitemap.xml
