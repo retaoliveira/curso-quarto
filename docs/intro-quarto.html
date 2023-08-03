@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Introdução</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": true,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/retaoliveira" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/retaoliveira" rel="" target=""><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:renataoliveira@gmail.com" rel="" target=""><i class="bi bi-envelope" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro-quarto.html">Conhecendo o Quarto</a></li><li class="breadcrumb-item"><a href="./intro-quarto.html">Introdução</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./_site/quarto.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sejam bem vindos ao Quarto!</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Conhecendo o Quarto</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro-quarto.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Introdução</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./documento.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Do RMarkdown para o Quarto</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./zotero-quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zotero no Quarto</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#visão-geral" id="toc-visão-geral" class="nav-link active" data-scroll-target="#visão-geral">Visão geral</a></li>
+  <li><a href="#renderizando" id="toc-renderizando" class="nav-link" data-scroll-target="#renderizando">Renderizando</a></li>
+  <li><a href="#criando-documentos" id="toc-criando-documentos" class="nav-link" data-scroll-target="#criando-documentos">Criando documentos</a>
+  <ul class="collapse">
+  <li><a href="#cabeçalho-yaml" id="toc-cabeçalho-yaml" class="nav-link" data-scroll-target="#cabeçalho-yaml">Cabeçalho YAML</a></li>
+  <li><a href="#chunks-de-código" id="toc-chunks-de-código" class="nav-link" data-scroll-target="#chunks-de-código">Chunks de código</a></li>
+  </ul></li>
+  <li><a href="#como-funciona" id="toc-como-funciona" class="nav-link" data-scroll-target="#como-funciona">Como funciona</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Introdução</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="visão-geral" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="visão-geral">Visão geral</h2>
+<p>Quarto é a próxima geração do RMarkdown do RStudio, e inclui dezenas de novos recursos e capacidades, ao mesmo tempo em que é capaz de renderizar a maioria dos arquivos .Rmd existentes sem modificações.</p>
+<p>Você editará o código e o markdown no RStudio da mesma forma que faria com qualquer documento computacional (por exemplo, R Markdown), e visualizará o documento renderizado na aba Viewer enquanto você trabalha.</p>
+<p>A extensão dos documentos Quarto é <code>.qmd</code> (à esquerda) junto com sua versão renderizada como HTML (à direita). Você também pode optar por renderizá-lo em outros formatos como PDF, MS Word, etc.</p>
+<div class="quarto-figure quarto-figure-center column-page-right page-columns page-full">
+<figure class="figure page-columns page-full">
+<p class="page-columns page-full"><img src="img/rstudio-hello.png" class="border column-page-right img-fluid figure-img" alt="RStudio with a Quarto document entitulado &quot;Penguins, meet Quarto!&quot; open on the left side and the rendered version of the document on the right side"></p>
+</figure>
+</div>
+<p>Este é o método básico para a publicação no Quarto - pegar um documento fonte e renderizá-lo em uma variedade de formatos de saída.</p>
+<p>Siga os passos descritos abaixo.</p>
+<ol type="1">
+<li><p>Baixe e instale o último lançamento do RStudio (v2022.07):</p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><i class="bi bi-download"></i> <a href="https://rstudio.com/products/rstudio/download/">Download RStudio v2022.07</a></p>
+</div>
+</div>
+</div></li>
+<li><p>Certifique-se de que você instalou os pacotes <code>tidyverse</code> e <code>palmerpenguins</code>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"palmerpenguins"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Baixe o documento Quarto (<code>.qmd</code>) abaixo, abra-o no RStudio, e clique em <kbd><img src="img/rstudio-render-button.png" width="25" height="20"></kbd> Render.</p>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><i class="bi bi-download"></i> <a href="_hello.qmd" download="hello.qmd">Download hello.qmd</a></p>
+</div>
+</div>
+</div></li>
+</ol>
+</section>
+<section id="renderizando" class="level2">
+<h2 class="anchored" data-anchor-id="renderizando">Renderizando</h2>
+<p>Use o botão <kbd><img src="img/rstudio-render-button.png" width="25" height="20"></kbd> <strong>Render</strong> no IDE RStudio para renderizar o arquivo e visualizar a saída com um único clique ou atalho de teclado (⇧⌘K).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rstudio-render.png" class="border img-fluid figure-img" alt="Top of the text editor in RStudio with the Render button highlighted with a purple box."></p>
+</figure>
+</div>
+<p>Se você preferir renderizar automaticamente sempre que salvar, você pode verificar a opção Render em Salvar na barra de ferramentas do editor. A pré-visualização será exibida sempre que você renderizar novamente o documento. A pré-visualização lado a lado funciona tanto para saídas HTML como para PDF.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rstudio-render-on-save.png" class="border img-fluid figure-img" alt="Top of the text editor in RStudio with the Render on Save checbox checked and highlighted with a purple box."></p>
+</figure>
+</div>
+<p>Observe que os documentos também podem ser resultados a partir do console R utilizando o pacote <strong>quarto</strong>*:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"quarto"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>quarto<span class="sc">::</span><span class="fu">quarto_render</span>(<span class="st">"notebook.Rmd"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ao renderizar, o Quarto gera um novo arquivo que contém texto, código e resultados selecionados a partir do arquivo .qmd. O novo arquivo pode ser um <a href="https://quarto.org/docs/output-formats/all-formats.html">HTML</a>, <a href="https://quarto.org/docs/output-formats/pdf-basics.html">PDF</a>, <a href="https://quarto.org/docs/output-formats/ms-word.html">MS Word</a> document, <a href="https://quarto.org/docs/presentations/">apresentação</a>, <a href="https://quarto.org/docs/websites/">website</a>, <a href="https://quarto.org/docs/books/">livro</a>, <a href="https://quarto.org/docs/interactive/">documento interativo</a>, ou <a href="https://quarto.org/docs/output-formats/all-formats.html">outro formato</a>.</p>
+</section>
+<section id="criando-documentos" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="criando-documentos">Criando documentos</h2>
+<p>Na imagem abaixo podemos ver o mesmo documento nos dois modos do editor do RStudio: visual (à esquerda) e fonte (à direita). O <a href="./docs/visual-editor/">editor visual</a> do RStudio oferece uma experiência de autoria <a href="https://en.wikipedia.org/wiki/WYSIWYM">WYSIWYM</a> por markdown. Para formatação você pode utilizar a barra de ferramentas, um atalho de teclado (⌘B), ou a construção de marcação para formato (<code>** negrito**</code>). O código fonte em texto puro subjacente ao documento é escrito por você e você pode visualizá-lo/editá-lo em qualquer ponto, mudando para o modo fonte para edição. Você pode alternar entre estes dois modos clicando em <strong>Source</strong>* e <strong>Visual</strong>* na barra de ferramentas do editor (ou usando o atalho de teclado ⌘⇧ F4).</p>
+<div class="quarto-figure quarto-figure-center column-page-right page-columns page-full">
+<figure class="figure page-columns page-full">
+<p class="page-columns page-full"><img src="img/rstudio-source-visual.png" class="column-page-right img-fluid figure-img" alt="On the left: Document in the visual editor. On the right: Same document in the source editor. The visual/source editor toggle is highlighted in both documents marking their current state. The document shown is the &quot;Hello Quarto&quot; document from a previous image on the page."></p>
+</figure>
+</div>
+<p>A seguir, vamos voltar nossa atenção para o conteúdo de nosso documento Quarto. O arquivo contém três tipos de conteúdo: um cabeçalho YAML, pedaços de código e texto em markdown.</p>
+<section id="cabeçalho-yaml" class="level3">
+<h3 class="anchored" data-anchor-id="cabeçalho-yaml">Cabeçalho YAML</h3>
+<p>É um cabeçalho (opcional) YAML demarcado por três traços (<code>---</code>) em ambas as extremidades.</p>
+<p>Quando renderizado, o <code>título</code>, <code>"Olá, Quarto"</code>, aparecerá no topo do documento com um tamanho de fonte maior do que o resto do documento. Os outros dois campos YAML denotam que a saída deve estar em formato “html” e o documento deve abrir no “editor” “visual”, por padrão.</p>
+<p>A sintaxe básica da YAML utiliza pares de valores chave no formato “chave: valor”. Outros campos do YAML comumente encontrados em cabeçalhos de documentos incluem metadados como “autor”, “subtítulo”, “data”, assim como opções de personalização como “tema”, “cor de botão”, “largura de figura”, etc. Você pode aprender sobre todos os campos YAML disponíveis para documentos HTML <a href="./docs/reference/formats/html.html">aqui</a>. Os campos YAML disponíveis variam de acordo com o formato do documento, por exemplo, veja <a href="./docs/reference/formats/pdf.html">aqui</a> para documentos em PDF e <a href="./docs/reference/formats/docx.html">aqui</a> para MS Word.</p>
+</section>
+<section id="chunks-de-código" class="level3">
+<h3 class="anchored" data-anchor-id="chunks-de-código">Chunks de código</h3>
+<p>Pedaços de código são identificados com <code>{r}</code> com opções (opcionais) em estilo YAML, identificados por <code>#|</code> no início da linha.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load-packages</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Neste caso, o “rótulo” do trecho de código é “load-packages” e nós definimos “include” para “false” para indicar que não queremos o trecho em si ou nenhuma de suas saídas nos documentos apresentados.</p>
+<p>Além de renderizar o documento completo para visualizar os resultados dos trechos de código, você também pode executar cada trecho de código interativamente no editor do RStudio, clicando no ícone <img src="https://d33wubrfki0l68.cloudfront.net/18153fb9953057ee5cff086122bd26f9cee8fe93/3aba9/img/notebook-run-chunk.png" class="img-fluid"> ou atalho de teclado (⇧⌘⏎). O RStudio executa o código e exibe os resultados em linha dentro de seu arquivo ou no Console, dependendo de sua preferência.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rstudio-inline-output.png" class="img-fluid figure-img" alt="In the background, the code chunk labeled plot-penguins from hello.qmd. The chunk is partially covered by its output, a scatterplot showing the relationship between bill length and flipper length of penguins, colors by species. The button for running the code chunk is highlighted and an arrow extends to the plot, showing that clicking the button results in the plot being generated."></p>
+</figure>
+</div>
+<section id="texto-markdown" class="level4">
+<h4 class="anchored" data-anchor-id="texto-markdown">Texto markdown</h4>
+<p>Texto markdown possui formatação, incluindo cabeçalhos de seção, hyperlinks, uma imagem embutida e um trecho de código em linha.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rstudio-text.png" class="border img-fluid figure-img" alt="Text portion of the of the linked example document titled &quot;Penguins, meet Quarto!&quot;, with annotation that reads &quot;Text&quot;."></p>
+</figure>
+</div>
+<p>O Quarto usa a sintaxe markdown para o texto. Se usar o editor visual, você não precisará aprender muita sintaxe de markdown para criar seu documento, pois você pode usar os menus e atalhos para adicionar um cabeçalho, texto em negrito, inserir uma tabela, etc. Se utilizar o editor do código fonte, você poderá formatar o texto com expressões marcadas como <code>##</code>, <code>***negrito**</code>, etc.</p>
+</section>
+</section>
+</section>
+<section id="como-funciona" class="level2">
+<h2 class="anchored" data-anchor-id="como-funciona">Como funciona</h2>
+<p>Quando você apresenta um documento da Quarto, primeiro o <a href="http://yihui.name/knitr/">knitr</a> executa todos os trechos de código e cria um novo documento markdown (.md) que inclui o código e sua saída. O arquivo de markdown gerado é então processado pelo <a href="http://pandoc.org/">pandoc</a>, que cria o formato final. O botão <strong>Render</strong> encapsula estas ações e as executa na ordem correta para você.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rstudio-qmd-how-it-works.png" class="border img-fluid figure-img" alt="Workflow diagram starting with a qmd file, then knitr, then md, then pandoc, then PDF, MS Word, or HTML."></p>
+</figure>
+</div>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Introdução"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">    code-link: true</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">## Visão geral</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>Quarto é a próxima geração do RMarkdown do RStudio, e inclui dezenas de novos recursos e capacidades, ao mesmo tempo em que é capaz de renderizar a maioria dos arquivos .Rmd existentes sem modificações.</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>Você editará o código e o markdown no RStudio da mesma forma que faria com qualquer documento computacional (por exemplo, R Markdown), e visualizará o documento renderizado na aba Viewer enquanto você trabalha.</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>A extensão dos documentos Quarto é <span class="in">`.qmd`</span> (à esquerda) junto com sua versão renderizada como HTML (à direita). Você também pode optar por renderizá-lo em outros formatos como PDF, MS Word, etc.</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/rstudio-hello.png)</span>{.column-page-right .border fig-alt="RStudio with a Quarto document entitulado \"Penguins, meet Quarto!\" open on the left side and the rendered version of the document on the right side" fig-align="center"}</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>Este é o método básico para a publicação no Quarto - pegar um documento fonte e renderizá-lo em uma variedade de formatos de saída.</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>Siga os passos descritos abaixo.</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Baixe e instale o último lançamento do RStudio (v2022.07):</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    ::: {.callout appearance="minimal"}</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;i</span> <span class="er">class</span><span class="ot">=</span><span class="st">"bi bi-download"</span><span class="kw">&gt;&lt;/i&gt;</span> <span class="co">[</span><span class="ot">Download RStudio v2022.07</span><span class="co">](https://rstudio.com/products/rstudio/download/)</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    :::</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Certifique-se de que você instalou os pacotes <span class="in">`tidyverse`</span> e <span class="in">`palmerpenguins`</span>:</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    <span class="in">``` r</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(<span class="st">"palmerpenguins"</span>)</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>    <span class="in">```</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="ss">3.  </span>Baixe o documento Quarto (<span class="in">`.qmd`</span>) abaixo, abra-o no RStudio, e clique em <span class="kw">&lt;kbd&gt;</span><span class="al">![](img/rstudio-render-button.png)</span>{width="25" height="20"}<span class="kw">&lt;/kbd&gt;</span> Render.</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>    ::: {.callout appearance="minimal"}</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;i</span> <span class="er">class</span><span class="ot">=</span><span class="st">"bi bi-download"</span><span class="kw">&gt;&lt;/i&gt;</span> <span class="co">[</span><span class="ot">Download hello.qmd</span><span class="co">](_hello.qmd)</span>{download="hello.qmd"}</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>    :::</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="fu">## Renderizando</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>Use o botão <span class="kw">&lt;kbd&gt;</span><span class="al">![](img/rstudio-render-button.png)</span>{width="25" height="20"}<span class="kw">&lt;/kbd&gt;</span> **Render** no IDE RStudio para renderizar o arquivo e visualizar a saída com um único clique ou atalho de teclado (⇧⌘K).</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/rstudio-render.png)</span>{.border fig-alt="Top of the text editor in RStudio with the Render button highlighted with a purple box." fig-align="center"}</span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>Se você preferir renderizar automaticamente sempre que salvar, você pode verificar a opção Render em Salvar na barra de ferramentas do editor. A pré-visualização será exibida sempre que você renderizar novamente o documento. A pré-visualização lado a lado funciona tanto para saídas HTML como para PDF.</span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/rstudio-render-on-save.png)</span>{.border fig-alt="Top of the text editor in RStudio with the Render on Save checbox checked and highlighted with a purple box." fig-align="center"}</span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>Observe que os documentos também podem ser resultados a partir do console R utilizando o pacote **quarto**<span class="sc">\*</span>:</span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="in">``` r</span></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"quarto"</span>)</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>quarto<span class="sc">::</span><span class="fu">quarto_render</span>(<span class="st">"notebook.Rmd"</span>)</span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>Ao renderizar, o Quarto gera um novo arquivo que contém texto, código e resultados selecionados a partir do arquivo .qmd. O novo arquivo pode ser um <span class="co">[</span><span class="ot">HTML</span><span class="co">](https://quarto.org/docs/output-formats/all-formats.html)</span>, <span class="co">[</span><span class="ot">PDF</span><span class="co">](https://quarto.org/docs/output-formats/pdf-basics.html)</span>, <span class="co">[</span><span class="ot">MS Word</span><span class="co">](https://quarto.org/docs/output-formats/ms-word.html)</span> document, <span class="co">[</span><span class="ot">apresentação</span><span class="co">](https://quarto.org/docs/presentations/)</span>, <span class="co">[</span><span class="ot">website</span><span class="co">](https://quarto.org/docs/websites/)</span>, <span class="co">[</span><span class="ot">livro</span><span class="co">](https://quarto.org/docs/books/)</span>, <span class="co">[</span><span class="ot">documento interativo</span><span class="co">](https://quarto.org/docs/interactive/)</span>, ou <span class="co">[</span><span class="ot">outro formato</span><span class="co">](https://quarto.org/docs/output-formats/all-formats.html)</span>.</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="fu">## Criando documentos</span></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>Na imagem abaixo podemos ver o mesmo documento nos dois modos do editor do RStudio: visual (à esquerda) e fonte (à direita). O <span class="co">[</span><span class="ot">editor visual</span><span class="co">](/docs/visual-editor/)</span> do RStudio oferece uma experiência de autoria <span class="co">[</span><span class="ot">WYSIWYM</span><span class="co">](https://en.wikipedia.org/wiki/WYSIWYM)</span> por markdown. Para formatação você pode utilizar a barra de ferramentas, um atalho de teclado (⌘B), ou a construção de marcação para formato (<span class="in">`** negrito**`</span>). O código fonte em texto puro subjacente ao documento é escrito por você e você pode visualizá-lo/editá-lo em qualquer ponto, mudando para o modo fonte para edição. Você pode alternar entre estes dois modos clicando em **Source**\* e **Visual**<span class="sc">\*</span> na barra de ferramentas do editor (ou usando o atalho de teclado ⌘⇧ F4).</span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/rstudio-source-visual.png)</span>{.column-page-right fig-alt="On the left: Document in the visual editor. On the right: Same document in the source editor. The visual/source editor toggle is highlighted in both documents marking their current state. The document shown is the \"Hello Quarto\" document from a previous image on the page." fig-align="center"}</span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>A seguir, vamos voltar nossa atenção para o conteúdo de nosso documento Quarto. O arquivo contém três tipos de conteúdo: um cabeçalho YAML, pedaços de código e texto em markdown.</span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a><span class="fu">### Cabeçalho YAML</span></span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>É um cabeçalho (opcional) YAML demarcado por três traços (<span class="in">`---`</span>) em ambas as extremidades.</span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>Quando renderizado, o <span class="in">`título`</span>, <span class="in">`"Olá, Quarto"`</span>, aparecerá no topo do documento com um tamanho de fonte maior do que o resto do documento. Os outros dois campos YAML denotam que a saída deve estar em formato "html" e o documento deve abrir no "editor" "visual", por padrão.</span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>A sintaxe básica da YAML utiliza pares de valores chave no formato "chave: valor". Outros campos do YAML comumente encontrados em cabeçalhos de documentos incluem metadados como "autor", "subtítulo", "data", assim como opções de personalização como "tema", "cor de botão", "largura de figura", etc. Você pode aprender sobre todos os campos YAML disponíveis para documentos HTML <span class="co">[</span><span class="ot">aqui</span><span class="co">](/docs/reference/formats/html.html)</span>. Os campos YAML disponíveis variam de acordo com o formato do documento, por exemplo, veja <span class="co">[</span><span class="ot">aqui</span><span class="co">](/docs/reference/formats/pdf.html)</span> para documentos em PDF e <span class="co">[</span><span class="ot">aqui</span><span class="co">](/docs/reference/formats/docx.html)</span> para MS Word.</span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a><span class="fu">### Chunks de código</span></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a>Pedaços de código são identificados com <span class="in">`{r}`</span> com opções (opcionais) em estilo YAML, identificados por <span class="in">`#|`</span> no início da linha.</span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a><span class="in">```` markdown</span></span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: load-packages</span></span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a><span class="in">````</span></span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a>Neste caso, o "rótulo" do trecho de código é "load-packages" e nós definimos "include" para "false" para indicar que não queremos o trecho em si ou nenhuma de suas saídas nos documentos apresentados.</span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a>Além de renderizar o documento completo para visualizar os resultados dos trechos de código, você também pode executar cada trecho de código interativamente no editor do RStudio, clicando no ícone <span class="al">![](https://d33wubrfki0l68.cloudfront.net/18153fb9953057ee5cff086122bd26f9cee8fe93/3aba9/img/notebook-run-chunk.png)</span> ou atalho de teclado (⇧⌘⏎). O RStudio executa o código e exibe os resultados em linha dentro de seu arquivo ou no Console, dependendo de sua preferência.</span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/rstudio-inline-output.png)</span>{fig-alt="In the background, the code chunk labeled plot-penguins from hello.qmd. The chunk is partially covered by its output, a scatterplot showing the relationship between bill length and flipper length of penguins, colors by species. The button for running the code chunk is highlighted and an arrow extends to the plot, showing that clicking the button results in the plot being generated." fig-align="center"}</span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Texto markdown</span></span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a>Texto markdown possui formatação, incluindo cabeçalhos de seção, hyperlinks, uma imagem embutida e um trecho de código em linha.</span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/rstudio-text.png)</span>{.border fig-alt="Text portion of the of the linked example document titled \"Penguins, meet Quarto!\", with annotation that reads \"Text\"." fig-align="center"}</span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a>O Quarto usa a sintaxe markdown para o texto. Se usar o editor visual, você não precisará aprender muita sintaxe de markdown para criar seu documento, pois você pode usar os menus e atalhos para adicionar um cabeçalho, texto em negrito, inserir uma tabela, etc. Se utilizar o editor do código fonte, você poderá formatar o texto com expressões marcadas como <span class="in">`##`</span>, <span class="in">`***negrito**`</span>, etc.</span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a><span class="fu">## Como funciona</span></span>
+<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a>Quando você apresenta um documento da Quarto, primeiro o <span class="co">[</span><span class="ot">knitr</span><span class="co">](http://yihui.name/knitr/)</span> executa todos os trechos de código e cria um novo documento markdown (.md) que inclui o código e sua saída. O arquivo de markdown gerado é então processado pelo <span class="co">[</span><span class="ot">pandoc</span><span class="co">](http://pandoc.org/)</span>, que cria o formato final. O botão **Render** encapsula estas ações e as executa na ordem correta para você.</span>
+<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-110"><a href="#cb4-110" aria-hidden="true" tabindex="-1"></a><span class="al">![](img/rstudio-qmd-how-it-works.png)</span>{.border fig-alt="Workflow diagram starting with a qmd file, then knitr, then md, then pandoc, then PDF, MS Word, or HTML." fig-align="center"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">Este site foi feito com ❤ e <a href="https://quarto.org/">Quarto</a>, por Renata Oliveira, baseado na documentação original do <a href="www.quarto.org">Quarto</a> <br><br> License: <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>.</div>
+  </div>
+</footer>
+
+
+
+</body></html>

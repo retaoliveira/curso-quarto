@@ -172,7 +172,7 @@ Note that the last paragraph in the div block is used as the figure caption.
 
 ## LaTeX Figures
 
-This section describes some figure handling options that are specific to LaTeX output. 
+This section describes some figure handling options that are specific to LaTeX output.
 
 One very important thing to note is that using the `fig-env` and `fig-pos` options described below will trigger the creation of a LaTeX floating environment (most often `\begin{figure}`). Depending upon where this LaTeX is generated it (e.g. is it within another `\begin{figure}`) this could generate invalid LaTeX. To be on the safe side these attributes should typically only be used for images at the very top level of your document.
 
@@ -342,6 +342,7 @@ Note that figure layout attributes also work for figures produced by executable 
 ::: panel-tabset
 #### Jupyter
 
+````         
 ``` {{python}}
 #| layout-ncol: 2
 #| fig-cap: 
@@ -355,11 +356,13 @@ plt.show()
 plt.plot([8,65,23,90])
 plt.show()
 ```
+````
 
 ![](images/jupyter-figure-layout.png){fig-alt="Two line plots rendered by Jupyter side-by-side."}
 
 #### Knitr
 
+````         
 ``` {{r}}
 #| layout-ncol: 2
 #| fig-cap: 
@@ -369,6 +372,7 @@ plt.show()
 plot(cars)
 plot(pressure)
 ```
+````
 
 ![](images/knitr-figure-layout.png){fig-alt="Two scatter plots arranged side-by-side."}
 :::
@@ -382,6 +386,7 @@ You can create subcaptions for computational output by combining the the `fig-ca
 ::: panel-tabset
 #### Jupyter
 
+````         
 ``` {{python}}
 #| label: fig-charts
 #| fig-cap: Charts
@@ -397,11 +402,13 @@ plt.show()
 plt.plot([8,65,23,90])
 plt.show()
 ```
+````
 
 ![](images/jupyter-figure-layout-caption.png){fig-alt="Two line plots with captions rendered by Jupyter side-by-side."}
 
 #### Knitr
 
+````         
 ``` {{r}}
 #| label: fig-charts
 #| fig-cap: Charts
@@ -413,6 +420,7 @@ plt.show()
 plot(cars)
 plot(pressure)
 ```
+````
 
 ![](images/knitr-figure-layout-caption.png){fig-alt="Two scatter plots with captions arranged side-by-side."}
 :::
@@ -421,6 +429,7 @@ plot(pressure)
 
 The `layout` works the same way for figures produced by Knitr or Jupyter. For example, here's an Rmd code chunk that produces 3 plots and defines a custom layout for them:
 
+````         
 ``` {{r}}
 #| layout: [[45,-10, 45], [100]]
 
@@ -428,6 +437,7 @@ plot(cars)
 plot(pressure)
 plot(mtcars)
 ```
+````
 
 ![](images/knitr-layout-complex.png){.preview-image fig-alt="Two plots arranged side-by-side with a large plot underneath it. The top two plots are scatter plots visualizing the `cars` and `pressure` datasets. These two plots are separated by some additional white space. The plot on the bottom visualizes the `mtcars` dataset and is wider and taller than the other two plots combined. This plot is an 11 by 11 grid plotting each of the 11 variables in the `mtcars` dataset against each other as a scatterplot. Instead of scatter plots in the diagonal starting in the upper left and going to the lower right are text labels for each of the variable names. These are: 'mpg', 'cyl', 'disp', 'hp', 'drat', 'wt', 'qsec', 'vs', 'am', 'gear', and 'carb'."}
 

@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
   render:
     - "*.qmd"
 
@@ -13,11 +14,11 @@ website:
     right: "Este site foi feito com ❤ e [Quarto](https://quarto.org/), por Renata Oliveira, baseado na documentação original do [Quarto](www.quarto.org) <br></br> License: [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/)."
     border: false
 
-  twitter-card:
-    creator: "@retaoliveira"
-    card-style: summary_large_image
+  # twitter-card:
+  #   creator: "@retaoliveira"
+  #   card-style: summary_large_image
     
-  open-graph: true  
+  # open-graph: true  
   
   reader-mode: true
   
@@ -26,9 +27,9 @@ website:
 #    type: express
 #    palette: light
     
-  google-analytics:
-    tracking-id: "G-XXXXXXX"
-    anonymize-ip: true
+  # google-analytics:
+  #   tracking-id: "G-XXXXXXX"
+  #   anonymize-ip: true
     
   navbar:
     search: true
@@ -86,7 +87,7 @@ format:
     footnotes-hover: true
     #include-in-header: meta.html
 
-editor: visual
+# editor: visual
 
 #comments:
 #  giscus:

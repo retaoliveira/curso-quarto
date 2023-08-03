@@ -1,4 +1,3 @@
 ---
 title: "Tutorial: Authoring"
-include-in-header: ../_redirect.html
 ---

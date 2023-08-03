@@ -13,10 +13,12 @@ bibliography: references.bib
 
 O Quarto suporta arquivos bibliográficos em uma grande variedade de formatos, incluindo BibLaTeX e CSL. Adicione uma bibliografia ao seu documento usando o campo de metadados da bibliografia YAML. Por exemplo:
 
-    ---
-    title: "My Document"
-    bibliography: references.bib
-    ---
+```         
+---
+title: "My Document"
+bibliography: references.bib
+---
+```
 
 O Quarto utilizará `Pandoc` para gerar automaticamente citações e uma bibliografia em vários estilos. Para usar esse recurso, você precisará:
 
@@ -32,29 +34,41 @@ Você pode fornecer mais de um arquivo bibliográfico, se desejar, definindo o v
 
 O Quarto utiliza a representação padrão `Pandoc` markdown para citações (por exemplo \[\@citação\]) - as citações vão dentro de colchetes e são separadas por ponto-e-vírgula. Cada citação deve ter uma chave, composta de '\@' + o identificador da citação do banco de dados. A chave de citação deve começar com uma letra, dígito, ou \_, e pode conter alfanuméricos, \_, e caracteres de pontuação interna (:.#\$%&-+?\<\>\~\~/). Aqui estão alguns exemplos:
 
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
-| Formato Markdown                          | Citação por nome dos autores                                                                                                                                                                                                     | Citação em formato numérico                         |
-+===========================================+==================================================================================================================================================================================================================================+=====================================================+
-|     Blah Blah [see @knuth1984, pp. 33-35; | Blah Blah (see [Knuth 1984, 33--35](https://quarto.org/docs/authoring/footnotes-and-citations.html#ref-knuth1984); also [Wickham 2015, chap. 1](https://quarto.org/docs/authoring/footnotes-and-citations.html#ref-wickham2015)) | Blah Blah see \[1\], pp. 33-35; also \[1\], chap. 1 |
-|     also @wickham2015, chap. 1]           |                                                                                                                                                                                                                                  |                                                     |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
-|     Blah Blah [@knuth1984, pp. 33-35,     | Blah Blah ([Knuth 1984, 33--35, 38--39](https://quarto.org/docs/authoring/footnotes-and-citations.html#ref-knuth1984) and passim)                                                                                                | Blah Blah \[1\], pp. 33-35, 38-39 and passim        |
-|     38-39 and passim]                     |                                                                                                                                                                                                                                  |                                                     |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
-|     Blah Blah [@wickham2015; @knuth1984]. | Blah Blah ([Wickham 2015](https://quarto.org/docs/authoring/footnotes-and-citations.html#ref-wickham2015); [Knuth 1984](https://quarto.org/docs/authoring/footnotes-and-citations.html#ref-knuth1984)).                          | Blah Blah \[1, 2\].                                 |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
-|     Wickham says blah [-@wickham2015]     | Wickham says blah ([2015](https://quarto.org/docs/authoring/footnotes-and-citations.html#ref-wickham2015))                                                                                                                       | Wickham says blah \[1\]                             |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| Formato Markdown                      | Citação por nome dos autores                                                                                                                                                                                                     | Citação em formato numérico                         |
++=======================================+==================================================================================================================================================================================================================================+=====================================================+
+| ```                                   | Blah Blah (see [Knuth 1984, 33--35](https://quarto.org/docs/authoring/footnotes-and-citations.html#ref-knuth1984); also [Wickham 2015, chap. 1](https://quarto.org/docs/authoring/footnotes-and-citations.html#ref-wickham2015)) | Blah Blah see \[1\], pp. 33-35; also \[1\], chap. 1 |
+| Blah Blah [see @knuth1984, pp. 33-35; |                                                                                                                                                                                                                                  |                                                     |
+| also @wickham2015, chap. 1]           |                                                                                                                                                                                                                                  |                                                     |
+| ```                                   |                                                                                                                                                                                                                                  |                                                     |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ```                                   | Blah Blah ([Knuth 1984, 33--35, 38--39](https://quarto.org/docs/authoring/footnotes-and-citations.html#ref-knuth1984) and passim)                                                                                                | Blah Blah \[1\], pp. 33-35, 38-39 and passim        |
+| Blah Blah [@knuth1984, pp. 33-35,     |                                                                                                                                                                                                                                  |                                                     |
+| 38-39 and passim]                     |                                                                                                                                                                                                                                  |                                                     |
+| ```                                   |                                                                                                                                                                                                                                  |                                                     |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ```                                   | Blah Blah ([Wickham 2015](https://quarto.org/docs/authoring/footnotes-and-citations.html#ref-wickham2015); [Knuth 1984](https://quarto.org/docs/authoring/footnotes-and-citations.html#ref-knuth1984)).                          | Blah Blah \[1, 2\].                                 |
+| Blah Blah [@wickham2015; @knuth1984]. |                                                                                                                                                                                                                                  |                                                     |
+| ```                                   |                                                                                                                                                                                                                                  |                                                     |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+| ```                                   | Wickham says blah ([2015](https://quarto.org/docs/authoring/footnotes-and-citations.html#ref-wickham2015))                                                                                                                       | Wickham says blah \[1\]                             |
+| Wickham says blah [-@wickham2015]     |                                                                                                                                                                                                                                  |                                                     |
+| ```                                   |                                                                                                                                                                                                                                  |                                                     |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
 
 ou também pode escrever citações em texto, como se segue:
 
-+-----------------------------------+-------------------------------------------------------------------------------------------------------------+-----------------------------+
-| Formato markdown                  | Citação por nome dos autores                                                                                | Citação em formato numérico |
-+===================================+=============================================================================================================+=============================+
-|     @knuth1984 says blah.         | Knuth ([1984](https://quarto.org/docs/authoring/footnotes-and-citations.html#ref-knuth1984)) says blah.     | \[1\] says blah.            |
-+-----------------------------------+-------------------------------------------------------------------------------------------------------------+-----------------------------+
-|     @knuth1984 [p. 33] says blah. | Knuth ([1984, 33](https://quarto.org/docs/authoring/footnotes-and-citations.html#ref-knuth1984)) says blah. | \[1\] \[p. 33\] says blah.  |
-+-----------------------------------+-------------------------------------------------------------------------------------------------------------+-----------------------------+
++-------------------------------+-------------------------------------------------------------------------------------------------------------+-----------------------------+
+| Formato markdown              | Citação por nome dos autores                                                                                | Citação em formato numérico |
++===============================+=============================================================================================================+=============================+
+| ```                           | Knuth ([1984](https://quarto.org/docs/authoring/footnotes-and-citations.html#ref-knuth1984)) says blah.     | \[1\] says blah.            |
+| @knuth1984 says blah.         |                                                                                                             |                             |
+| ```                           |                                                                                                             |                             |
++-------------------------------+-------------------------------------------------------------------------------------------------------------+-----------------------------+
+| ```                           | Knuth ([1984, 33](https://quarto.org/docs/authoring/footnotes-and-citations.html#ref-knuth1984)) says blah. | \[1\] \[p. 33\] says blah.  |
+| @knuth1984 [p. 33] says blah. |                                                                                                             |                             |
+| ```                           |                                                                                                             |                             |
++-------------------------------+-------------------------------------------------------------------------------------------------------------+-----------------------------+
 
 Consulte a documentação da Pandoc Citations para obter informações adicionais sobre a sintaxe da citação.
 
@@ -62,11 +76,13 @@ Consulte a documentação da Pandoc Citations para obter informações adicionai
 
 O Quarto utiliza Pandoc para formatar citações e bibliografias. Por padrão, a Pandoc usará o formato **Chicago Manual of Style author-date**, mas você pode especificar uma formatação personalizada usando CSL (*Citation Style Language*). Para fornecer o estilo de citação personalizada, forneça um caminho para um arquivo CSL usando o campo de metadados csl em seu documento, por exemplo:
 
-    ---
-    title: "My Document"
-    bibliography: references.bib
-    csl: nature.csl
-    ---
+```         
+---
+title: "My Document"
+bibliography: references.bib
+csl: nature.csl
+---
+```
 
 You pode encontrar arquivos CSL ou aprender mais sobre o uso de estilos no [CSL Project](https://github.com/citation-style-language/styles). Você pode consultar a lista de mais de 8.500 definições Creative Commons de CSL no Projeto CSL [central repository](https://github.com/citation-style-language/styles) ou utilizar o [style repository](https://www.zotero.org/styles) do Zotero.
 
@@ -119,9 +135,11 @@ Por exemplo, aqui especificamos uma opção de nível de projeto para usar a bib
 
 Você também pode especificar uma ou mais bibliotecas dentro da YAML. Por exemplo, uma ou mais bibliotecas dentro da YAML:
 
-    ---
-    title: "Reproducible Research"
-    zotero: "Reproducible Research Series (Year 1)"
-    ---
+```         
+---
+title: "Reproducible Research"
+zotero: "Reproducible Research Series (Year 1)"
+---
+```
 
 \
